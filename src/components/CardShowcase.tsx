@@ -216,18 +216,18 @@ export default function CardShowcase() {
               <div className="lg:col-span-4 flex flex-col justify-start">
                 <div className="w-12 h-1 bg-[#0055FF] mb-4" />
 
-                <h2 className="text-2xl sm:text-3xl font-black text-[#0F172A] tracking-tight mb-4">
+                <h2 className="text-2xl sm:text-3xl font-black text-[#0335ab] tracking-tight mb-4">
                   {section.title}
                 </h2>
 
-                <p className="text-sm text-[#334155] leading-relaxed mb-6">
+                <p className="text-sm text-[#0051c5] leading-relaxed mb-6 font-medium">
                   {section.description}
                 </p>
 
                 <div className="relative">
                   <button
                     onClick={() => toggle(section.id)}
-                    className="inline-flex items-center gap-2 text-[13px] font-bold text-[#0055FF] hover:text-[#0040C1] transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-2 text-[13px] font-bold text-[#0055FF] hover:text-[#0335ab] transition-colors cursor-pointer"
                   >
                     <ChevronDown
                       className={`w-4 h-4 transition-transform duration-200 ${
@@ -243,7 +243,7 @@ export default function CardShowcase() {
                         <a
                           key={i}
                           href={link.href}
-                          className="flex items-center gap-2 text-xs font-semibold text-[#334155] hover:text-[#0055FF] transition-colors"
+                          className="flex items-center gap-2 text-xs font-semibold text-[#0051c5] hover:text-[#0055FF] transition-colors"
                         >
                           <ArrowRight className="w-3 h-3 text-[#0055FF]" />
                           <span>{link.label}</span>
@@ -285,11 +285,11 @@ export default function CardShowcase() {
                         </div>
 
                         <div className="p-6">
-                          <h3 className="text-[15px] sm:text-base font-extrabold text-[#0F172A] leading-snug group-hover:text-[#0055FF] transition-colors">
+                          <h3 className="text-[15px] sm:text-base font-extrabold text-[#0335ab] leading-snug group-hover:text-[#0055FF] transition-colors">
                             {card.title}
                           </h3>
 
-                          <p className="text-xs sm:text-[13px] text-[#334155] mt-3 leading-relaxed">
+                          <p className="text-xs sm:text-[13px] text-[#0051c5] mt-3 leading-relaxed font-normal">
                             {card.description}
                           </p>
                         </div>

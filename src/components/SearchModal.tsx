@@ -57,13 +57,13 @@ export default function SearchModal({ isOpen, onClose, onSearchSubmit }: SearchM
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             autoFocus
-            className="w-full bg-transparent text-[#0B192C] placeholder-[#8C9BAE] focus:outline-none text-[15px] font-medium"
+            className="w-full bg-transparent text-[#0335ab] placeholder-[#8C9BAE] focus:outline-none text-[15px] font-medium"
           />
           {query && (
             <button
               type="button"
               onClick={() => setQuery("")}
-              className="text-[#8C9BAE] hover:text-[#0B192C] p-1.5 mr-2 cursor-pointer transition-colors"
+              className="text-[#8C9BAE] hover:text-[#0335ab] p-1.5 mr-2 cursor-pointer transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
@@ -78,7 +78,7 @@ export default function SearchModal({ isOpen, onClose, onSearchSubmit }: SearchM
           <button
             type="button"
             onClick={onClose}
-            className="ml-2.5 px-2.5 py-2 text-xs font-mono text-[#64748B] hover:text-[#0B192C] hover:bg-[#F0F6FE] border border-[#D2E4F9] transition-colors cursor-pointer rounded-none"
+            className="ml-2.5 px-2.5 py-2 text-xs font-mono text-[#0051c5] hover:text-[#0335ab] hover:bg-[#F0F6FE] border border-[#D2E4F9] transition-colors cursor-pointer rounded-none"
           >
             ESC
           </button>

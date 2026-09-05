@@ -40,7 +40,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${manrope.variable} ${geist.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans font-medium selection:bg-[#0062FF] selection:text-white bg-[#F8FBFE] text-[#1E293B]">
+      <body className="min-h-full flex flex-col font-sans font-medium selection:bg-[#0062FF] selection:text-white bg-[#F8FBFE] text-[#0335ab]">
         {children}
       </body>
     </html>

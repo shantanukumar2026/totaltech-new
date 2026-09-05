@@ -10,7 +10,7 @@ export default function Home() {
   const [searchOpen, setSearchOpen] = useState(false);
 
   return (
-    <main className="min-h-screen techno-blue-mesh text-[#0F172A] flex flex-col font-sans selection:bg-[#0085f4] selection:text-white">
+    <main className="min-h-screen techno-blue-mesh text-[#0335ab] flex flex-col font-sans selection:bg-[#0085f4] selection:text-white">
       <SearchModal
         isOpen={searchOpen}
         onClose={() => setSearchOpen(false)}
@@ -24,12 +24,12 @@ export default function Home() {
 
       <CardShowcase />
 
-      <footer className="mt-auto bg-white border-t border-[#D2E4F9] py-8 px-4 sm:px-6 lg:px-8 text-center text-xs text-[#475569]">
+      <footer className="mt-auto bg-white border-t border-[#D2E4F9] py-8 px-4 sm:px-6 lg:px-8 text-center text-xs text-[#0051c5]">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="font-semibold text-[#0F172A]">
+          <p className="font-semibold text-[#0335ab]">
             © {new Date().getFullYear()} Total Tech. All Rights Reserved.
           </p>
-          <div className="flex items-center gap-6 text-xs text-[#475569]">
+          <div className="flex items-center gap-6 text-xs text-[#0051c5] font-medium">
             <a href="#" className="hover:text-[#0055FF] transition-colors">Privacy</a>
             <a href="#" className="hover:text-[#0055FF] transition-colors">Terms</a>
             <a href="#" className="hover:text-[#0055FF] transition-colors">Security</a>

@@ -573,7 +573,7 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
                       onMouseEnter={() => setActiveSubcatId(subcat.id)}
                       className={`w-full text-left px-5 py-3.5 text-xs sm:text-[13px] transition-all flex items-center gap-3 group relative cursor-pointer ${isSubActive
                         ? "bg-white text-[#0055FF] font-bold shadow-xs"
-                        : "text-[#475569] hover:text-[#0055FF] hover:bg-white/80 font-medium"
+                        : "text-[#0051c5] hover:text-[#0055FF] hover:bg-white/80 font-medium"
                         }`}
                     >
 
@@ -602,7 +602,7 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
                     <div className="p-1.5 bg-[#F0F7FF] border border-[#0055FF]/30 text-[#0055FF]">
                       {React.createElement(currentSubcategory.icon, { className: "w-4 h-4" })}
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-[#0B192C] font-sans tracking-tight">
+                    <h3 className="text-lg sm:text-xl font-bold text-[#0335ab] font-sans tracking-tight">
                       {currentSubcategory.heading}
                     </h3>
                   </div>
@@ -622,14 +622,14 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
                           </div>
 
                           <div className="flex-1">
-                            <div className="flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#0B192C] group-hover:text-[#0055FF] transition-colors">
+                            <div className="flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#0335ab] group-hover:text-[#0055FF] transition-colors">
                               <span>{item.title}</span>
                               <span className="text-[#0055FF] font-black text-xs group-hover:translate-x-1 transition-all inline-block">
                                 &gt;
                               </span>
                             </div>
 
-                            <p className="text-[11.5px] text-[#64748B] mt-1 leading-relaxed font-normal group-hover:text-[#1E293B] transition-colors">
+                            <p className="text-[11.5px] text-[#0051c5] mt-1 leading-relaxed font-normal group-hover:text-[#0335ab] transition-colors">
                               {item.desc}
                             </p>
                           </div>
