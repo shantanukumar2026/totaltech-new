@@ -58,7 +58,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className={styles.descCol}>
             <div className={styles.logoArea}>
-              <img src="./logo.png" alt="Total Tech " className={styles.logoImg} />
+              <img src="./logo-white-bg.png" alt="Total Tech " className={styles.logoImg} />
             </div>
             <p className={styles.companyDesc}>
               Headquartered in Stuart, Florida, Total Tech is a dynamic, technology-driven organization rapidly expanding its global footprint.

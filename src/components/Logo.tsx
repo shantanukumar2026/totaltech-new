@@ -10,12 +10,12 @@ export default function Logo({ className = "h-10 w-auto" }: LogoProps) {
   return (
     <div className={`inline-flex items-center select-none cursor-pointer ${className}`}>
       <Image
-        src="/logo-white-bg.jpg"
+        src="/logo-white-bg.png"
         alt="Total Tech"
-        width={280}
-        height={70}
+        width={350}
+        height={110}
         priority
-        className="h-full w-auto object-contain"
+      // className="h-full w-auto object-contain"
       />
     </div>
   );

@@ -82,14 +82,14 @@ const NAV_TABS: NavTab[] = [
         icon: Factory,
         items: [
           {
-            title: "Robotics",
-            desc: "Autonomous robotics workcells and articulated robotic systems for manufacturing.",
+            title: "Precast Technology",
+            desc: "",
             href: "#",
             icon: Bot,
           },
           {
-            title: "Additive Manufacturing (3D Sand Printing)",
-            desc: "Industrial binder jetting 3D sand printing for rapid casting molds and cores.",
+            title: "Concreate Technologies",
+            desc: "",
             href: "#",
             icon: Layers,
           },

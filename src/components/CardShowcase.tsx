@@ -198,21 +198,21 @@ const SECTIONS: TopicSection[] = [
     cards: [
       {
         id: "mfg-1",
-        category: "Robotics",
-        type: "Automation",
-        title: "Autonomous Industrial Robotics & Systems",
+        category: "Precast Technology",
+        type: "Precast Technology",
+        title: "Precast Technology",
         description:
-          "Deploying high-precision robotic workcells and automated guided systems for mission-critical manufacturing.",
+          "",
         icon: Bot,
         mediaUrl: "/istockphoto-460888701-640_adpp_is.mp4",
       },
       {
         id: "mfg-2",
-        category: "Additive Tech",
-        type: "Precision",
-        title: "Additive Manufacturing (3D Sand Printing)",
+        category: "Concreate Technologies",
+        type: "Concreate Technologies",
+        title: "Concreate Technologies",
         description:
-          "Industrial 3D additive engineering and custom hardware tooling that radically reduce prototyping cycle times.",
+          " ",
         icon: Layers,
         mediaUrl: "/photo-1561634507-9db8434412d8.avif",
       },
@@ -220,7 +220,7 @@ const SECTIONS: TopicSection[] = [
   },
   {
     id: "ai",
-    title: "Artificial Intelligence",
+    title: "UI/UX For Precast ",
     description:
       "Harnessing deep neural architectures, cognitive algorithms, and automated computer vision to optimize high-throughput workflows.",
     quickLinks: [

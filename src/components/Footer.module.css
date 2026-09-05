@@ -47,7 +47,7 @@
     width: auto;
     max-width: 540px;
     object-fit: contain;
-    /* filter: brightness(0) invert(1); */
+    background-color: #fff;
 }
 
 .companyDesc {
