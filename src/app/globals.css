@@ -101,3 +101,16 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #0085f4;
 }
+
+/* Hide all dev overlays / Next.js indicators */
+nextjs-portal,
+[data-nextjs-toast],
+[data-nextjs-dev-indicator],
+[data-nextjs-dev-tools-button],
+#__next-build-watcher,
+#nextjs-dev-overlay {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}

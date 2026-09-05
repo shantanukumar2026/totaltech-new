@@ -20,6 +20,12 @@ const SLIDES = [
     image: "/crausal-3.png",
     alt: "Industrial Robotics & Automation",
   },
+  {
+    id: "slide-4",
+    image: "/crausal-4.png",
+    alt: ""
+
+  },
 ];
 
 export default function HeroSlider() {
@@ -73,9 +79,8 @@ export default function HeroSlider() {
         return (
           <div
             key={slide.id}
-            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
-              isActive ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-            }`}
+            className={`absolute inset-0 w-auto h-100vh transition-opacity duration-1000 ease-in-out ${isActive ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+              }`}
             style={{
               transform: isActive
                 ? `scale(1.02) translate(${mousePos.x * -6}px, ${mousePos.y * -4}px)`
@@ -114,7 +119,7 @@ export default function HeroSlider() {
       </button>
 
       {/* DOT NAVIGATION */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5 px-4 py-2 bg-white/70 backdrop-blur-md rounded-full border border-slate-200/50 shadow-sm">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5 px-4 py-2 bg-white/80 backdrop-blur-md rounded-full border border-[#D2E4F9] shadow-sm">
         {SLIDES.map((_, idx) => {
           const isActive = idx === currentSlide;
           return (
@@ -122,9 +127,8 @@ export default function HeroSlider() {
               key={idx}
               onClick={() => setCurrentSlide(idx)}
               aria-label={`Go to slide ${idx + 1}`}
-              className={`h-2 transition-all duration-300 rounded-full cursor-pointer ${
-                isActive ? "w-8 bg-[#0055FF]" : "w-2 bg-slate-300 hover:bg-slate-400"
-              }`}
+              className={`h-2 transition-all duration-300 rounded-full cursor-pointer ${isActive ? "w-8 bg-[#0055FF]" : "w-2 bg-[#B6D5FC] hover:bg-[#0085f4]"
+                }`}
             />
           );
         })}

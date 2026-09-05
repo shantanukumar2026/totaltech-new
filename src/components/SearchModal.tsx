@@ -41,7 +41,7 @@ export default function SearchModal({ isOpen, onClose, onSearchSubmit }: SearchM
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-start justify-center pt-24 px-4 bg-slate-900/30 backdrop-blur-sm animate-in fade-in duration-150 font-sans select-none"
+      className="fixed inset-0 z-50 flex items-start justify-center pt-24 px-4 bg-[#0335ab]/20 backdrop-blur-sm animate-in fade-in duration-150 font-sans select-none"
       onClick={onClose}
     >
       <div
