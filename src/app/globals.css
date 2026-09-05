@@ -15,8 +15,8 @@
   --blue-border: #D2E4F9;
   --blue-border-hover: #0085f4;
 
-  --text-main: #0B192C;
-  --text-muted: #536B88;
+  --text-main: #1E293B;
+  --text-muted: #475569;
 
   --font-family-global: var(--font-manrope), var(--font-geist), "Geist Fallback", system-ui, -apple-system, sans-serif;
 }
@@ -32,7 +32,7 @@
   html,
   body {
     background-color: #F8FBFE;
-    color: #0B192C;
+    color: #1E293B;
     font-family: var(--font-family-global) !important;
     font-weight: 500;
     overflow-x: hidden;
