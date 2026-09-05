@@ -1,26 +1,103 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Exact User Techno Blue 3-Color Palette */
+  --techno-deep: #005dff;
+  --techno-blue: #0085f4;
+  --techno-cyan: #00bbff;
+
+  /* Theme Tokens */
+  --blue-primary: #0085f4;
+  --blue-deep: #005dff;
+  --blue-cyan: #00bbff;
+  --blue-ice-light: #F0F6FE;
+  --blue-card-bg: #FFFFFF;
+  --blue-border: #D2E4F9;
+  --blue-border-hover: #0085f4;
+
+  --text-main: #0B192C;
+  --text-muted: #536B88;
+
+  --font-family-global: var(--font-manrope), var(--font-geist), "Geist Fallback", system-ui, -apple-system, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  *,
+  *::before,
+  *::after {
+    font-family: var(--font-family-global) !important;
+  }
+
+  html,
+  body {
+    background-color: #F8FBFE;
+    color: #0B192C;
+    font-family: var(--font-family-global) !important;
+    font-weight: 500;
+    overflow-x: hidden;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Sharp Corporate Tech Styles */
+.sharp-border {
+  border-radius: 0 !important;
+}
+
+/* Techno Blue 3-Color Gradients and Utilities */
+.gradient-techno-text {
+  background: linear-gradient(135deg, #005dff 0%, #0085f4 50%, #00bbff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-techno-btn {
+  background: linear-gradient(135deg, #005dff 0%, #0085f4 100%);
+  color: #ffffff;
+  transition: all 0.25s ease;
+}
+
+.gradient-techno-btn:hover {
+  background: linear-gradient(135deg, #005dff 0%, #00bbff 100%);
+  box-shadow: 0 4px 18px rgba(0, 133, 244, 0.35);
+}
+
+.border-techno-glow:hover {
+  border-color: #0085f4;
+  box-shadow: 0 0 15px rgba(0, 187, 255, 0.25);
+}
+
+/* Techno Blue Light Canvas Mesh */
+.techno-blue-mesh {
+  background-color: #F8FBFE;
+  background-image:
+    radial-gradient(at 10% 15%, rgba(0, 133, 244, 0.09) 0px, transparent 50%),
+    radial-gradient(at 88% 25%, rgba(0, 187, 255, 0.11) 0px, transparent 50%),
+    radial-gradient(at 50% 85%, rgba(0, 4, 173, 0.05) 0px, transparent 60%);
+}
+
+.techno-grid-pattern {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(0, 133, 244, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 133, 244, 0.06) 1px, transparent 1px);
+}
+
+/* Sharp Scrollbar in Techno Blue */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F0F6FE;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #B6D5FC;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0085f4;
 }
