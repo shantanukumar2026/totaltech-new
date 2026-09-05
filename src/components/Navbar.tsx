@@ -415,6 +415,73 @@ const NAV_TABS: NavTab[] = [
       },
     ],
   },
+  {
+    name: "Blog",
+    hasMegaMenu: false,
+    subcategories: [
+      {
+        id: "Blog",
+        name: "Company Profile & Vision",
+        heading: "Total Tech Enterprise Profile & Heritage",
+        icon: Building2,
+        items: [
+          {
+            title: "Enterprise Profile & History",
+            desc: "Pioneering industrial intelligence, enterprise software, and deep-tech platforms since inception.",
+            href: "#about-profile-section",
+            icon: Building2,
+          },
+          {
+            title: "Executive Leadership & Board",
+            desc: "Visionary industry veterans guiding world-class engineers, scientists, and architects.",
+            href: "#about-profile-section",
+            icon: Users,
+          },
+          {
+            title: "Mission, Vision & Core Values",
+            desc: "Unwavering commitment to safety, mission-critical uptime, and ethical AI stewardship.",
+            href: "#about-profile-section",
+            icon: Compass,
+          },
+          {
+            title: "Investor Relations & ESG",
+            desc: "Corporate governance, annual financial reports, and global sustainability roadmaps.",
+            href: "#about-profile-section",
+            icon: FileText,
+          },
+        ],
+      },
+      {
+        id: "about-global",
+        name: "Global Presence & Labs",
+        heading: "Global Operations & Technology Labs",
+        icon: Globe2,
+        items: [
+          {
+            title: "Worldwide Innovation Hubs",
+            desc: "Distributed high-tech engineering facilities across North America, Europe, and Asia-Pacific.",
+            href: "#about-profile-section",
+            icon: Globe2,
+          },
+        ],
+      },
+      {
+        id: "about-certs",
+        name: "Certifications & Patents",
+        heading: "Industrial Certifications & IP Portfolio",
+        icon: Award,
+        items: [
+          {
+            title: "ISO 9001 & AS9100D Certified",
+            desc: "Global quality management standards across aerospace, automotive, and defense systems.",
+            href: "#about-profile-section",
+            icon: Award,
+          },
+        ],
+      },
+
+    ],
+  },
 ];
 
 export default function Navbar({ onOpenSearch }: NavbarProps) {
