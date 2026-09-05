@@ -25,6 +25,12 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Total Tech - Enterprise IT & Industrial Technology Systems",
   description: "Total Tech - Enterprise IT Solutions, Artificial Intelligence, Quantum Computing, Robotics, and Advanced Automation.",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
