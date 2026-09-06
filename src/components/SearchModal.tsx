@@ -48,7 +48,7 @@ export default function SearchModal({ isOpen, onClose, onSearchSubmit }: SearchM
         className="w-full max-w-2xl bg-white border border-[#D2E4F9] shadow-2xl shadow-blue-900/15 overflow-hidden rounded-none"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Clean NVIDIA-Inspired Search Form */}
+        {/* Search Form */}
         <form onSubmit={handleSubmit} className="flex items-center px-5 py-4 bg-white">
           <Search className="w-5 h-5 text-[#0062FF] mr-3.5 shrink-0" />
           <input

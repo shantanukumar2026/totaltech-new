@@ -2,199 +2,190 @@
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
+import styles from "./HeroSlider.module.css";
 
-const SLIDES = [
+interface Slide {
+  id: string;
+  tag: string;
+  title: string;
+  desc: string;
+  btnText: string;
+  btnLink: string;
+  imgSrc: string;
+  alt: string;
+  tabName: string;
+}
+
+const slides: Slide[] = [
   {
     id: "slide-1",
-    image: "/crausal-1.png",
-    alt: "Complete Technology for a Smarter Tomorrow",
+    tag: "Precast Technology",
+    title: "Precast Technology",
+    desc: "Precast is a construction method in which concrete structures are cast in a reusable mold or factory-controlled environment, then transported to the construction site for assembly.",
+    btnText: "Explore Our Solutions",
+    btnLink: "/solutions/precast-technology",
+    imgSrc: "/precast-technology.jpg",
+    alt: "Precast Technology",
+    tabName: "Precast Technology",
   },
   {
     id: "slide-2",
-    image: "/crausal-2.png",
+    tag: "Quantum & Neural Systems",
+    title: "Next-Gen Quantum & Neural Systems",
+    desc: "Architecting distributed compute architectures, hybrid quantum algorithms, and accelerated neural hardware for extreme simulation speed.",
+    btnText: "Explore Our Solutions",
+    btnLink: "/solutions/quantum-neural",
+    imgSrc: "/crausal-2.png",
     alt: "Next-Gen Quantum & Neural Systems",
+    tabName: "Quantum & Neural",
   },
   {
     id: "slide-3",
-    image: "/crausal-3.png",
+    tag: "Industrial Robotics",
+    title: "Industrial Robotics & Automation",
+    desc: "Deploy adaptive robotic systems equipped with sub-millimeter computer vision, dynamic spatial awareness, and real-time safety telemetry.",
+    btnText: "Explore Our Solutions",
+    btnLink: "/solutions/industrial-robotics",
+    imgSrc: "/crausal-3.png",
     alt: "Industrial Robotics & Automation",
+    tabName: "Industrial Robotics",
   },
   {
     id: "slide-4",
-    image: "/crausal-4.png",
-    alt: ""
-
+    tag: "Cloud & AI Analytics",
+    title: "Cloud & Predictive Intelligence",
+    desc: "Delivering real-time predictive analytics, high-frequency industrial telemetry, and sovereign data pipelines across mission-critical nodes.",
+    btnText: "Explore Our Solutions",
+    btnLink: "/solutions/cloud-predictive-ai",
+    imgSrc: "/crausal-4.png",
+    alt: "Cloud & Predictive AI",
+    tabName: "Cloud & AI",
   },
 ];
 
-export default function HeroSlider() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
-  const [loaded, setLoaded] = useState(false);
+const AUTOPLAY_DELAY = 6000;
 
-  useEffect(() => {
-    setLoaded(true);
-  }, []);
+export default function HeroSlider() {
+  const [activeIdx, setActiveIdx] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const lastTimeRef = useRef<number>(Date.now());
 
   const nextSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
+    setActiveIdx((prev) => (prev + 1) % slides.length);
+    setProgress(0);
+    lastTimeRef.current = Date.now();
   }, []);
 
-  const prevSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev - 1 + SLIDES.length) % SLIDES.length);
+  const goToSlide = useCallback((index: number) => {
+    setActiveIdx(index);
+    setProgress(0);
+    lastTimeRef.current = Date.now();
   }, []);
 
-  // Autoplay timer
   useEffect(() => {
     if (isHovered) return;
+
+    lastTimeRef.current = Date.now();
     const timer = setInterval(() => {
-      nextSlide();
-    }, 6000);
+      const now = Date.now();
+      const elapsed = now - lastTimeRef.current;
+      const pct = Math.min(100, (elapsed / AUTOPLAY_DELAY) * 100);
+      setProgress(pct);
+
+      if (elapsed >= AUTOPLAY_DELAY) {
+        nextSlide();
+      }
+    }, 40);
+
     return () => clearInterval(timer);
-  }, [isHovered, nextSlide]);
+  }, [activeIdx, isHovered, nextSlide]);
 
-  const handleMouseMove = useCallback((e: React.MouseEvent) => {
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    setMousePos({ x, y });
-  }, []);
+  const current = slides[activeIdx];
 
   return (
-    <div
-      ref={containerRef}
-      className="w-full select-none overflow-hidden relative group bg-[#F8FAFD]"
-      onMouseMove={handleMouseMove}
+    <section
+      className={styles.hero}
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      style={{ height: "calc(100vh - 66px)" }}
+      onMouseLeave={() => {
+        setIsHovered(false);
+        lastTimeRef.current = Date.now() - (progress / 100) * AUTOPLAY_DELAY;
+      }}
+      aria-label="Hero Slider"
     >
-      {/* SLIDES */}
-      {SLIDES.map((slide, idx) => {
-        const isActive = idx === currentSlide;
-        return (
-          <div
-            key={slide.id}
-            className={`absolute inset-0 w-auto h-100vh transition-opacity duration-1000 ease-in-out ${isActive ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-              }`}
-            style={{
-              transform: isActive
-                ? `scale(1.02) translate(${mousePos.x * -6}px, ${mousePos.y * -4}px)`
-                : "scale(1)",
-              transition: "transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 1s ease-in-out",
-            }}
-          >
-            <Image
-              src={slide.image}
-              alt={slide.alt}
-              fill
-              className="object-fill"
-              priority={idx === 0}
-            />
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <div key={`tag-${current.id}`} className={styles.tag}>
+            {current.tag}
           </div>
-        );
-      })}
 
-      <Particles loaded={loaded} />
+          <h1 key={`title-${current.id}`} className={styles.title}>
+            {current.title}
+          </h1>
 
-      {/* PREV / NEXT BUTTONS */}
-      <button
-        onClick={prevSlide}
-        aria-label="Previous slide"
-        className="absolute left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 bg-white hover:bg-[#F0F7FF] text-[#0055FF] shadow-lg border border-[#D2E4F9] flex items-center justify-center transition-all duration-200 cursor-pointer opacity-0 group-hover:opacity-100 hover:scale-105"
-      >
-        <ChevronLeft className="w-6 h-6" />
-      </button>
+          <p key={`desc-${current.id}`} className={styles.desc}>
+            {current.desc}
+          </p>
 
-      <button
-        onClick={nextSlide}
-        aria-label="Next slide"
-        className="absolute right-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 bg-white hover:bg-[#F0F7FF] text-[#0055FF] shadow-lg border border-[#D2E4F9] flex items-center justify-center transition-all duration-200 cursor-pointer opacity-0 group-hover:opacity-100 hover:scale-105"
-      >
-        <ChevronRight className="w-6 h-6" />
-      </button>
+          <Link href={current.btnLink} className={styles.btn}>
+            <span>{current.btnText}</span>
+            <span>
+              <ChevronRight size={18} />
+            </span>
+          </Link>
+        </div>
 
-      {/* DOT NAVIGATION */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5 px-4 py-2 bg-white/80 backdrop-blur-md rounded-full border border-[#D2E4F9] shadow-sm">
-        {SLIDES.map((_, idx) => {
-          const isActive = idx === currentSlide;
-          return (
-            <button
-              key={idx}
-              onClick={() => setCurrentSlide(idx)}
-              aria-label={`Go to slide ${idx + 1}`}
-              className={`h-2 transition-all duration-300 rounded-full cursor-pointer ${isActive ? "w-8 bg-[#0055FF]" : "w-2 bg-[#B6D5FC] hover:bg-[#0085f4]"
-                }`}
+        <div className={styles.imageStage}>
+          <Link href={current.btnLink} className={styles.imageWrapper} key={current.id}>
+            <Image
+              src={current.imgSrc}
+              alt={current.alt}
+              fill
+              priority={true}
+              sizes="(max-width: 1024px) 100vw, 54vw"
+              className={styles.slideImg}
             />
-          );
-        })}
+          </Link>
+        </div>
       </div>
-    </div>
-  );
-}
 
-function Particles({ loaded }: { loaded: boolean }) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+      <div className={styles.bottomRow}>
+        <div className={styles.indicators}>
+          {slides.map((slide, index) => {
+            const isActive = index === activeIdx;
+            const isPassed = index < activeIdx;
 
-  useEffect(() => {
-    if (!loaded) return;
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
+            let fillWidth = 0;
+            if (isActive) {
+              fillWidth = progress;
+            } else if (isPassed) {
+              fillWidth = 100;
+            }
 
-    const resize = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-    };
-    resize();
-    window.addEventListener("resize", resize);
-
-    const dots = Array.from({ length: 25 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 0.3,
-      vy: (Math.random() - 0.5) * 0.2 - 0.1,
-      r: Math.random() * 2 + 0.5,
-      a: Math.random() * 0.25 + 0.05,
-      p: Math.random() * Math.PI * 2,
-    }));
-
-    let id: number;
-    const loop = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      dots.forEach((d) => {
-        d.x += d.vx;
-        d.y += d.vy;
-        d.p += 0.01;
-        if (d.x < 0) d.x = canvas.width;
-        if (d.x > canvas.width) d.x = 0;
-        if (d.y < 0) d.y = canvas.height;
-        if (d.y > canvas.height) d.y = 0;
-        const glow = d.a + Math.sin(d.p) * 0.08;
-        ctx.beginPath();
-        ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(0,180,255,${glow})`;
-        ctx.fill();
-      });
-      id = requestAnimationFrame(loop);
-    };
-    loop();
-    return () => {
-      cancelAnimationFrame(id);
-      window.removeEventListener("resize", resize);
-    };
-  }, [loaded]);
-
-  return (
-    <canvas
-      ref={canvasRef}
-      className="absolute inset-0 w-full h-full pointer-events-none z-10"
-      style={{ opacity: loaded ? 0.4 : 0, transition: "opacity 1s ease" }}
-    />
+            return (
+              <button
+                key={slide.id}
+                type="button"
+                onClick={() => goToSlide(index)}
+                className={`${styles.indicator} ${
+                  isActive ? styles.active : ""
+                }`}
+                aria-label={`Go to ${slide.tabName}`}
+              >
+                <div className={styles.track}>
+                  <div
+                    className={styles.fill}
+                    style={{ width: `${fillWidth}%` }}
+                  />
+                </div>
+                <span className={styles.label}>{slide.tabName}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
 }

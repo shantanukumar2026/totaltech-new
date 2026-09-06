@@ -1,158 +1,142 @@
 "use client";
 
 import React from "react";
-// import { Mail, Phone, MapPin, Clock, Linkedin, Facebook, Twitter, Youtube } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import styles from "./Footer.module.css";
 
-const scrollTo = (id: string) => {
-  if (typeof window !== "undefined") {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  }
-};
-
 export default function Footer() {
-  const links = {
-    Company: [
-      ["about", "About Us"],
-      ["process", "Company Profile & Vision"],
-      ["facility", "Global Presence & Labs"],
-      ["advantages", "Certifications & Patents"],
-      ["advantages", "Careers & Culture"],
+  const productLinks = [
+    { label: "Precast Technology", href: "/solutions/precast-technology" },
+    { label: "Concreate Technologies", href: "/solutions/concreate-technologies" },
+    { label: "Quantum & Neural Systems", href: "/solutions/quantum-neural" },
+    { label: "Industrial Robotics", href: "/solutions/industrial-robotics" },
+    { label: "Mission-Critical Datacenter", href: "/solutions/datacenter-operations" },
+    { label: "Zero-Trust Cybersecurity", href: "/solutions/cybersecurity-defense" },
+  ];
 
-    ],
-    Products: [
-      ["products", "Manufacturing Technology"],
-      ["products", "Artificial Intelligence"],
-      ["products", "Quantum Technology / Computing"],
-      ["products", "Information Technology"],
-      ["products", "Machine Learning"],
+  const servicesLinks = [
+    { label: "User Research (UI/UX)", href: "/solutions/user-research" },
+    { label: "Information Architecture", href: "/solutions/information-architecture" },
+    { label: "Search Engine Optimization", href: "/solutions/search-engine-optimization" },
+    { label: "Pay-Per-Click Advertising", href: "/solutions/pay-per-click-advertising" },
+    { label: "Hardware Diagnostics", href: "/solutions/hardware-diagnostics" },
+    { label: "Predictive Analytics", href: "/solutions/predictive-analytics" },
+  ];
 
-    ],
-    Industries: [
-      ["industries", "Automotive & Heavy Industry"],
-      ["industries", "Defense & Energy"],
-
-    ],
-    // Engineering: [
-    //   ["process", "3D CAD & BIM Modeling"],
-    //   ["process", "FEA Stress Analysis"],
-    //   ["process", "Custom Mold Engineering"],
-    //   ["how-it-works", "Self-Curing Steam Jackets"],
-    //   ["how-it-works", "Pneumatic & Hydraulics"],
-    //   ["advantages", "Steel Grades & Materials"],
-    //   ["process", "On-Site Cast Trials"],
-    //   ["how-it-works", "Automated Stripping"],
-    //   ["process", "Precision CNC Machining"],
-    //   ["process", "Technical Support"],
-    // ],
-  };
+  const companyLinks = [
+    { label: "About Total Tech", href: "#about" },
+    { label: "Corporate Vision & Labs", href: "#vision" },
+    { label: "Certifications & Standards", href: "#certifications" },
+    { label: "Global Engineering Footprint", href: "#global" },
+    { label: "Careers & Culture", href: "#careers" },
+  ];
 
   return (
-    <footer className={styles.footerWrapper}>
-      <div className="container p-4 d-flex justify-content-center">
+    <footer className={styles.footer}>
+      <div className={styles.container}>
+        <div className={styles.grid}>
+          <div className={styles.brandCol}>
+            <Link href="/" className={styles.logoLink}>
+              <div className={styles.logoWrapper}>
+                <Image
+                  src="/logo-white-bg.png"
+                  alt="Total Tech"
+                  width={170}
+                  height={44}
+                  className={styles.logoImg}
+                />
+              </div>
+            </Link>
 
-        {/* Six-Column Grid */}
-        <div className={styles.topGrid}>
-
-          {/* Brand Column */}
-          <div className={styles.descCol}>
-            <div className={styles.logoArea}>
-              <img src="./logo-white-bg.png" alt="Total Tech " className={styles.logoImg} />
-            </div>
-            <p className={styles.companyDesc}>
-              Headquartered in Stuart, Florida, Total Tech is a dynamic, technology-driven organization rapidly expanding its global footprint.
+            <p className={styles.brandDesc}>
+              Total Tech delivers end-to-end intelligent manufacturing, industrial robotics, high-performance computing, and advanced engineering systems worldwide.
             </p>
-            <div className={styles.certBadges}>
-              <span className={styles.certBadge}>ISO 9001:2015</span>
-              <span className={styles.certBadge}>AWS D1.1</span>
-              <span className={styles.certBadge}>CE Marked</span>
+
+            <div className={styles.badges}>
+              <span className={styles.badge}>ISO 9001:2015</span>
+              <span className={styles.badge}>PCI Certified</span>
+              <span className={styles.badge}>CE Marked</span>
             </div>
-            {/* <ul className={styles.socialList}>
-              {[
-                ["https://linkedin.com", Linkedin, "LinkedIn"],
-                ["https://facebook.com", Facebook, "Facebook"],
-                ["https://twitter.com", Twitter, "Twitter"],
-                ["https://youtube.com", Youtube, "YouTube"],
-              ].map(([href, Icon, label]) => (
-                <li key={label}>
-                  <a href={href} target="_blank" rel="noopener noreferrer"
-                    className={styles.socialBtn} aria-label={label}>
-                    <Icon size={15} />
+          </div>
+
+          <div className={styles.linkCol}>
+            <h4 className={styles.colTitle}>Solutions</h4>
+            <ul className={styles.list}>
+              {productLinks.map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className={styles.link}>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className={styles.linkCol}>
+            <h4 className={styles.colTitle}>Technologies</h4>
+            <ul className={styles.list}>
+              {servicesLinks.map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className={styles.link}>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className={styles.linkCol}>
+            <h4 className={styles.colTitle}>Company</h4>
+            <ul className={styles.list}>
+              {companyLinks.map((item) => (
+                <li key={item.label}>
+                  <a href={item.href} className={styles.link}>
+                    {item.label}
                   </a>
                 </li>
               ))}
-            </ul> */}
+            </ul>
           </div>
 
-          {/* Link Columns */}
-          {Object.entries(links).map(([title, items]) => (
-            <div key={title}>
-              <h4 className={styles.colTitle}>{title}</h4>
-              <ul className={styles.linkList}>
-                {items.map(([id, label]) => (
-                  <li key={label}>
-                    <button onClick={() => scrollTo(id)}>{label}</button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-
-          {/* Contact Column */}
-          <div>
-            <h4 className={styles.colTitle}>Contact</h4>
+          <div className={styles.contactCol}>
+            <h4 className={styles.colTitle}>Headquarters</h4>
             <ul className={styles.contactList}>
               <li className={styles.contactItem}>
-                {/* <MapPin className={styles.contactIcon} size={15} /> */}
-                <span className={styles.contactText}>
-                  <strong>SOUTH OFFICE</strong><br />
-                  850 NW FEDERAL HWY<br />
-                  STUART, FL 34994
-                </span>
+                <MapPin size={16} className={styles.icon} />
+                <span>850 NW Federal Hwy, Stuart, FL 34994</span>
               </li>
               <li className={styles.contactItem}>
-                {/* <Phone className={styles.contactIcon} size={15} /> */}
+                <Phone size={16} className={styles.icon} />
                 <a href="tel:+123456789">(123) 456-7890</a>
               </li>
-
-              <li className={`${styles.contactItem} ${styles.locationDivider}`}>
-                {/* <Mail className={styles.contactIcon} size={15} /> */}
+              <li className={styles.contactItem}>
+                <Mail size={16} className={styles.icon} />
                 <a href="mailto:info@totaltech.com">info@totaltech.com</a>
               </li>
-              <li className={styles.contactItem}>
-                {/* <Clock className={styles.contactIcon} size={15} /> */}
-                <span className={styles.contactText}>Mon – Sat: 7:00 AM – 5:00 PM EST</span>
-              </li>
+              {/* <li className={styles.contactItem}>
+                <Clock size={16} className={styles.icon} />
+                <span>Mon – Fri: 8:00 AM – 6:00 PM EST</span>
+              </li> */}
             </ul>
-            <div className={styles.territories}>
-              <div className={styles.territoryTitle}>Service Territories</div>
-              <div className={styles.territoryFlags}>
-                <span>USA</span>
-                <span>Canada</span>
-                <span>Europe</span>
-              </div>
-            </div>
           </div>
-
         </div>
 
-        {/* Bottom Bar */}
         <div className={styles.bottomBar}>
-          <div className={styles.bottomLeft}>
-            <span>&copy; {new Date().getFullYear()} Total Tech All Rights Reserved.</span>
-            <span className={styles.bottomSep}>|</span>
-            <span>ISO 9001:2015 Certified Manufacturing</span>
-          </div>
-          <ul className={styles.bottomLinks}>
-            {["Privacy Policy", "Terms & Conditions", "Cookie Policy", "Sitemap"].map((item) => (
-              <li key={item}>
-                <button onClick={() => scrollTo("downloads")}>{item}</button>
-              </li>
-            ))}
-          </ul>
-        </div>
+          <div className={styles.bottomText}>
+            <span>&copy; {new Date().getFullYear()} Total Tech. All Rights Reserved.</span>
+            <span className={styles.sep}></span>
 
+          </div>
+
+          <div className={styles.bottomLinks}>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms & Conditions</a>
+            <a href="#security">Security</a>
+            <a href="#sitemap">Sitemap</a>
+          </div>
+        </div>
       </div>
     </footer>
   );

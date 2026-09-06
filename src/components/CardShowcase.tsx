@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   ChevronDown,
   ArrowRight,
@@ -11,7 +12,6 @@ import {
   Database,
   Atom,
   Factory,
-  BarChart3,
   Cpu,
   ShieldCheck,
   TrendingUp,
@@ -20,15 +20,15 @@ import {
 
 interface CardItem {
   id: string;
+  slug: string;
   category: string;
   type: string;
   title: string;
   description: string;
   icon?: any;
-  /** Can be an image path/URL, video file (.mp4, .webm), YouTube URL, or Vimeo URL */
   mediaUrl?: string;
-  imageUrl?: string; // backwards-compatible alias
-  videoUrl?: string; // convenience alias
+  imageUrl?: string;
+  videoUrl?: string;
   mediaType?: "auto" | "image" | "video" | "youtube" | "vimeo";
 }
 
@@ -52,7 +52,6 @@ function detectMediaType(
 
   const cleanUrl = url.trim();
 
-  // Explicit type overrides
   if (explicitType && explicitType !== "auto") {
     if (explicitType === "youtube") {
       const match = cleanUrl.match(
@@ -75,7 +74,6 @@ function detectMediaType(
     return { type: explicitType };
   }
 
-  // Auto-detect YouTube URLs (watch, share, embed, shorts)
   const ytMatch = cleanUrl.match(
     /(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/|v\/)|youtu\.be\/)([\w-]{11})/i
   );
@@ -87,7 +85,6 @@ function detectMediaType(
     };
   }
 
-  // Auto-detect Vimeo URLs
   const vimeoMatch = cleanUrl.match(/(?:vimeo\.com\/(?:video\/)?)([0-9]+)/i);
   if (vimeoMatch) {
     const videoId = vimeoMatch[1];
@@ -97,7 +94,6 @@ function detectMediaType(
     };
   }
 
-  // Auto-detect direct video files
   if (
     /\.(mp4|webm|ogg|ogv|mov|m4v|mkv)(\?.*)?$/i.test(cleanUrl) ||
     cleanUrl.startsWith("data:video/")
@@ -105,7 +101,6 @@ function detectMediaType(
     return { type: "video" };
   }
 
-  // Default to image
   return { type: "image" };
 }
 
@@ -171,7 +166,6 @@ function CardMedia({
     );
   }
 
-  // Regular Image (local or remote)
   return (
     <img
       src={url}
@@ -188,101 +182,101 @@ const SECTIONS: TopicSection[] = [
     id: "mfg-tech",
     title: "Manufacturing Technology",
     description:
-      "Advanced industrial automation, precision robotics, and cutting-edge additive manufacturing transforming modern factory floors.",
+      "Manufacturing Technology encompasses a diverse range of technologies used in the design, development, production, operation, and management of manufacturing systems.",
     quickLinks: [
-      { label: "Robotics", href: "#" },
-      { label: "Additive Manufacturing", href: "#" },
-      { label: "Automation & Process Control", href: "#" },
-      { label: "Non-Destructive Testing", href: "#" },
+      { label: "Precast Technology", href: "/solutions/precast-technology" },
+      { label: "Concreate Technologies", href: "/solutions/concreate-technologies" },
     ],
     cards: [
       {
         id: "mfg-1",
+        slug: "precast-technology",
         category: "Precast Technology",
         type: "Precast Technology",
         title: "Precast Technology",
         description:
-          "",
+          "Precast is a construction method in which concrete structures are cast in a reusable mold or factory-controlled environment, then transported to the construction site for assembly.",
         icon: Bot,
-        mediaUrl: "/istockphoto-460888701-640_adpp_is.mp4",
+        mediaUrl: "/precast-technology.jpg",
       },
       {
         id: "mfg-2",
+        slug: "concreate-technologies",
         category: "Concreate Technologies",
         type: "Concreate Technologies",
         title: "Concreate Technologies",
         description:
-          " ",
+          "Concreate Technologies refers to the range of advanced technologies used in the production and application of concrete. These technologies focus on improving concrete's strength, durability, workability, and sustainability .",
         icon: Layers,
-        mediaUrl: "/photo-1561634507-9db8434412d8.avif",
+        mediaUrl: "/Concreatetechnologies.jpg",
       },
     ],
   },
   {
     id: "ai",
-    title: "UI/UX For Precast ",
+    title: "UI/UX For Precast",
     description:
       "Harnessing deep neural architectures, cognitive algorithms, and automated computer vision to optimize high-throughput workflows.",
     quickLinks: [
-      { label: "Predictive Maintenance", href: "#" },
-      { label: "Computer Vision", href: "#" },
-      { label: "Digital Twin Simulation", href: "#" },
-      { label: "Process Optimization", href: "#" },
+      { label: "User Research", href: "/solutions/user-research" },
+      { label: "Information Architecture (IA)", href: "/solutions/information-architecture" },
     ],
     cards: [
       {
         id: "ai-1",
-        category: "Predictive AI",
-        type: "Platform",
-        title: "Cognitive Neural Engines & Intelligent Ops",
+        slug: "user-research",
+        category: "User Research",
+        type: "UI/UX",
+        title: "User Research",
         description:
-          "Self-learning AI models predicting operational bottlenecks and streamlining resource distribution in real time.",
+          "Conducting comprehensive research to understand user needs, behaviors, and motivations to inform the design process.",
         icon: Zap,
-        mediaUrl: "/173104-848555587.mp4",
+        mediaUrl: "/istockphoto-1472894613-2048x2048.jpg",
       },
       {
         id: "ai-2",
-        category: "Computer Vision",
-        type: "Vision AI",
-        title: "Computer Vision Quality Control",
+        slug: "information-architecture",
+        category: "Information Architecture (IA)",
+        type: "UI/UX",
+        title: "Information Architecture (IA)",
         description:
-          "Automated vision recognition detecting sub-millimeter defects with zero false positives across production lines.",
+          "Organizing and structuring content in a clear and logical manner to enhance user experience and navigation.",
         icon: Factory,
-        mediaUrl: "/card-7.jpg",
+        mediaUrl: "/istockphoto-1412244091-640_adpp_is.mp4",
       },
     ],
   },
   {
     id: "quantum",
-    title: "Quantum Technology",
+    title: "Digital Marketing",
     description:
-      "Pioneering quantum algorithms and next-generation distributed compute infrastructures engineered for complex simulations.",
+      "Driving measurable growth through targeted, data-driven digital marketing strategies.",
     quickLinks: [
-      { label: "Cloud Computing", href: "#" },
-      { label: "Quantum Simulation", href: "#" },
-      { label: "Supply Chain Optimization", href: "#" },
-      { label: "Secure Communication", href: "#" },
+      { label: "Search Engine Optimization (SEO)", href: "/solutions/search-engine-optimization" },
+      { label: "Pay-Per-Click (PPC) Advertising", href: "/solutions/pay-per-click-advertising" },
     ],
     cards: [
       {
         id: "qt-1",
-        category: "Global Network",
-        type: "Infrastructure",
-        title: "Distributed Global Cloud Grid Architecture",
+        slug: "search-engine-optimization",
+        category: "Search Engine Optimization (SEO)",
+        type: "Search Engine Optimization (SEO)",
+        title: "Search Engine Optimization (SEO)",
         description:
-          "Ultra-low-latency planetary compute infrastructure powering mission-critical real-time applications.",
+          "Driving measurable growth through targeted, data-driven digital marketing strategies.",
         icon: Atom,
-        mediaUrl: "/113385-697718118_medium.mp4",
+        mediaUrl: "/istockphoto-1364968289-612x612.jpg",
       },
       {
         id: "qt-2",
-        category: "Quantum Research",
-        type: "Compute",
-        title: "Quantum Algorithm & Molecular Modeling",
+        slug: "pay-per-click-advertising",
+        category: "Pay-Per-Click (PPC) Advertising",
+        type: "Pay-Per-Click (PPC) Advertising",
+        title: "Pay-Per-Click (PPC) Advertising",
         description:
-          "Simulating complex molecular structures and encryption breakthroughs using cutting-edge quantum logic.",
+          "Driving measurable growth through targeted, data-driven digital marketing strategies.",
         icon: Sparkles,
-        mediaUrl: "/card-9.jpg",
+        mediaUrl: "/istockphoto-2287580756-612x612.jpg",
       },
     ],
   },
@@ -292,14 +286,13 @@ const SECTIONS: TopicSection[] = [
     description:
       "Robust enterprise server fabrics, resilient industrial cybersecurity, and tightly coupled manufacturing execution systems.",
     quickLinks: [
-      { label: "MES Systems", href: "#" },
-      { label: "ERP Integration", href: "#" },
-      { label: "Product Lifecycle Management", href: "#" },
-      { label: "Industrial Cybersecurity", href: "#" },
+      { label: "Mission-Critical Datacenter Operations", href: "/solutions/datacenter-operations" },
+      { label: "Zero-Trust Threat Defense", href: "/solutions/cybersecurity-defense" },
     ],
     cards: [
       {
         id: "it-1",
+        slug: "datacenter-operations",
         category: "Enterprise IT",
         type: "Server Grid",
         title: "Mission-Critical Datacenter Operations",
@@ -310,6 +303,7 @@ const SECTIONS: TopicSection[] = [
       },
       {
         id: "it-2",
+        slug: "cybersecurity-defense",
         category: "Cybersecurity",
         type: "Defense",
         title: "Zero-Trust Threat Defense & Data Vaulting",
@@ -326,14 +320,13 @@ const SECTIONS: TopicSection[] = [
     description:
       "Real-time sensor telemetry, automated anomaly diagnostics, and algorithmic forecasting models designed for industrial scale.",
     quickLinks: [
-      { label: "Anomaly Detection", href: "#" },
-      { label: "Defect Classification", href: "#" },
-      { label: "Yield Optimization", href: "#" },
-      { label: "Demand Forecasting", href: "#" },
+      { label: "Micro-Sensor Array & Hardware Diagnostics", href: "/solutions/hardware-diagnostics" },
+      { label: "Predictive Analytics & Yield Optimization", href: "/solutions/predictive-analytics" },
     ],
     cards: [
       {
         id: "ml-1",
+        slug: "hardware-diagnostics",
         category: "Edge Telemetry",
         type: "IoT Sensors",
         title: "Micro-Sensor Array & Hardware Diagnostics",
@@ -344,6 +337,7 @@ const SECTIONS: TopicSection[] = [
       },
       {
         id: "ml-2",
+        slug: "predictive-analytics",
         category: "Forecasting",
         type: "Analytics",
         title: "Predictive Analytics & Yield Optimization",
@@ -386,8 +380,9 @@ export default function CardShowcase() {
                     className="inline-flex items-center gap-2 text-[13px] font-bold text-[#0055FF] hover:text-[#0335ab] transition-colors cursor-pointer"
                   >
                     <ChevronDown
-                      className={`w-4 h-4 transition-transform duration-200 ${openLinks[section.id] ? "rotate-180" : ""
-                        }`}
+                      className={`w-4 h-4 transition-transform duration-200 ${
+                        openLinks[section.id] ? "rotate-180" : ""
+                      }`}
                     />
                     <span>Quick Links</span>
                   </button>
@@ -395,14 +390,14 @@ export default function CardShowcase() {
                   {openLinks[section.id] && (
                     <div className="mt-3 p-4 bg-[#F8FAFD] border border-[#D2E4F9] shadow-xs space-y-2.5">
                       {section.quickLinks.map((link, i) => (
-                        <a
+                        <Link
                           key={i}
                           href={link.href}
                           className="flex items-center gap-2 text-xs font-semibold text-[#0051c5] hover:text-[#0055FF] transition-colors"
                         >
                           <ArrowRight className="w-3 h-3 text-[#0055FF]" />
                           <span>{link.label}</span>
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   )}
@@ -412,8 +407,9 @@ export default function CardShowcase() {
               <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                 {section.cards.map((card) => {
                   return (
-                    <div
+                    <Link
                       key={card.id}
+                      href={`/solutions/${card.slug}`}
                       className="bg-white border border-[#E2E8F0] hover:border-[#0055FF] shadow-xs hover:shadow-xl hover:shadow-blue-900/10 transition-all duration-300 flex flex-col justify-between group cursor-pointer overflow-hidden"
                     >
                       <div>
@@ -453,7 +449,7 @@ export default function CardShowcase() {
                           <ArrowRight className="w-3.5 h-3.5 text-[#0055FF]" />
                         </span>
                       </div>
-                    </div>
+                    </Link>
                   );
                 })}
               </div>

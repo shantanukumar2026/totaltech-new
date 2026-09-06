@@ -44,9 +44,10 @@ import {
 } from "lucide-react";
 
 import Logo from "@/components/Logo";
+import SearchModal from "@/components/SearchModal";
 
 interface NavbarProps {
-  onOpenSearch: () => void;
+  onOpenSearch?: () => void;
 }
 
 interface ItemCard {
@@ -84,13 +85,13 @@ const NAV_TABS: NavTab[] = [
           {
             title: "Precast Technology",
             desc: "",
-            href: "#",
+            href: "/solutions/precast-technology",
             icon: Bot,
           },
           {
             title: "Concreate Technologies",
             desc: "",
-            href: "#",
+            href: "/solutions/concreate-technologies",
             icon: Layers,
           },
           {
@@ -485,10 +486,19 @@ const NAV_TABS: NavTab[] = [
 ];
 
 export default function Navbar({ onOpenSearch }: NavbarProps) {
+  const [internalSearchOpen, setInternalSearchOpen] = useState(false);
   const [activeTabName, setActiveTabName] = useState<string | null>(null);
   const [activeSubcatId, setActiveSubcatId] = useState<string>("mfg-tech");
   const [mobileOpen, setMobileOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
+
+  const handleSearchOpen = () => {
+    if (onOpenSearch) {
+      onOpenSearch();
+    } else {
+      setInternalSearchOpen(true);
+    }
+  };
 
   // Close when clicking outside
   useEffect(() => {
@@ -587,7 +597,7 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
           <div className="ml-auto flex items-center gap-2.5 sm:gap-3 pr-6 lg:pr-8">
 
             <button
-              onClick={onOpenSearch}
+              onClick={handleSearchOpen}
               className="flex items-center gap-2 px-3 py-1.5 bg-white/15 hover:bg-white/25 border border-white/20 hover:border-white text-white transition-all cursor-pointer"
               title="Search Total Tech"
             >
@@ -753,7 +763,7 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
             <button
               onClick={() => {
                 setMobileOpen(false);
-                onOpenSearch();
+                handleSearchOpen();
               }}
               className="w-full flex items-center justify-center gap-2 p-2.5 bg-white/20 text-white text-xs font-semibold border border-white/30"
             >
@@ -763,6 +773,11 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
           </div>
         </div>
       )}
+
+      <SearchModal
+        isOpen={internalSearchOpen}
+        onClose={() => setInternalSearchOpen(false)}
+      />
     </div>
   );
 }

@@ -15,7 +15,6 @@ export default function Logo({ className = "h-10 w-auto" }: LogoProps) {
         width={350}
         height={110}
         priority
-      // className="h-full w-auto object-contain"
       />
     </div>
   );
