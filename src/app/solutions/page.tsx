@@ -39,10 +39,7 @@ export default function SolutionsCatalogPage() {
 
         {/* Hero Header */}
         <section className={styles.heroSection}>
-          <div className={styles.categoryPill}>
-            <Sparkles size={14} color="#00bbff" />
-            <span>Technology Portfolio</span>
-          </div>
+
 
           <h1 className={styles.heroTitle}>Engineered Technology Solutions</h1>
 
@@ -54,7 +51,7 @@ export default function SolutionsCatalogPage() {
         </section>
 
         {/* Solutions Grouped by Category */}
-        <div className={styles.container}>
+        {/* <div className={styles.container}>
           {categories.map((cat) => {
             const categoryItems = allSolutions.filter(
               (item) => item.category === cat
@@ -119,10 +116,10 @@ export default function SolutionsCatalogPage() {
               </section>
             );
           })}
-        </div>
+        </div> */}
 
         {/* Global CTA */}
-        <section className={styles.ctaBanner}>
+        {/* <section className={styles.ctaBanner}>
           <div className={styles.ctaContainer}>
             <div>
               <h2 className={styles.ctaTitle}>
@@ -137,7 +134,7 @@ export default function SolutionsCatalogPage() {
               Contact Engineering Team
             </a>
           </div>
-        </section>
+        </section> */}
       </main>
 
       <Footer />
