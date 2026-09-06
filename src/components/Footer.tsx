@@ -9,7 +9,7 @@ import styles from "./Footer.module.css";
 export default function Footer() {
   const productLinks = [
     { label: "Precast Technology", href: "/solutions/precast-technology" },
-    { label: "Concreate Technologies", href: "/solutions/concreate-technologies" },
+    { label: "Concrete Technologies", href: "/solutions/concreate-technologies" },
     { label: "Quantum & Neural Systems", href: "/solutions/quantum-neural" },
     { label: "Industrial Robotics", href: "/solutions/industrial-robotics" },
     { label: "Mission-Critical Datacenter", href: "/solutions/datacenter-operations" },

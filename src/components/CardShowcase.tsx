@@ -185,14 +185,14 @@ const SECTIONS: TopicSection[] = [
       "Manufacturing Technology encompasses a diverse range of technologies used in the design, development, production, operation, and management of manufacturing systems.",
     quickLinks: [
       { label: "Precast Technologies", href: "/solutions/precast-technology" },
-      { label: "Concreate Technologies", href: "/solutions/concreate-technologies" },
+      { label: "Concrete Technologies", href: "/solutions/concreate-technologies" },
     ],
     cards: [
       {
         id: "mfg-1",
         slug: "precast-technology",
         category: "Precast Technologies",
-        type: "Precast Technologies",
+        type: "Manufacturing",
         title: "Precast Technologies",
         description:
           "Precast is a construction method in which concrete structures are cast in a reusable mold or factory-controlled environment, then transported to the construction site for assembly.",
@@ -202,11 +202,11 @@ const SECTIONS: TopicSection[] = [
       {
         id: "mfg-2",
         slug: "concreate-technologies",
-        category: "Concreate Technologies",
-        type: "Concreate Technologies",
-        title: "Concreate Technologies",
+        category: "Concrete Technologies",
+        type: "Material Science",
+        title: "Concrete Technologies",
         description:
-          "Concreate Technologies refers to the range of advanced technologies used in the production and application of concrete. These technologies focus on improving concrete's strength, durability, workability, and sustainability .",
+          "Concrete Technologies refers to the range of advanced technologies used in the production and application of concrete. These technologies focus on improving concrete's strength, durability, workability, and sustainability.",
         icon: Layers,
         mediaUrl: "/Concreatetechnologies.jpg",
       },
@@ -226,7 +226,7 @@ const SECTIONS: TopicSection[] = [
         id: "ai-1",
         slug: "user-research",
         category: "User Research",
-        type: "UI/UX",
+        type: "Discovery",
         title: "User Research",
         description:
           "Conducting comprehensive research to understand user needs, behaviors, and motivations to inform the design process.",
@@ -237,7 +237,7 @@ const SECTIONS: TopicSection[] = [
         id: "ai-2",
         slug: "information-architecture",
         category: "Information Architecture (IA)",
-        type: "UI/UX",
+        type: "Data Architecture",
         title: "Information Architecture (IA)",
         description:
           "Organizing and structuring content in a clear and logical manner to enhance user experience and navigation.",
@@ -259,8 +259,8 @@ const SECTIONS: TopicSection[] = [
       {
         id: "qt-1",
         slug: "search-engine-optimization",
-        category: "Search Engine Optimization (SEO)",
-        type: "Search Engine Optimization (SEO)",
+        category: "SEO Optimization",
+        type: "Organic Growth",
         title: "Search Engine Optimization (SEO)",
         description:
           "Driving measurable growth through targeted, data-driven digital marketing strategies.",
@@ -270,8 +270,8 @@ const SECTIONS: TopicSection[] = [
       {
         id: "qt-2",
         slug: "pay-per-click-advertising",
-        category: "Pay-Per-Click (PPC) Advertising",
-        type: "Pay-Per-Click (PPC) Advertising",
+        category: "PPC Campaigns",
+        type: "Paid Search",
         title: "Pay-Per-Click (PPC) Advertising",
         description:
           "Driving measurable growth through targeted, data-driven digital marketing strategies.",

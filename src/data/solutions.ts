@@ -61,9 +61,9 @@ export const SOLUTIONS: Record<string, SolutionItem> = {
   "concreate-technologies": {
     slug: "concreate-technologies",
     category: "Manufacturing Technology",
-    title: "Concreate Technologies",
+    title: "Concrete Technologies",
     shortDesc: "Next-generation material science and automated batching for high-performance industrial concrete.",
-    fullDesc: "Concreate Technologies encompasses the latest advancements in chemical admixtures, self-compacting matrices, automated batching plants, and real-time curing telemetry. By optimizing chemical hydration and particle packing density, we deliver concrete solutions that maximize compressive strength, resist environmental degradation, and extend lifecycle longevity.",
+    fullDesc: "Concrete Technologies encompasses the latest advancements in chemical admixtures, self-compacting matrices, automated batching plants, and real-time curing telemetry. By optimizing chemical hydration and particle packing density, we deliver concrete solutions that maximize compressive strength, resist environmental degradation, and extend lifecycle longevity.",
     mediaUrl: "/Concreatetechnologies.jpg",
     mediaType: "image",
     highlights: [

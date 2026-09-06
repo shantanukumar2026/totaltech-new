@@ -89,7 +89,7 @@ const NAV_TABS: NavTab[] = [
             icon: Bot,
           },
           {
-            title: "Concreate Technologies",
+            title: "Concrete Technologies",
             desc: "",
             href: "/solutions/concreate-technologies",
             icon: Layers,

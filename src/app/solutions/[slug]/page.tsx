@@ -10,14 +10,13 @@ import {
   ChevronRight,
   Shield,
   Zap,
-  Layers,
   Sparkles,
-  PhoneCall,
-  FileText
+  PhoneCall
 } from "lucide-react";
 import { SOLUTIONS } from "@/data/solutions";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import styles from "./solution.module.css";
 
 interface PageProps {
   params: Promise<{
@@ -60,78 +59,55 @@ export default async function SolutionDetailPage({ params }: PageProps) {
     .slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-[#F8FBFE] text-[#0f172a] flex flex-col font-sans selection:bg-[#0055ff] selection:text-white">
+    <div className={styles.pageWrapper}>
       <Navbar />
 
-      <main className="flex-1 w-full pt-[66px]">
+      <main className={styles.mainContent}>
         {/* Breadcrumb Navigation */}
-        <div className="w-full bg-[#F0F6FE] border-b border-[#D2E4F9]">
-          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-3.5 flex items-center gap-2 text-xs font-semibold text-[#0051c5]">
-            <Link href="/" className="hover:text-[#0055ff] transition-colors">
+        <div className={styles.breadcrumbBar}>
+          <div className={styles.breadcrumbInner}>
+            <Link href="/" className={styles.breadcrumbLink}>
               Home
             </Link>
-            <ChevronRight size={14} className="text-slate-400" />
-            <Link href="/solutions" className="hover:text-[#0055ff] transition-colors">
+            <ChevronRight size={14} />
+            <Link href="/solutions" className={styles.breadcrumbLink}>
               Solutions
             </Link>
-            <ChevronRight size={14} className="text-slate-400" />
-            <span className="text-[#0055ff] font-bold truncate">
-              {item.title}
-            </span>
+            <ChevronRight size={14} />
+            <span className={styles.breadcrumbActive}>{item.title}</span>
           </div>
         </div>
 
         {/* Hero Section */}
-        <section className="relative w-full bg-gradient-to-br from-[#00236e] via-[#021844] to-[#010e2b] text-white py-14 lg:py-20 overflow-hidden">
-          <div
-            className="absolute inset-0 pointer-events-none opacity-20"
-            style={{
-              backgroundImage:
-                "linear-gradient(to right, rgba(0, 187, 255, 0.15) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 187, 255, 0.15) 1px, transparent 1px)",
-              backgroundSize: "40px 40px",
-            }}
-          />
-
-          <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            <div className="lg:col-span-7 flex flex-col justify-center">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/20 text-[#00bbff] text-xs font-bold uppercase tracking-wider rounded-sm w-fit mb-4">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00bbff]" />
+        <section className={styles.heroSection}>
+          <div className={styles.heroGrid}>
+            <div className={styles.heroTextCol}>
+              <div className={styles.categoryPill}>
+                <span className={styles.pillDot} />
                 <span>{item.category}</span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15] mb-5">
-                {item.title}
-              </h1>
+              <h1 className={styles.heroTitle}>{item.title}</h1>
 
-              <p className="text-base sm:text-lg text-slate-200 font-normal leading-relaxed mb-8 max-w-2xl">
-                {item.shortDesc}
-              </p>
+              <p className={styles.heroDesc}>{item.shortDesc}</p>
 
-              <div className="flex flex-wrap items-center gap-4">
-                <a
-                  href="#overview"
-                  className="px-7 py-3.5 bg-[#0055ff] hover:bg-[#0044cc] text-white font-bold text-sm tracking-wide rounded-sm shadow-[0_4px_18px_rgba(0,85,255,0.4)] transition-all"
-                >
-                  Technical Overview
+              <div className={styles.heroActions}>
+                <a href="#overview" className={styles.primaryBtn}>
+                  <span>Technical Overview</span>
+                  <ArrowRight size={16} />
                 </a>
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white font-bold text-sm tracking-wide rounded-sm border border-white/20 transition-all"
-                >
+                <a href="#contact" className={styles.secondaryBtn}>
                   <PhoneCall size={16} />
                   <span>Request Information</span>
                 </a>
-                <Link
-                  href="/"
-                  className="inline-flex items-center gap-2 px-5 py-3.5 text-slate-300 hover:text-white font-semibold text-sm transition-colors"
-                >
+                <Link href="/" className={styles.backLink}>
                   <ArrowLeft size={16} />
                   <span>Back to Home</span>
                 </Link>
               </div>
             </div>
 
-            <div className="lg:col-span-5 relative w-full h-[280px] sm:h-[360px] lg:h-[400px] rounded-lg overflow-hidden border border-white/20 shadow-2xl bg-slate-900 flex items-center justify-center">
+            <div className={styles.heroMediaContainer}>
               {item.mediaType === "video" ? (
                 <video
                   src={item.mediaUrl}
@@ -139,7 +115,7 @@ export default async function SolutionDetailPage({ params }: PageProps) {
                   loop
                   muted
                   playsInline
-                  className="w-full h-full object-cover"
+                  className={styles.mediaItem}
                 />
               ) : (
                 <Image
@@ -147,8 +123,8 @@ export default async function SolutionDetailPage({ params }: PageProps) {
                   alt={item.title}
                   fill
                   priority
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className={styles.mediaItem}
                 />
               )}
             </div>
@@ -156,34 +132,27 @@ export default async function SolutionDetailPage({ params }: PageProps) {
         </section>
 
         {/* Technical Overview & Specifications */}
-        <section id="overview" className="w-full py-16 px-6 sm:px-8 lg:px-12 bg-white">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-            <div className="lg:col-span-8">
-              <div className="w-12 h-1 bg-[#0055ff] mb-4" />
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#021844] tracking-tight mb-6">
+        <section id="overview" className={styles.overviewSection}>
+          <div className={styles.overviewGrid}>
+            <div>
+              <div className={styles.accentBar} />
+              <h2 className={styles.sectionHeading}>
                 Technical Overview & Capabilities
               </h2>
-              <p className="text-base sm:text-lg text-[#334155] leading-relaxed mb-10 font-normal">
-                {item.fullDesc}
-              </p>
+              <p className={styles.overviewText}>{item.fullDesc}</p>
 
-              <h3 className="text-xl font-bold text-[#021844] mb-6 flex items-center gap-2">
-                <Sparkles size={20} className="text-[#0055ff]" />
+              <h3 className={styles.subsectionHeading}>
+                <Sparkles size={20} color="#0055ff" />
                 <span>Key Highlights & Engineering Advantages</span>
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className={styles.highlightsGrid}>
                 {item.highlights.map((highlight, idx) => (
-                  <div
-                    key={idx}
-                    className="p-5 bg-[#F8FAFD] border border-[#D2E4F9] rounded-sm hover:border-[#0055ff] transition-all hover:shadow-md"
-                  >
-                    <div className="flex items-center gap-2.5 mb-2.5">
-                      <CheckCircle2 size={18} className="text-[#0055ff] shrink-0" />
-                      <h4 className="text-sm font-bold text-[#021844]">
-                        {highlight.title}
-                      </h4>
+                  <div key={idx} className={styles.highlightCard}>
+                    <div className={styles.highlightHeader}>
+                      <CheckCircle2 size={18} color="#0055ff" />
+                      <h4 className={styles.highlightTitle}>{highlight.title}</h4>
                     </div>
-                    <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                    <p className={styles.highlightDesc}>
                       {highlight.description}
                     </p>
                   </div>
@@ -191,40 +160,33 @@ export default async function SolutionDetailPage({ params }: PageProps) {
               </div>
             </div>
 
-            <div className="lg:col-span-4 flex flex-col gap-6">
-              {/* System Specifications Card */}
-              <div className="p-6 bg-[#F0F6FE] border border-[#D2E4F9] rounded-sm shadow-xs">
-                <h3 className="text-base font-bold text-[#021844] uppercase tracking-wider mb-4 pb-2 border-b border-[#D2E4F9] flex items-center gap-2">
-                  <Shield size={18} className="text-[#0055ff]" />
+            <div className={styles.sidebarCol}>
+              {/* System Specifications */}
+              <div className={styles.specCard}>
+                <div className={styles.cardHeader}>
+                  <Shield size={18} color="#0055ff" />
                   <span>System Specifications</span>
-                </h3>
-                <div className="space-y-4">
+                </div>
+                <div className={styles.specList}>
                   {item.specifications.map((spec, i) => (
-                    <div key={i} className="flex flex-col text-xs pb-2 border-b border-blue-100 last:border-0 last:pb-0">
-                      <span className="font-semibold text-slate-500 uppercase tracking-wide">
-                        {spec.label}
-                      </span>
-                      <span className="font-bold text-[#021844] text-sm mt-0.5">
-                        {spec.value}
-                      </span>
+                    <div key={i} className={styles.specRow}>
+                      <span className={styles.specLabel}>{spec.label}</span>
+                      <span className={styles.specValue}>{spec.value}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Target Applications Card */}
-              <div className="p-6 bg-white border border-[#D2E4F9] rounded-sm shadow-xs">
-                <h3 className="text-base font-bold text-[#021844] uppercase tracking-wider mb-4 pb-2 border-b border-[#D2E4F9] flex items-center gap-2">
-                  <Zap size={18} className="text-[#0055ff]" />
+              {/* Target Applications */}
+              <div className={styles.appCard}>
+                <div className={styles.cardHeader}>
+                  <Zap size={18} color="#0055ff" />
                   <span>Target Applications</span>
-                </h3>
-                <ul className="space-y-3">
+                </div>
+                <ul className={styles.appList}>
                   {item.applications.map((app, i) => (
-                    <li
-                      key={i}
-                      className="flex items-start gap-2.5 text-xs sm:text-sm text-[#334155]"
-                    >
-                      <ArrowRight size={14} className="text-[#0055ff] mt-0.5 shrink-0" />
+                    <li key={i} className={styles.appItem}>
+                      <ArrowRight size={14} color="#0055ff" />
                       <span>{app}</span>
                     </li>
                   ))}
@@ -235,35 +197,30 @@ export default async function SolutionDetailPage({ params }: PageProps) {
         </section>
 
         {/* Related Solutions */}
-        <section className="w-full py-16 px-6 sm:px-8 lg:px-12 bg-[#F8FAFD] border-t border-[#D2E4F9]">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+        <section className={styles.relatedSection}>
+          <div className={styles.relatedContainer}>
+            <div className={styles.relatedHeader}>
               <div>
-                <span className="text-xs font-bold text-[#0055ff] uppercase tracking-wider">
-                  Explore More
-                </span>
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-[#021844] tracking-tight mt-1">
+                <span className={styles.relatedTag}>Explore More</span>
+                <h2 className={styles.relatedTitle}>
                   Related Technology Solutions
                 </h2>
               </div>
-              <Link
-                href="/solutions"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0055ff] hover:text-[#0044cc] transition-colors"
-              >
+              <Link href="/solutions" className={styles.viewAllLink}>
                 <span>View All Solutions</span>
                 <ArrowRight size={14} />
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className={styles.relatedCardsGrid}>
               {relatedSolutions.map((related) => (
                 <Link
                   key={related.slug}
                   href={`/solutions/${related.slug}`}
-                  className="bg-white border border-[#D2E4F9] hover:border-[#0055ff] rounded-sm overflow-hidden shadow-xs hover:shadow-xl hover:shadow-blue-900/10 transition-all flex flex-col justify-between group"
+                  className={styles.cardItem}
                 >
                   <div>
-                    <div className="relative w-full aspect-[16/10] bg-[#E8F2FD] overflow-hidden">
+                    <div className={styles.cardMediaWrapper}>
                       {related.mediaType === "video" ? (
                         <video
                           src={related.mediaUrl}
@@ -271,7 +228,7 @@ export default async function SolutionDetailPage({ params }: PageProps) {
                           loop
                           muted
                           playsInline
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          className={styles.mediaItem}
                         />
                       ) : (
                         <Image
@@ -279,27 +236,21 @@ export default async function SolutionDetailPage({ params }: PageProps) {
                           alt={related.title}
                           fill
                           sizes="(max-width: 768px) 100vw, 33vw"
-                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                          className={styles.mediaItem}
                         />
                       )}
-                      <div className="absolute top-3 left-3 px-2 py-0.5 bg-white/95 text-[#0055ff] text-[10px] font-bold uppercase tracking-wider rounded-sm shadow-sm">
-                        {related.category}
-                      </div>
+                      <div className={styles.cardBadge}>{related.category}</div>
                     </div>
 
-                    <div className="p-5">
-                      <h3 className="text-base font-bold text-[#021844] group-hover:text-[#0055ff] transition-colors leading-snug mb-2">
-                        {related.title}
-                      </h3>
-                      <p className="text-xs text-[#64748b] leading-relaxed line-clamp-2">
-                        {related.shortDesc}
-                      </p>
+                    <div className={styles.cardBody}>
+                      <h3 className={styles.cardTitle}>{related.title}</h3>
+                      <p className={styles.cardDesc}>{related.shortDesc}</p>
                     </div>
                   </div>
 
-                  <div className="px-5 pb-5 pt-2 flex items-center gap-1.5 text-xs font-bold text-[#0055ff]">
+                  <div className={styles.cardFooter}>
                     <span>Learn More</span>
-                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight size={14} />
                   </div>
                 </Link>
               ))}
@@ -308,20 +259,19 @@ export default async function SolutionDetailPage({ params }: PageProps) {
         </section>
 
         {/* Contact CTA Section */}
-        <section id="contact" className="w-full py-14 px-6 sm:px-8 lg:px-12 bg-gradient-to-r from-[#0055ff] via-[#0044cc] to-[#00236e] text-white">
-          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+        <section id="contact" className={styles.ctaBanner}>
+          <div className={styles.ctaContainer}>
             <div>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">
+              <h2 className={styles.ctaTitle}>
                 Ready to Implement {item.title}?
               </h2>
-              <p className="text-sm sm:text-base text-blue-100 font-medium max-w-xl">
-                Connect with our technical architects and engineering team to evaluate system integration, custom specifications, and deployment requirements.
+              <p className={styles.ctaSubtitle}>
+                Connect with our technical architects and engineering team to
+                evaluate system integration, custom specifications, and
+                deployment requirements.
               </p>
             </div>
-            <a
-              href="mailto:contact@totaltech.com"
-              className="px-8 py-4 bg-white hover:bg-slate-100 text-[#0055ff] font-extrabold text-sm rounded-sm shadow-xl hover:shadow-2xl transition-all shrink-0"
-            >
+            <a href="mailto:contact@totaltech.com" className={styles.ctaBtn}>
               Contact Engineering Team
             </a>
           </div>
