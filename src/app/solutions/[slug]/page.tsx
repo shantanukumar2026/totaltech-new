@@ -133,7 +133,7 @@ export default async function SolutionDetailPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section id="overview" className="w-full py-16 px-6 sm:px-8 lg:px-12 bg-white">
+        {/* <section id="overview" className="w-full py-16 px-6 sm:px-8 lg:px-12 bg-white">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             <div className="lg:col-span-8">
               <div className="w-12 h-1 bg-[#005dff] mb-4" />
@@ -206,7 +206,7 @@ export default async function SolutionDetailPage({ params }: PageProps) {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section className="w-full py-16 px-6 sm:px-8 lg:px-12 bg-[#F8FAFD] border-t border-[#D2E4F9]">
           <div className="max-w-7xl mx-auto">
@@ -280,7 +280,7 @@ export default async function SolutionDetailPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section className="w-full py-14 px-6 sm:px-8 lg:px-12 bg-gradient-to-r from-[#005dff] via-[#0085f4] to-[#00aaff] text-white">
+        {/* <section className="w-full py-14 px-6 sm:px-8 lg:px-12 bg-gradient-to-r from-[#005dff] via-[#0085f4] to-[#00aaff] text-white">
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
             <div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">
@@ -297,7 +297,7 @@ export default async function SolutionDetailPage({ params }: PageProps) {
               Contact Engineering Team
             </a>
           </div>
-        </section>
+        </section> */}
       </main>
 
       <Footer />
