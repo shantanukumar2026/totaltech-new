@@ -184,16 +184,16 @@ const SECTIONS: TopicSection[] = [
     description:
       "Manufacturing Technology encompasses a diverse range of technologies used in the design, development, production, operation, and management of manufacturing systems.",
     quickLinks: [
-      { label: "Precast Technology", href: "/solutions/precast-technology" },
+      { label: "Precast Technologies", href: "/solutions/precast-technology" },
       { label: "Concreate Technologies", href: "/solutions/concreate-technologies" },
     ],
     cards: [
       {
         id: "mfg-1",
         slug: "precast-technology",
-        category: "Precast Technology",
-        type: "Precast Technology",
-        title: "Precast Technology",
+        category: "Precast Technologies",
+        type: "Precast Technologies",
+        title: "Precast Technologies",
         description:
           "Precast is a construction method in which concrete structures are cast in a reusable mold or factory-controlled environment, then transported to the construction site for assembly.",
         icon: Bot,
@@ -299,7 +299,7 @@ const SECTIONS: TopicSection[] = [
         description:
           "Scalable server architectures providing 99.999% uptime for enterprise data hubs and multi-region pipelines.",
         icon: Database,
-        mediaUrl: "/3975-176000797.mp4",
+        mediaUrl: "/3975-176000797.jpg",
       },
       {
         id: "it-2",
@@ -310,7 +310,7 @@ const SECTIONS: TopicSection[] = [
         description:
           "Military-grade automated encryption and continuous threat vector monitoring protecting sensitive IP.",
         icon: ShieldCheck,
-        mediaUrl: "/card-it-2.jpg",
+        mediaUrl: "/istockphoto-1851610545-2048x2048.webp",
       },
     ],
   },
@@ -333,7 +333,7 @@ const SECTIONS: TopicSection[] = [
         description:
           "Embedded IoT sensors reading millions of signals per second to catch anomalies before equipment failures occur.",
         icon: Cpu,
-        mediaUrl: "/card-ml-1.jpg",
+        mediaUrl: "/istockphoto-1969136908-2048x2048.webp",
       },
       {
         id: "ml-2",
@@ -344,7 +344,7 @@ const SECTIONS: TopicSection[] = [
         description:
           "Dynamic machine learning pipelines forecasting market demands and fine-tuning output capacity.",
         icon: TrendingUp,
-        mediaUrl: "/card-10.jpg",
+        mediaUrl: "/1000_F_799793082_ZnRdJhFLNkugUyKdQgwpxXrUhN6Hq0Wa.webp",
       },
     ],
   },
@@ -380,9 +380,8 @@ export default function CardShowcase() {
                     className="inline-flex items-center gap-2 text-[13px] font-bold text-[#0055FF] hover:text-[#0335ab] transition-colors cursor-pointer"
                   >
                     <ChevronDown
-                      className={`w-4 h-4 transition-transform duration-200 ${
-                        openLinks[section.id] ? "rotate-180" : ""
-                      }`}
+                      className={`w-4 h-4 transition-transform duration-200 ${openLinks[section.id] ? "rotate-180" : ""
+                        }`}
                     />
                     <span>Quick Links</span>
                   </button>

@@ -251,19 +251,19 @@ const NAV_TABS: NavTab[] = [
           {
             title: "Autonomous Plant Logistics",
             desc: "Self-driving automated mobile robots and fleet orchestration systems.",
-            href: "#",
+            href: "/solutions/industrial-robotics",
             icon: Bot,
           },
           {
             title: "Smart Energy Grid Integration",
             desc: "Factory-wide peak load management and renewable power synchronization.",
-            href: "#",
+            href: "/solutions/cloud-predictive-ai",
             icon: Zap,
           },
           {
             title: "Zero-Downtime Migration",
             desc: "Legacy facility upgrades without interrupting active continuous production lines.",
-            href: "#",
+            href: "/solutions/datacenter-operations",
             icon: Activity,
           },
         ],
@@ -277,13 +277,13 @@ const NAV_TABS: NavTab[] = [
           {
             title: "Turbine Blade Inspection",
             desc: "High-precision NDT computed tomography for critical aerospace alloys.",
-            href: "#",
+            href: "/solutions/hardware-diagnostics",
             icon: ShieldCheck,
           },
           {
             title: "Sand Cast Tooling",
             desc: "Direct additive mold tooling reducing lead times from months to hours.",
-            href: "#",
+            href: "/solutions/precast-technology",
             icon: Layers,
           },
         ],

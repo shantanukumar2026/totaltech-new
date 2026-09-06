@@ -21,14 +21,14 @@ interface Slide {
 const slides: Slide[] = [
   {
     id: "slide-1",
-    tag: "Precast Technology",
-    title: "Precast Technology",
+    tag: "Precast Technologies",
+    title: "Precast Technologies",
     desc: "Precast is a construction method in which concrete structures are cast in a reusable mold or factory-controlled environment, then transported to the construction site for assembly.",
     btnText: "Explore Our Solutions",
     btnLink: "/solutions/precast-technology",
-    imgSrc: "/precast-technology.jpg",
-    alt: "Precast Technology",
-    tabName: "Precast Technology",
+    imgSrc: "/precast-tech-bg.png",
+    alt: "Precast Technologies",
+    tabName: "Precast Technologies",
   },
   {
     id: "slide-2",
@@ -37,7 +37,7 @@ const slides: Slide[] = [
     desc: "Architecting distributed compute architectures, hybrid quantum algorithms, and accelerated neural hardware for extreme simulation speed.",
     btnText: "Explore Our Solutions",
     btnLink: "/solutions/quantum-neural",
-    imgSrc: "/crausal-2.png",
+    imgSrc: "/istockphoto-2263045124-2048x2048.webp",
     alt: "Next-Gen Quantum & Neural Systems",
     tabName: "Quantum & Neural",
   },
@@ -48,7 +48,7 @@ const slides: Slide[] = [
     desc: "Deploy adaptive robotic systems equipped with sub-millimeter computer vision, dynamic spatial awareness, and real-time safety telemetry.",
     btnText: "Explore Our Solutions",
     btnLink: "/solutions/industrial-robotics",
-    imgSrc: "/crausal-3.png",
+    imgSrc: "/istockphoto-1173740436-2048x204.webp",
     alt: "Industrial Robotics & Automation",
     tabName: "Industrial Robotics",
   },
@@ -59,7 +59,7 @@ const slides: Slide[] = [
     desc: "Delivering real-time predictive analytics, high-frequency industrial telemetry, and sovereign data pipelines across mission-critical nodes.",
     btnText: "Explore Our Solutions",
     btnLink: "/solutions/cloud-predictive-ai",
-    imgSrc: "/crausal-4.png",
+    imgSrc: "/istockphoto-2240007320-2048.webp",
     alt: "Cloud & Predictive AI",
     tabName: "Cloud & AI",
   },
@@ -169,9 +169,8 @@ export default function HeroSlider() {
                 key={slide.id}
                 type="button"
                 onClick={() => goToSlide(index)}
-                className={`${styles.indicator} ${
-                  isActive ? styles.active : ""
-                }`}
+                className={`${styles.indicator} ${isActive ? styles.active : ""
+                  }`}
                 aria-label={`Go to ${slide.tabName}`}
               >
                 <div className={styles.track}>
