@@ -1,12 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  /* Exact User Techno Blue 3-Color Palette */
   --techno-deep: #005dff;
   --techno-blue: #0085f4;
   --techno-cyan: #00bbff;
 
-  /* Theme Tokens */
   --blue-primary: #0085f4;
   --blue-deep: #005dff;
   --blue-cyan: #00bbff;
@@ -22,7 +20,6 @@
 }
 
 @layer base {
-
   *,
   *::before,
   *::after {
@@ -39,12 +36,10 @@
   }
 }
 
-/* Sharp Corporate Tech Styles */
 .sharp-border {
   border-radius: 0 !important;
 }
 
-/* Techno Blue 3-Color Gradients and Utilities */
 .gradient-techno-text {
   background: linear-gradient(135deg, #005dff 0%, #0085f4 50%, #00bbff 100%);
   -webkit-background-clip: text;
@@ -67,7 +62,6 @@
   box-shadow: 0 0 15px rgba(0, 187, 255, 0.25);
 }
 
-/* Techno Blue Light Canvas Mesh */
 .techno-blue-mesh {
   background-color: #F8FBFE;
   background-image:
@@ -83,7 +77,6 @@
     linear-gradient(to bottom, rgba(0, 133, 244, 0.06) 1px, transparent 1px);
 }
 
-/* Sharp Scrollbar in Techno Blue */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -102,7 +95,6 @@
   background: #0085f4;
 }
 
-/* Hide all dev overlays / Next.js indicators */
 nextjs-portal,
 [data-nextjs-toast],
 [data-nextjs-dev-indicator],

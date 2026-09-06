@@ -548,10 +548,7 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
       <header className="w-full bg-[#0055FF] border-b-2 border-[#0085f4] text-white shadow-[0_4px_24px_rgba(0,85,255,0.35)]">
         <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#00bbff] to-transparent opacity-90" />
 
-        {/* FULL WIDTH HEADER — NO OUTER PADDING */}
         <div className="w-full h-16 flex items-center">
-
-          {/* LOGO AREA */}
           <a
             href="/"
             className="flex items-center justify-center h-full w-[285px] bg-white shrink-0 px-5"
@@ -559,7 +556,6 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
             <Logo className="h-full w-auto py-2" />
           </a>
 
-          {/* NAVIGATION */}
           <nav className="hidden lg:flex items-stretch h-full ml-8 gap-0.5">
             {NAV_TABS.map((tab) => {
               const isActive = activeTabName === tab.name;
@@ -593,7 +589,6 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
             })}
           </nav>
 
-          {/* RIGHT ACTIONS */}
           <div className="ml-auto flex items-center gap-2.5 sm:gap-3 pr-6 lg:pr-8">
 
             <button
