@@ -197,7 +197,7 @@ const SECTIONS: TopicSection[] = [
         description:
           "Precast is a construction method in which concrete structures are cast in a reusable mold or factory-controlled environment, then transported to the construction site for assembly.",
         icon: Bot,
-        mediaUrl: "/precast-technology.jpg",
+        mediaUrl: "/precast_technologies_458x288.png",
       },
       {
         id: "mfg-2",
@@ -208,7 +208,7 @@ const SECTIONS: TopicSection[] = [
         description:
           "Concrete Technologies refers to the range of advanced technologies used in the production and application of concrete. These technologies focus on improving concrete's strength, durability, workability, and sustainability.",
         icon: Layers,
-        mediaUrl: "/Concreatetechnologies.jpg",
+        mediaUrl: "/concreate_technologies_458x288.png",
       },
     ],
   },
