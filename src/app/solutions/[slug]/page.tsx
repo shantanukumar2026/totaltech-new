@@ -3,16 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
-import {
-  ArrowLeft,
-  ArrowRight,
-  CheckCircle2,
-  ChevronRight,
-  Shield,
-  Zap,
-  Sparkles,
-  PhoneCall
-} from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronRight } from "lucide-react";
 import { SOLUTIONS } from "@/data/solutions";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -82,11 +73,6 @@ export default async function SolutionDetailPage({ params }: PageProps) {
         <section className={styles.heroSection}>
           <div className={styles.heroGrid}>
             <div className={styles.heroTextCol}>
-              <div className={styles.categoryPill}>
-                <span className={styles.pillDot} />
-                <span>{item.category}</span>
-              </div>
-
               <h1 className={styles.heroTitle}>{item.title}</h1>
 
               <p className={styles.heroDesc}>{item.shortDesc}</p>
@@ -95,10 +81,6 @@ export default async function SolutionDetailPage({ params }: PageProps) {
                 <a href="#overview" className={styles.primaryBtn}>
                   <span>Technical Overview</span>
                   <ArrowRight size={16} />
-                </a>
-                <a href="#contact" className={styles.secondaryBtn}>
-                  <PhoneCall size={16} />
-                  <span>Request Information</span>
                 </a>
                 <Link href="/" className={styles.backLink}>
                   <ArrowLeft size={16} />
@@ -131,68 +113,14 @@ export default async function SolutionDetailPage({ params }: PageProps) {
           </div>
         </section>
 
-        {/* Technical Overview & Specifications */}
+        {/* Technical Overview Section */}
         <section id="overview" className={styles.overviewSection}>
-          <div className={styles.overviewGrid}>
-            <div>
-              <div className={styles.accentBar} />
-              <h2 className={styles.sectionHeading}>
-                Technical Overview & Capabilities
-              </h2>
-              <p className={styles.overviewText}>{item.fullDesc}</p>
-
-              <h3 className={styles.subsectionHeading}>
-                <Sparkles size={20} color="#0055ff" />
-                <span>Key Highlights & Engineering Advantages</span>
-              </h3>
-              <div className={styles.highlightsGrid}>
-                {item.highlights.map((highlight, idx) => (
-                  <div key={idx} className={styles.highlightCard}>
-                    <div className={styles.highlightHeader}>
-                      <CheckCircle2 size={18} color="#0055ff" />
-                      <h4 className={styles.highlightTitle}>{highlight.title}</h4>
-                    </div>
-                    <p className={styles.highlightDesc}>
-                      {highlight.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className={styles.sidebarCol}>
-              {/* System Specifications */}
-              <div className={styles.specCard}>
-                <div className={styles.cardHeader}>
-                  <Shield size={18} color="#0055ff" />
-                  <span>System Specifications</span>
-                </div>
-                <div className={styles.specList}>
-                  {item.specifications.map((spec, i) => (
-                    <div key={i} className={styles.specRow}>
-                      <span className={styles.specLabel}>{spec.label}</span>
-                      <span className={styles.specValue}>{spec.value}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Target Applications */}
-              <div className={styles.appCard}>
-                <div className={styles.cardHeader}>
-                  <Zap size={18} color="#0055ff" />
-                  <span>Target Applications</span>
-                </div>
-                <ul className={styles.appList}>
-                  {item.applications.map((app, i) => (
-                    <li key={i} className={styles.appItem}>
-                      <ArrowRight size={14} color="#0055ff" />
-                      <span>{app}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+          <div className={styles.overviewContainer}>
+            <div className={styles.accentBar} />
+            <h2 className={styles.sectionHeading}>
+              Technical Overview & Capabilities
+            </h2>
+            <p className={styles.overviewText}>{item.fullDesc}</p>
           </div>
         </section>
 
@@ -255,25 +183,6 @@ export default async function SolutionDetailPage({ params }: PageProps) {
                 </Link>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Contact CTA Section */}
-        <section id="contact" className={styles.ctaBanner}>
-          <div className={styles.ctaContainer}>
-            <div>
-              <h2 className={styles.ctaTitle}>
-                Ready to Implement {item.title}?
-              </h2>
-              <p className={styles.ctaSubtitle}>
-                Connect with our technical architects and engineering team to
-                evaluate system integration, custom specifications, and
-                deployment requirements.
-              </p>
-            </div>
-            <a href="mailto:contact@totaltech.com" className={styles.ctaBtn}>
-              Contact Engineering Team
-            </a>
           </div>
         </section>
       </main>
