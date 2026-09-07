@@ -42,7 +42,7 @@ import {
   Target,
   Rocket
 } from "lucide-react";
-
+import Link from "next/link";
 import Logo from "@/components/Logo";
 import SearchModal from "@/components/SearchModal";
 
@@ -68,6 +68,7 @@ interface SubcategoryData {
 interface NavTab {
   name: string;
   hasMegaMenu: boolean;
+  href?: string;
   subcategories?: SubcategoryData[];
 }
 
@@ -419,69 +420,7 @@ const NAV_TABS: NavTab[] = [
   {
     name: "Blog",
     hasMegaMenu: false,
-    subcategories: [
-      {
-        id: "Blog",
-        name: "Company Profile & Vision",
-        heading: "Total Tech Enterprise Profile & Heritage",
-        icon: Building2,
-        items: [
-          {
-            title: "Enterprise Profile & History",
-            desc: "Pioneering industrial intelligence, enterprise software, and deep-tech platforms since inception.",
-            href: "#about-profile-section",
-            icon: Building2,
-          },
-          {
-            title: "Executive Leadership & Board",
-            desc: "Visionary industry veterans guiding world-class engineers, scientists, and architects.",
-            href: "#about-profile-section",
-            icon: Users,
-          },
-          {
-            title: "Mission, Vision & Core Values",
-            desc: "Unwavering commitment to safety, mission-critical uptime, and ethical AI stewardship.",
-            href: "#about-profile-section",
-            icon: Compass,
-          },
-          {
-            title: "Investor Relations & ESG",
-            desc: "Corporate governance, annual financial reports, and global sustainability roadmaps.",
-            href: "#about-profile-section",
-            icon: FileText,
-          },
-        ],
-      },
-      {
-        id: "about-global",
-        name: "Global Presence & Labs",
-        heading: "Global Operations & Technology Labs",
-        icon: Globe2,
-        items: [
-          {
-            title: "Worldwide Innovation Hubs",
-            desc: "Distributed high-tech engineering facilities across North America, Europe, and Asia-Pacific.",
-            href: "#about-profile-section",
-            icon: Globe2,
-          },
-        ],
-      },
-      {
-        id: "about-certs",
-        name: "Certifications & Patents",
-        heading: "Industrial Certifications & IP Portfolio",
-        icon: Award,
-        items: [
-          {
-            title: "ISO 9001 & AS9100D Certified",
-            desc: "Global quality management standards across aerospace, automotive, and defense systems.",
-            href: "#about-profile-section",
-            icon: Award,
-          },
-        ],
-      },
-
-    ],
+    href: "/blog",
   },
 ];
 
@@ -560,7 +499,19 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
             {NAV_TABS.map((tab) => {
               const isActive = activeTabName === tab.name;
 
-              return (
+              return tab.href ? (
+                <Link
+                  key={tab.name}
+                  href={tab.href}
+                  className={`px-4 sm:px-5 h-full text-[13.5px] font-semibold tracking-normal transition-all flex items-center gap-1.5 ${isActive
+                    ? "bg-white text-[#0055FF] font-bold shadow-xs border-t-2 border-[#00bbff]"
+                    : "text-white hover:text-white hover:bg-white/10"
+                    }`}
+                >
+                  <span>{tab.name} </span>
+
+                </Link>
+              ) : (
                 <button
                   key={tab.name}
                   onClick={() =>
@@ -585,7 +536,27 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
                     />
                   )}
                 </button>
-              );
+              )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             })}
           </nav>
 
@@ -624,7 +595,7 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
 
           </div>
         </div>
-      </header>
+      </header >
 
 
       {activeTab?.hasMegaMenu && activeTab.subcategories && (
@@ -714,66 +685,69 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
             </div>
           </div>
         </div>
-      )}
+      )
+      }
 
-      {mobileOpen && (
-        <div className="lg:hidden bg-[#0055FF] border-b-2 border-white px-4 pt-4 pb-6 max-h-[85vh] overflow-y-auto shadow-xl text-white">
-          {NAV_TABS.map((tab) => (
-            <div key={tab.name} className="py-2 border-b border-white/20">
-              <div className="text-sm font-bold text-white px-2 py-1 flex items-center justify-between">
-                <span>{tab.name}</span>
-                {tab.hasMegaMenu && <ChevronDown className="w-4 h-4 text-white" />}
-              </div>
-              {tab.subcategories && (
-                <div className="pl-3 space-y-2 mt-1">
-                  {tab.subcategories.map((sub) => {
-                    const SubIcon = sub.icon;
-                    return (
-                      <div key={sub.id} className="py-1">
-                        <div className="flex items-center gap-2 text-xs font-bold text-white/90 uppercase tracking-wider mb-1">
-                          <SubIcon className="w-3.5 h-3.5" />
-                          <span>{sub.name}</span>
-                        </div>
-                        <div className="pl-4 space-y-1 mt-1">
-                          {sub.items.map((item, i) => (
-                            <a
-                              key={i}
-                              href={item.href}
-                              onClick={() => setMobileOpen(false)}
-                              className="block text-xs text-white/80 hover:text-white py-0.5"
-                            >
-                              • {item.title}
-                            </a>
-                          ))}
-                        </div>
-                      </div>
-                    );
-                  })}
+      {
+        mobileOpen && (
+          <div className="lg:hidden bg-[#0055FF] border-b-2 border-white px-4 pt-4 pb-6 max-h-[85vh] overflow-y-auto shadow-xl text-white">
+            {NAV_TABS.map((tab) => (
+              <div key={tab.name} className="py-2 border-b border-white/20">
+                <div className="text-sm font-bold text-white px-2 py-1 flex items-center justify-between">
+                  <span>{tab.name}</span>
+                  {tab.hasMegaMenu && <ChevronDown className="w-4 h-4 text-white" />}
                 </div>
-              )}
-            </div>
-          ))}
+                {tab.subcategories && (
+                  <div className="pl-3 space-y-2 mt-1">
+                    {tab.subcategories.map((sub) => {
+                      const SubIcon = sub.icon;
+                      return (
+                        <div key={sub.id} className="py-1">
+                          <div className="flex items-center gap-2 text-xs font-bold text-white/90 uppercase tracking-wider mb-1">
+                            <SubIcon className="w-3.5 h-3.5" />
+                            <span>{sub.name}</span>
+                          </div>
+                          <div className="pl-4 space-y-1 mt-1">
+                            {sub.items.map((item, i) => (
+                              <a
+                                key={i}
+                                href={item.href}
+                                onClick={() => setMobileOpen(false)}
+                                className="block text-xs text-white/80 hover:text-white py-0.5"
+                              >
+                                • {item.title}
+                              </a>
+                            ))}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            ))}
 
-          <div className="pt-4">
-            <button
-              onClick={() => {
-                setMobileOpen(false);
-                handleSearchOpen();
-              }}
-              className="w-full flex items-center justify-center gap-2 p-2.5 bg-white/20 text-white text-xs font-semibold border border-white/30"
-            >
-              <Search className="w-4 h-4 text-white" />
-              <span>Search Total Tech</span>
-            </button>
+            <div className="pt-4">
+              <button
+                onClick={() => {
+                  setMobileOpen(false);
+                  handleSearchOpen();
+                }}
+                className="w-full flex items-center justify-center gap-2 p-2.5 bg-white/20 text-white text-xs font-semibold border border-white/30"
+              >
+                <Search className="w-4 h-4 text-white" />
+                <span>Search Total Tech</span>
+              </button>
+            </div>
           </div>
-        </div>
-      )}
+        )
+      }
 
       <SearchModal
         isOpen={internalSearchOpen}
         onClose={() => setInternalSearchOpen(false)}
       />
-    </div>
+    </div >
   );
 }
 
