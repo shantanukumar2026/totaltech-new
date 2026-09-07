@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import SearchModal from "@/components/SearchModal";
 import HeroSlider from "@/components/HeroSlider";
 import CardShowcase from "@/components/CardShowcase";
+import CorporateContactSection from "@/components/CorporateContactSection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
       </div>
 
       <CardShowcase />
+      <CorporateContactSection />
       <Footer />
     </main>
   );

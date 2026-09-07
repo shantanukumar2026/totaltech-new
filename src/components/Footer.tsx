@@ -26,11 +26,10 @@ export default function Footer() {
   ];
 
   const companyLinks = [
-    { label: "About Total Tech", href: "#about" },
-    { label: "Corporate Vision & Labs", href: "#vision" },
-    { label: "Certifications & Standards", href: "#certifications" },
-    { label: "Global Engineering Footprint", href: "#global" },
-    { label: "Careers & Culture", href: "#careers" },
+    { label: "Corporate Overview", href: "/contact" },
+    { label: "Global Locations", href: "/contact" },
+    { label: "Office Directory", href: "/contact" },
+    { label: "Quality & Standards", href: "/contact" },
   ];
 
   return (
@@ -56,7 +55,7 @@ export default function Footer() {
 
             <div className={styles.badges}>
               <span className={styles.badge}>ISO 9001:2015</span>
-              <span className={styles.badge}>PCI Certified</span>
+              <span className={styles.badge}>AS9100D</span>
               <span className={styles.badge}>CE Marked</span>
             </div>
           </div>
@@ -88,13 +87,13 @@ export default function Footer() {
           </div>
 
           <div className={styles.linkCol}>
-            <h4 className={styles.colTitle}>Company</h4>
+            <h4 className={styles.colTitle}>Company & Offices</h4>
             <ul className={styles.list}>
               {companyLinks.map((item) => (
                 <li key={item.label}>
-                  <a href={item.href} className={styles.link}>
+                  <Link href={item.href} className={styles.link}>
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -109,32 +108,31 @@ export default function Footer() {
               </li>
               <li className={styles.contactItem}>
                 <Phone size={16} className={styles.icon} />
-                <a href="tel:+123456789">(123) 456-7890</a>
+                <a href="tel:+17722970700">(772) 297-0700</a>
               </li>
               <li className={styles.contactItem}>
                 <Mail size={16} className={styles.icon} />
-                <a href="mailto:info@totaltech.com">info@totaltech.com</a>
+                <a href="mailto:americas@totaltech.com">americas@totaltech.com</a>
               </li>
-              {/* <li className={styles.contactItem}>
+              <li className={styles.contactItem}>
                 <Clock size={16} className={styles.icon} />
                 <span>Mon – Fri: 8:00 AM – 6:00 PM EST</span>
-              </li> */}
+              </li>
             </ul>
           </div>
         </div>
 
         <div className={styles.bottomBar}>
           <div className={styles.bottomText}>
-            <span>&copy; {new Date().getFullYear()} Total Tech. All Rights Reserved.</span>
+            <span>&copy; {new Date().getFullYear()} Total Tech Systems Corporation. All Rights Reserved.</span>
             <span className={styles.sep}></span>
-
           </div>
 
           <div className={styles.bottomLinks}>
+            <Link href="/contact">Contact Support</Link>
             <a href="#privacy">Privacy Policy</a>
             <a href="#terms">Terms & Conditions</a>
-            <a href="#security">Security</a>
-            <a href="#sitemap">Sitemap</a>
+            <a href="#security">Security Compliance</a>
           </div>
         </div>
       </div>

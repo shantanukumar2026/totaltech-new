@@ -40,7 +40,8 @@ import {
   Sparkles,
   Globe2,
   Target,
-  Rocket
+  Rocket,
+  MapPin
 } from "lucide-react";
 import Link from "next/link";
 import Logo from "@/components/Logo";
@@ -350,25 +351,25 @@ const NAV_TABS: NavTab[] = [
           {
             title: "Enterprise Profile & History",
             desc: "Pioneering industrial intelligence, enterprise software, and deep-tech platforms since inception.",
-            href: "#about-profile-section",
+            href: "/contact",
             icon: Building2,
           },
           {
             title: "Executive Leadership & Board",
             desc: "Visionary industry veterans guiding world-class engineers, scientists, and architects.",
-            href: "#about-profile-section",
+            href: "/contact",
             icon: Users,
           },
           {
             title: "Mission, Vision & Core Values",
             desc: "Unwavering commitment to safety, mission-critical uptime, and ethical AI stewardship.",
-            href: "#about-profile-section",
+            href: "/contact",
             icon: Compass,
           },
           {
             title: "Investor Relations & ESG",
             desc: "Corporate governance, annual financial reports, and global sustainability roadmaps.",
-            href: "#about-profile-section",
+            href: "/contact",
             icon: FileText,
           },
         ],
@@ -382,7 +383,7 @@ const NAV_TABS: NavTab[] = [
           {
             title: "Worldwide Innovation Hubs",
             desc: "Distributed high-tech engineering facilities across North America, Europe, and Asia-Pacific.",
-            href: "#about-profile-section",
+            href: "/contact",
             icon: Globe2,
           },
         ],
@@ -396,7 +397,7 @@ const NAV_TABS: NavTab[] = [
           {
             title: "ISO 9001 & AS9100D Certified",
             desc: "Global quality management standards across aerospace, automotive, and defense systems.",
-            href: "#about-profile-section",
+            href: "/contact",
             icon: Award,
           },
         ],
@@ -410,7 +411,7 @@ const NAV_TABS: NavTab[] = [
           {
             title: "Open Engineering Roles",
             desc: "Join our elite teams across AI research, robotics engineering, and distributed IT.",
-            href: "#about-profile-section",
+            href: "/contact",
             icon: Briefcase,
           },
         ],
@@ -422,6 +423,11 @@ const NAV_TABS: NavTab[] = [
     hasMegaMenu: false,
     href: "/blog",
   },
+  {
+    name: "Contact",
+    hasMegaMenu: false,
+    href: "/contact",
+  },
 ];
 
 export default function Navbar({ onOpenSearch }: NavbarProps) {
@@ -429,7 +435,18 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
   const [activeTabName, setActiveTabName] = useState<string | null>(null);
   const [activeSubcatId, setActiveSubcatId] = useState<string>("mfg-tech");
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [regionOpen, setRegionOpen] = useState(false);
+  const [selectedRegion, setSelectedRegion] = useState("IN");
   const navRef = useRef<HTMLDivElement>(null);
+  const regionRef = useRef<HTMLDivElement>(null);
+
+  const REGIONS = [
+    { code: "GL", name: "Global Operations" },
+    { code: "US", name: "Americas (USA)" },
+    { code: "EU", name: "Europe (Germany)" },
+    { code: "IN", name: "Asia-Pacific (India)" },
+    { code: "JP", name: "East Asia (Japan)" },
+  ];
 
   const handleSearchOpen = () => {
     if (onOpenSearch) {
@@ -444,6 +461,9 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
     const handleOutside = (e: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(e.target as Node)) {
         setActiveTabName(null);
+      }
+      if (regionRef.current && !regionRef.current.contains(e.target as Node)) {
+        setRegionOpen(false);
       }
     };
     document.addEventListener("mousedown", handleOutside);
@@ -561,7 +581,6 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
           </nav>
 
           <div className="ml-auto flex items-center gap-2.5 sm:gap-3 pr-6 lg:pr-8">
-
             <button
               onClick={handleSearchOpen}
               className="flex items-center gap-2 px-3 py-1.5 bg-white/15 hover:bg-white/25 border border-white/20 hover:border-white text-white transition-all cursor-pointer"
@@ -573,14 +592,37 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
               </span>
             </button>
 
-            <button
-              onClick={() => alert("Region Selector: Global / India")}
-              className="flex items-center gap-1.5 text-white hover:bg-white/20 px-2.5 py-1.5 transition-colors cursor-pointer border border-white/20 bg-white/10 font-semibold"
-              title="Select Region"
-            >
-              <Globe className="w-3.5 h-3.5 text-white" />
-              <span className="text-[11px] font-bold">IN</span>
-            </button>
+            <div ref={regionRef} className="relative">
+              <button
+                onClick={() => setRegionOpen(!regionOpen)}
+                className="flex items-center gap-1.5 text-white hover:bg-white/20 px-2.5 py-1.5 transition-colors cursor-pointer border border-white/20 bg-white/10 font-semibold"
+                title="Select Regional Gateway"
+              >
+                <Globe className="w-3.5 h-3.5 text-white" />
+                <span className="text-[11px] font-bold">{selectedRegion}</span>
+                <ChevronDown className={`w-3 h-3 transition-transform ${regionOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              {regionOpen && (
+                <div className="absolute right-0 top-full mt-1 w-48 bg-white border border-[#D2E4F9] shadow-xl py-1 z-50 text-[#0335ab]">
+                  {REGIONS.map((reg) => (
+                    <button
+                      key={reg.code}
+                      onClick={() => {
+                        setSelectedRegion(reg.code);
+                        setRegionOpen(false);
+                      }}
+                      className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between hover:bg-[#F0F6FE] transition-colors ${
+                        selectedRegion === reg.code ? "font-bold text-[#0055FF] bg-[#F8FBFE]" : "text-[#0335ab]"
+                      }`}
+                    >
+                      <span>{reg.name}</span>
+                      <span className="font-mono text-[10px] text-[#0051c5] font-bold">{reg.code}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
 
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
