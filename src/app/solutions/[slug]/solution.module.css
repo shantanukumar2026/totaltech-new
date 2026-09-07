@@ -1,7 +1,7 @@
 .pageWrapper {
   min-height: 100vh;
   background-color: #f8fbfe;
-  color: #0f172a;
+  color: #0335ab;
   display: flex;
   flex-direction: column;
   font-family: var(--font-family-global, system-ui, -apple-system, sans-serif);
@@ -51,7 +51,7 @@
 .heroSection {
   position: relative;
   width: 100%;
-  background: linear-gradient(135deg, #001f66 0%, #00123a 60%, #000b24 100%);
+  background: #00236e;
   color: #ffffff;
   padding: 60px 0;
   overflow: hidden;
@@ -147,7 +147,7 @@
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-  background-color: #020e26;
+  background-color: #00236e;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -182,7 +182,7 @@
 .sectionHeading {
   font-size: clamp(24px, 2.2vw, 32px);
   font-weight: 800;
-  color: #021844;
+  color: #0335ab;
   margin: 0 0 20px 0;
   letter-spacing: -0.01em;
 }
@@ -190,7 +190,7 @@
 .overviewText {
   font-size: 16.5px;
   line-height: 1.8;
-  color: #334155;
+  color: #0335ab;
   margin: 0;
   max-width: 1100px;
   font-weight: 400;
@@ -230,7 +230,7 @@
 .relatedTitle {
   font-size: 28px;
   font-weight: 800;
-  color: #021844;
+  color: #0335ab;
   margin: 0;
 }
 
@@ -303,7 +303,7 @@
 .cardTitle {
   font-size: 16px;
   font-weight: 700;
-  color: #021844;
+  color: #0335ab;
   margin: 0 0 10px 0;
   line-height: 1.35;
   transition: color 0.2s ease;
@@ -316,7 +316,7 @@
 .cardDesc {
   font-size: 13px;
   line-height: 1.6;
-  color: #64748b;
+  color: #0051c5;
   margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
