@@ -67,12 +67,12 @@ function OfficeCard({ office }: { office: LocationCard }) {
       </div>
 
       <div className="relative z-10">
-        <h3 className="text-base sm:text-lg font-black text-[#002B7F] tracking-tight uppercase mb-4">
+        <h3 className="text-base sm:text-lg font-black text-[#0335ab] tracking-tight uppercase mb-4">
           {office.title}
         </h3>
 
-        <div className="flex items-start gap-2.5 text-[11px] sm:text-xs text-[#4A5568] font-semibold tracking-wide">
-          <MapPin className="w-4 h-4 text-[#0062FF] shrink-0 mt-0.5" />
+        <div className="flex items-start gap-2.5 text-[11px] sm:text-xs text-[#0051c5] font-semibold tracking-wide">
+          <MapPin className="w-4 h-4 text-[#0055FF] shrink-0 mt-0.5" />
           <div className="space-y-0.5 uppercase leading-relaxed">
             {office.addressLines.map((line, i) => (
               <div key={i}>{line}</div>
@@ -81,11 +81,11 @@ function OfficeCard({ office }: { office: LocationCard }) {
         </div>
       </div>
 
-      <div className="relative z-10 pt-4 mt-3 flex items-center gap-2.5 text-xs sm:text-[13px] text-[#002B7F] font-bold tracking-wide">
-        <Phone className="w-4 h-4 text-[#0062FF] shrink-0" />
+      <div className="relative z-10 pt-4 mt-3 flex items-center gap-2.5 text-xs sm:text-[13px] text-[#0055FF] font-bold tracking-wide">
+        <Phone className="w-4 h-4 text-[#0055FF] shrink-0" />
         <a
           href={`tel:${office.phone.replace(/[^0-9+]/g, "")}`}
-          className="hover:text-[#0062FF] transition-colors"
+          className="hover:text-[#0335ab] transition-colors"
         >
           {office.phone}
         </a>
