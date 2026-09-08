@@ -11,41 +11,41 @@ interface LocationCard {
 
 const USA_OFFICES: LocationCard[] = [
   {
-    title: "NORTHEAST",
-    addressLines: ["105 MAXESS ROAD", "MELVILLE, NY 11747"],
+    title: "NORTHEAST REGION",
+    addressLines: ["NEW YORK METRO AREA", "NEW YORK, NY"],
     phone: "(631) 452-1111",
   },
   {
-    title: "SOUTH",
-    addressLines: ["850 NW FEDERAL HWY", "STUART, FL 34994"],
+    title: "SOUTHEAST REGION",
+    addressLines: ["FLORIDA OPERATIONS", "STUART, FL"],
     phone: "(772) 297-0700",
   },
   {
-    title: "MIDWEST",
-    addressLines: ["2200 HUNT STREET", "DETROIT, MI 48207"],
+    title: "MIDWEST REGION",
+    addressLines: ["GREAT LAKES REGIONAL HUB", "DETROIT, MI"],
     phone: "(631) 452-1111",
   },
   {
-    title: "WESTCOAST",
-    addressLines: ["1824 STORE ST 2ND FLOOR,", "VICTORIA, BC V8T 4R4 CANADA"],
-    phone: "604 200 0616",
+    title: "WEST COAST REGION",
+    addressLines: ["PACIFIC NORTHWEST HUB", "SEATTLE & VICTORIA"],
+    phone: "(604) 200-0616",
   },
 ];
 
 const INTERNATIONAL_OFFICES: LocationCard[] = [
   {
     title: "CANADA - EAST",
-    addressLines: ["ONE YONGE STREET", "TORONTO, ONTARIO M5E 1R4, CANADA"],
+    addressLines: ["ONTARIO REGIONAL OFFICE", "TORONTO, ON, CANADA"],
     phone: "+1 (438) 805-9990",
   },
   {
     title: "CANADA - WEST",
-    addressLines: ["1824 STORE ST, 2ND FLOOR", "VICTORIA, BC V8T 4R4, CANADA"],
+    addressLines: ["BRITISH COLUMBIA OFFICE", "VICTORIA, BC, CANADA"],
     phone: "(604) 200-0616",
   },
   {
-    title: "CARIBBEAN / LATIN AMERICA",
-    addressLines: ["CRYPTO ISLE - GREEN ROOFS", "1 E BAY ST, NASSAU, BAHAMAS"],
+    title: "CARIBBEAN & LATIN AMERICA",
+    addressLines: ["REGIONAL OPERATIONS", "NASSAU, BAHAMAS"],
     phone: "(242) 802-8000",
   },
 ];

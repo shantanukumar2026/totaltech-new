@@ -14,173 +14,105 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    id: "mfg-1",
-    slug: "precast-technology",
-    title: "Precast Technologies",
-    excerpt: "Precast is a construction method in which concrete structures are cast in a reusable mold or factory-controlled environment, then transported to the construction site for assembly.",
-    category: "Precast Technologies",
-    type: "Manufacturing",
-    date: "September 07, 2026",
-    readTime: "4 min read",
-    author: "Manufacturing Team",
-    image: "/precast_technologies_458x288.png",
+    id: "post-1",
+    slug: "precast-bridge-engineering-abc",
+    title: "Precast Concrete Systems in Accelerated Bridge Construction (ABC)",
+    excerpt: "Examining how pretensioned bridge girders and modular precast deck panels reduce highway closure times from months to days while improving structural durability.",
+    category: "Bridge Engineering",
+    type: "Technical Whitepaper",
+    date: "September 04, 2026",
+    readTime: "5 min read",
+    author: "Structural Engineering Team",
+    image: "/precast-technology.jpg",
     content: [
-      "Precast technology is an advanced construction method where structural concrete components are cast in reusable, precision-engineered molds within a controlled factory setting.",
-      "Once properly cured and quality-verified, these components are transported directly to the project site for rapid assembly, ensuring high structural strength, thermal performance, and minimal site waste.",
-      "The use of factory automation and modern curing techniques significantly accelerates construction schedules compared to traditional cast-in-place concrete methods."
+      "Accelerated Bridge Construction (ABC) is transforming transportation infrastructure across the United States. By casting primary structural members in a controlled offsite facility, contractors can replace or build bridge superstructures in a fraction of traditional construction timeframes.",
+      "Pretensioned AASHTO bulb-tee girders and full-depth precast deck panels provide superior concrete compaction and curing conditions compared to field-cast alternatives, substantially reducing micro-cracking and permeability under freeze-thaw cycles.",
+      "Advanced 3D coordination between precast fabricators and general contractors ensures that bearing seats, utility sleeves, and shear key grouting details align precisely during weekend roadway closures."
     ]
   },
   {
-    id: "mfg-2",
-    slug: "concreate-technologies",
-    title: "Concrete Technologies",
-    excerpt: "Concrete Technologies refers to the range of advanced technologies used in the production and application of concrete. These technologies focus on improving concrete's strength, durability, workability, and sustainability.",
-    category: "Concrete Technologies",
-    type: "Material Science",
-    date: "September 07, 2026",
-    readTime: "5 min read",
-    author: "Engineering Team",
+    id: "post-2",
+    slug: "concrete-mix-optimization-durability",
+    title: "High-Performance Concrete Mixes & Durability in Civil Infrastructure",
+    excerpt: "Evaluating low-permeability mix designs, supplementary cementitious materials, and compressive strength testing for long-term bridge longevity.",
+    category: "Material Science",
+    type: "Engineering Analysis",
+    date: "August 28, 2026",
+    readTime: "6 min read",
+    author: "Materials Engineering Group",
     image: "/concreate_technologies_458x288.png",
     content: [
-      "Advanced concrete technologies encompass innovative mix formulations, sustainable pozzolan additives, and specialized chemical admixtures.",
-      "These advancements improve compressive strength, reduce permeability, and ensure long-term durability under demanding industrial and environmental conditions.",
-      "Continuous testing and batch-monitoring systems ensure precise workability and compliance with international engineering standards."
+      "Modern civil infrastructure specifications increasingly require 75- to 100-year design life cycles. Achieving this longevity demands precision mix design, utilizing supplementary cementitious materials (SCMs) like silica fume and fly ash to refine the pore structure and resist chloride penetration.",
+      "Automated plant batching equipment and real-time moisture sensors maintain tight water-cement ratios (w/c ≤ 0.38), ensuring uniform 28-day and 56-day compressive strengths exceeding 8,000 to 10,000 psi for prestressed members.",
+      "Rigorous quality assurance protocols—including ASTM C39 compressive testing, ASTM C1202 rapid chloride permeability tests, and air-void analysis—guarantee compliance with strict state DOT standards."
     ]
   },
   {
-    id: "ai-1",
-    slug: "user-research",
-    title: "User Research",
-    excerpt: "Conducting comprehensive research to understand user needs, behaviors, and motivations to inform the design process.",
-    category: "User Research",
-    type: "Discovery",
-    date: "September 07, 2026",
+    id: "post-3",
+    slug: "lod-400-bim-precast-detailing",
+    title: "LOD 400 BIM Detailing: From 3D Models to Automated Bar Bending",
+    excerpt: "How clash-free 3D reinforcement modeling and direct CNC machine data exports eliminate plant re-work and field placement errors.",
+    category: "3D BIM & Detailing",
+    type: "Digital Detailing",
+    date: "August 20, 2026",
     readTime: "4 min read",
-    author: "Design Team",
-    image: "/istockphoto-1472894613-2048x2048.jpg",
+    author: "BIM Detailing Group",
+    image: "/infrastructure/precast_rebar_cage.jpg",
     content: [
-      "Effective user research uncovers operational bottlenecks, workflow expectations, and user mental models across complex technical systems.",
-      "By combining quantitative analytics with qualitative user interviews, teams can design intuitive interfaces that increase productivity and reduce user error.",
-      "Iterative testing throughout the product lifecycle ensures systems remain aligned with real-world operator requirements."
+      "Level of Development (LOD) 400 modeling represents full fabrication-level precision. Every reinforcement bar, prestressing strand, lifting insert, and embed plate is modeled in exact 3D coordinates before a single yard of concrete is poured.",
+      "Automated collision checking resolves congestion between tightly spaced shear stirrups and post-tensioning anchor ducts, preventing expensive delays in the plant casting yard.",
+      "Modern BIM platforms export bar bending schedules directly into industry-standard BVBS formats, enabling CNC automated rebar benders and cage mesh welders to fabricate reinforcement with millimeter accuracy."
     ]
   },
   {
-    id: "ai-2",
-    slug: "information-architecture",
-    title: "Information Architecture (IA)",
-    excerpt: "Organizing and structuring content in a clear and logical manner to enhance user experience and navigation.",
-    category: "Information Architecture",
-    type: "Data Architecture",
-    date: "September 07, 2026",
+    id: "post-4",
+    slug: "segmental-viaduct-erection-methods",
+    title: "Precast Segmental Viaducts & Span-by-Span Erection Techniques",
+    excerpt: "Key engineering considerations for post-tensioned box girder viaducts, tendon profile layouts, and overhead launching gantry erection.",
+    category: "Highway Viaducts",
+    type: "Construction Method",
+    date: "August 12, 2026",
+    readTime: "7 min read",
+    author: "Civil Infrastructure Team",
+    image: "/infrastructure/precast_highway_viaduct.jpg",
+    content: [
+      "Precast segmental concrete bridges represent the premier solution for long-span highway flyovers and urban transit viaducts where ground-level traffic cannot be disrupted during construction.",
+      "Individual match-cast box segments are manufactured in climate-controlled precast plants, transported to site, and hoisted into position using specialized overhead launching gantries.",
+      "Comprehensive structural stage-by-stage analysis models calculate camber evolution, creep, shrinkage, and post-tensioning tendon losses across every erection phase to guarantee seamless deck profile transitions."
+    ]
+  },
+  {
+    id: "post-5",
+    slug: "technical-spec-portals-precast-manufacturers",
+    title: "Technical Specification Portals for Precast Infrastructure Producers",
+    excerpt: "Building searchable digital load tables, submittal catalogs, and engineering tools for DOT and commercial civil contractors.",
+    category: "Digital Solutions",
+    type: "Industry Technology",
+    date: "July 30, 2026",
     readTime: "4 min read",
-    author: "Architecture Team",
-    image: "/istockphoto-1412244091-640x640.jpg",
+    author: "Digital Solutions Team",
+    image: "/precast_technologies_458x288.png",
     content: [
-      "Information Architecture forms the structural blueprint for data presentation, navigation taxonomies, and user journeys across enterprise software.",
-      "Clear visual hierarchies and structured data models enable users to access mission-critical insights quickly with minimal cognitive load.",
-      "Consistent taxonomy standards facilitate seamless data interoperability across multi-tier enterprise systems."
+      "Precast producers with comprehensive digital product portals give structural engineers and project estimators immediate access to dimensional data, load tables, and downloadable CAD submittal files.",
+      "Optimizing product documentation with clear technical search parameters ensures engineers specifying precast culverts, girders, and retaining walls find exact specifications quickly during project design phases.",
+      "Interactive specification builders allow civil estimators to request certified quote packages directly, speeding up the submittal and procurement lifecycle."
     ]
   },
   {
-    id: "qt-1",
-    slug: "search-engine-optimization",
-    title: "Search Engine Optimization (SEO)",
-    excerpt: "Driving measurable growth through targeted, data-driven digital marketing strategies.",
-    category: "SEO Optimization",
-    type: "Organic Growth",
-    date: "September 07, 2026",
-    readTime: "4 min read",
-    author: "Marketing Team",
-    image: "/istockphoto-1364968289-612x612.jpg",
-    content: [
-      "Modern search engine optimization focuses on technical performance, search intent matching, and structured schema implementation.",
-      "Optimizing page load speeds, crawl efficiency, and domain authority drives sustained organic discovery and customer acquisition.",
-      "Regular data analysis and keyword gap tracking ensure content strategies adapt to evolving search patterns."
-    ]
-  },
-  {
-    id: "qt-2",
-    slug: "pay-per-click-advertising",
-    title: "Pay-Per-Click (PPC) Advertising",
-    excerpt: "Driving measurable growth through targeted, data-driven digital marketing strategies.",
-    category: "PPC Campaigns",
-    type: "Paid Search",
-    date: "September 07, 2026",
-    readTime: "3 min read",
-    author: "Marketing Team",
-    image: "/istockphoto-2287580756-612x612.jpg",
-    content: [
-      "Pay-per-click campaigns provide targeted reach across competitive industrial and enterprise keywords.",
-      "Real-time bid adjustments, granular audience targeting, and high-converting landing pages maximize return on ad spend (ROAS).",
-      "Continuous conversion rate optimization and A/B ad creative testing ensure consistent lead quality."
-    ]
-  },
-  {
-    id: "it-1",
-    slug: "datacenter-operations",
-    title: "Mission-Critical Datacenter Operations",
-    excerpt: "Scalable server architectures providing 99.999% uptime for enterprise data hubs and multi-region pipelines.",
-    category: "Enterprise IT",
-    type: "Server Grid",
-    date: "September 07, 2026",
+    id: "post-6",
+    slug: "astm-c1577-box-culverts-drainage",
+    title: "ASTM C1577 Box Culverts & Heavy Highway Drainage Design",
+    excerpt: "Structural capacity analysis, soil-structure interaction, and joint detailing for precast box culverts under heavy highway live loads.",
+    category: "Drainage & Substructure",
+    type: "Engineering Standard",
+    date: "July 18, 2026",
     readTime: "5 min read",
-    author: "Infrastructure Team",
-    image: "/3975-176000797.jpg",
+    author: "Structural Engineering Team",
+    image: "/infrastructure/precast_segments_yard.jpg",
     content: [
-      "High-availability datacenter infrastructure requires redundant power grids, automated failover routing, and precision cooling.",
-      "Containerized microservices and automated orchestration ensure continuous deployment without service interruptions.",
-      "Comprehensive telemetry monitors system health, thermal parameters, and network throughput 24/7."
-    ]
-  },
-  {
-    id: "it-2",
-    slug: "cybersecurity-defense",
-    title: "Zero-Trust Threat Defense & Data Vaulting",
-    excerpt: "Military-grade automated encryption and continuous threat vector monitoring protecting sensitive IP.",
-    category: "Cybersecurity",
-    type: "Defense",
-    date: "September 07, 2026",
-    readTime: "5 min read",
-    author: "Security Team",
-    image: "/istockphoto-1851610545-2048x2048.webp",
-    content: [
-      "Zero-trust architecture operates on the principle of continuous verification across every network packet and access request.",
-      "Hardware-level encryption keys and mutual TLS (mTLS) secure communication channels across distributed edge and cloud assets.",
-      "Real-time intrusion detection systems identify anomalies and isolate threats before unauthorized lateral movement can occur."
-    ]
-  },
-  {
-    id: "ml-1",
-    slug: "hardware-diagnostics",
-    title: "Micro-Sensor Array & Hardware Diagnostics",
-    excerpt: "Embedded IoT sensors reading millions of signals per second to catch anomalies before equipment failures occur.",
-    category: "Edge Telemetry",
-    type: "IoT Sensors",
-    date: "September 07, 2026",
-    readTime: "4 min read",
-    author: "Hardware Team",
-    image: "/istockphoto-1969136908-2048x2048.webp",
-    content: [
-      "Industrial sensor networks capture high-frequency vibration, temperature, and pressure signals directly from machinery.",
-      "Edge computing microcontrollers perform on-device signal processing, filtering noise and highlighting micro-deviations.",
-      "Early warning alerts enable preventive maintenance before physical wear leads to unscheduled equipment downtime."
-    ]
-  },
-  {
-    id: "ml-2",
-    slug: "predictive-analytics",
-    title: "Predictive Analytics & Yield Optimization",
-    excerpt: "Dynamic machine learning pipelines forecasting market demands and fine-tuning output capacity.",
-    category: "Forecasting",
-    type: "Analytics",
-    date: "September 07, 2026",
-    readTime: "5 min read",
-    author: "Analytics Team",
-    image: "/1000_F_799793082_ZnRdJhFLNkugUyKdQgwpxXrUhN6Hq0Wa.webp",
-    content: [
-      "Predictive analytics models analyze historical production datasets and real-time plant variables to optimize batch outputs.",
-      "Dynamic parameter adjustments reduce raw material consumption and improve finished product consistency.",
-      "Continuous model retraining ensures forecasts adapt to changing operational constraints and seasonal demands."
+      "Precast concrete box culverts manufactured to ASTM C1577 standards provide rapid, high-durability solutions for highway drainage, stormwater detention, and stream crossings.",
+      "Structural design calculations account for variable earth covers, AASHTO HL-93 live loading, and hydrostatic uplift pressures to ensure long-term stability under severe soil conditions.",
+      "Standardized tongue-and-groove joint detailing with preformed flexible rubber gaskets prevents infiltration and exfiltration, protecting roadway embankments from subsurface erosion."
     ]
   }
 ];

@@ -216,7 +216,7 @@ const SECTIONS: TopicSection[] = [
     id: "ai",
     title: "UI/UX For Precast",
     description:
-      "Engineering intuitive digital interfaces, data architectures, and model workflows tailored for precast plant operators, detailers, and project managers.",
+      "Harnessing deep neural architectures, cognitive algorithms, and automated computer vision to optimize high-throughput workflows.",
     quickLinks: [
       { label: "User Research", href: "/solutions/user-research" },
       { label: "Information Architecture (IA)", href: "/solutions/information-architecture" },
