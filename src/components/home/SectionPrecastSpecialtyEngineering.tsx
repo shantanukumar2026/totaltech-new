@@ -82,13 +82,13 @@ export default function SectionPrecastSpecialtyEngineering() {
   return (
     <section id="section-specialty-engineering" className="w-full bg-[#F8FBFE] py-12 sm:py-16 border-t border-[#E2E8F0] select-none">
       <div className="w-full px-4 sm:px-6 lg:px-12">
-        
+
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 pb-6 mb-6 border-b border-[#E2E8F0]">
           <div>
             <div className="w-12 h-1 bg-[#0055FF] mb-3" />
             <div className="inline-flex items-center gap-2 px-2.5 py-0.5 bg-white border border-[#D2E4F9] text-[#0055FF] text-[10px] font-mono font-bold uppercase tracking-wider mb-2 shadow-xs">
-              <span>04 | SPECIALTY PRECAST ENGINEERING & DETAILING</span>
+              <span>03 | SPECIALTY PRECAST ENGINEERING & DETAILING</span>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0335ab] tracking-tight">
               Precast Engineering & Detailing Services
@@ -111,9 +111,8 @@ export default function SectionPrecastSpecialtyEngineering() {
               >
                 {/* Image */}
                 <div
-                  className={`lg:col-span-6 ${
-                    isImageLeft ? "lg:order-1" : "lg:order-2"
-                  }`}
+                  className={`lg:col-span-6 ${isImageLeft ? "lg:order-1" : "lg:order-2"
+                    }`}
                 >
                   <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#F0F6FE] border border-[#D2E4F9]">
                     <img
@@ -131,9 +130,8 @@ export default function SectionPrecastSpecialtyEngineering() {
 
                 {/* Text */}
                 <div
-                  className={`lg:col-span-6 flex flex-col justify-center ${
-                    isImageLeft ? "lg:order-2" : "lg:order-1"
-                  }`}
+                  className={`lg:col-span-6 flex flex-col justify-center ${isImageLeft ? "lg:order-2" : "lg:order-1"
+                    }`}
                 >
                   <div className="inline-flex items-center gap-2 px-2 py-0.5 bg-[#F0F6FE] text-[#0055FF] text-[10px] font-mono font-bold uppercase border border-[#D2E4F9] mb-2 w-fit">
                     {row.tag}

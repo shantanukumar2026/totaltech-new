@@ -18,6 +18,7 @@ import SectionFeaturedProjects from "@/components/home/SectionFeaturedProjects";
 
 import CorporateContactSection from "@/components/CorporateContactSection";
 import Footer from "@/components/Footer";
+import OurMarkets from "@/components/home/OurMarkets";
 
 export default function Home() {
   const [searchOpen, setSearchOpen] = useState(false);
@@ -40,10 +41,19 @@ export default function Home() {
       <CardShowcase />
 
       {/* 03 | Who We Are */}
+      <OurMarkets />
+
+
+
       <SectionWhoWeAre />
+
+
+
 
       {/* 04 | Specialty Precast Engineering & Detailing */}
       <SectionPrecastSpecialtyEngineering />
+
+
 
       {/* 05 | Precast Infrastructure & Building Markets */}
       <SectionPrecastMarkets />

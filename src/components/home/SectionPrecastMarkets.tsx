@@ -52,13 +52,13 @@ export default function SectionPrecastMarkets() {
   return (
     <section id="section-precast-markets" className="w-full bg-white py-14 sm:py-18 border-t border-[#E2E8F0] select-none">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
-        
+
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 pb-8 mb-10 border-b border-[#E2E8F0]">
           <div>
             <div className="w-12 h-1 bg-[#0055FF] mb-3" />
             <div className="inline-flex items-center gap-2 px-2.5 py-0.5 bg-[#F0F6FE] border border-[#D2E4F9] text-[#0055FF] text-[10px] font-mono font-bold uppercase tracking-wider mb-2">
-              <span>05 | PRECAST INFRASTRUCTURE & CIVIL SECTORS</span>
+              <span>04 | PRECAST INFRASTRUCTURE & CIVIL SECTORS</span>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0335ab] tracking-tight">
               Civil Infrastructure Sectors We Engineer

@@ -9,13 +9,13 @@ export default function SectionPrecastDigitalMarketing() {
   return (
     <section id="section-digital-marketing" className="w-full bg-[#F8FBFE] py-14 sm:py-18 border-t border-[#E2E8F0] select-none">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
-        
+
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 pb-6 mb-10 border-b border-[#E2E8F0]">
           <div>
             <div className="w-12 h-1 bg-[#0055FF] mb-3" />
             <div className="inline-flex items-center gap-2 px-2.5 py-0.5 bg-white border border-[#D2E4F9] text-[#0055FF] text-[10px] font-mono font-bold uppercase tracking-wider mb-2 shadow-xs">
-              <span>08 | DIGITAL MARKETING & WEB SOLUTIONS</span>
+              <span>07 | DIGITAL MARKETING & WEB SOLUTIONS</span>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0335ab] tracking-tight">
               Digital Marketing & Presentation Systems
@@ -28,7 +28,7 @@ export default function SectionPrecastDigitalMarketing() {
 
         {/* Balanced Enterprise Showcase (Visual Graphic Left + Editorial Capability Highlights Right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white border border-[#E2E8F0] p-6 sm:p-10 shadow-xs">
-          
+
           {/* Left Visual Column (5 cols) */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-5">
             <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#F0F6FE] border border-[#D2E4F9] shadow-xs">

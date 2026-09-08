@@ -60,13 +60,13 @@ export default function SectionFeaturedProjects() {
   return (
     <section id="section-featured-projects" className="w-full bg-[#F8FBFE] py-12 sm:py-16 border-t border-[#E2E8F0] select-none">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
-        
+
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 pb-6 mb-6 border-b border-[#E2E8F0]">
           <div>
             <div className="w-12 h-1 bg-[#0055FF] mb-3" />
             <div className="inline-flex items-center gap-2 px-2.5 py-0.5 bg-white border border-[#D2E4F9] text-[#0055FF] text-[10px] font-mono font-bold uppercase tracking-wider mb-2 shadow-xs">
-              <span>10 | FEATURED INFRASTRUCTURE PROJECTS & PORTFOLIO</span>
+              <span>09 | FEATURED INFRASTRUCTURE PROJECTS & PORTFOLIO</span>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0335ab] tracking-tight">
               Featured Precast Infrastructure Projects
@@ -83,11 +83,10 @@ export default function SectionFeaturedProjects() {
             <button
               key={i}
               onClick={() => setActiveFilter(f)}
-              className={`px-3 py-1 text-[11px] font-mono font-bold uppercase tracking-wider transition-all cursor-pointer border ${
-                activeFilter === f
-                  ? "bg-[#0055FF] text-white border-[#0055FF] shadow-xs"
-                  : "bg-white text-[#0335ab] border-[#D2E4F9] hover:border-[#0055FF]"
-              }`}
+              className={`px-3 py-1 text-[11px] font-mono font-bold uppercase tracking-wider transition-all cursor-pointer border ${activeFilter === f
+                ? "bg-[#0055FF] text-white border-[#0055FF] shadow-xs"
+                : "bg-white text-[#0335ab] border-[#D2E4F9] hover:border-[#0055FF]"
+                }`}
             >
               {f}
             </button>
