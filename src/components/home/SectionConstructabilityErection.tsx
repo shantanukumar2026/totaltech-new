@@ -41,11 +41,10 @@ export default function SectionConstructabilityErection() {
   ];
 
   return (
-    <section id="section-constructability" className="w-full bg-white py-14 sm:py-18 border-t border-[#E2E8F0] select-none">
+    <section id="section-constructability" className="w-full bg-white py-10 sm:py-14 border-t border-[#E2E8F0] select-none">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
 
-        {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 pb-8 mb-10 border-b border-[#E2E8F0]">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 pb-6 mb-8 border-b border-[#E2E8F0]">
           <div>
             <div className="w-12 h-1 bg-[#0055FF] mb-3" />
             <div className="inline-flex items-center gap-2 px-2.5 py-0.5 bg-[#F0F6FE] border border-[#D2E4F9] text-[#0055FF] text-[10px] font-mono font-bold uppercase tracking-wider mb-2">
@@ -60,19 +59,18 @@ export default function SectionConstructabilityErection() {
           </p>
         </div>
 
-        {/* 3 Constructability Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {ERECTION_SERVICES.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
                 key={idx}
-                className="bg-[#F8FBFE] border border-[#E2E8F0] p-5 sm:p-7 hover:border-[#0055FF] shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between group"
+                className="bg-[#F8FBFE] border border-[#E2E8F0] p-5 sm:p-6 hover:border-[#0055FF] shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-4">
-                    <div className="w-10 h-10 bg-white border border-[#D2E4F9] flex items-center justify-center text-[#0055FF] group-hover:bg-[#0055FF] group-hover:text-white transition-colors">
-                      <Icon className="w-5 h-5" />
+                    <div className="w-9 h-9 bg-white border border-[#D2E4F9] flex items-center justify-center text-[#0055FF] group-hover:bg-[#0055FF] group-hover:text-white transition-colors">
+                      <Icon className="w-4.5 h-4.5" />
                     </div>
                     <span className="px-2 py-0.5 bg-white text-[#0055FF] text-[9px] font-mono font-bold uppercase border border-[#D2E4F9]">
                       {item.tag}
@@ -83,11 +81,11 @@ export default function SectionConstructabilityErection() {
                     {item.title}
                   </h3>
 
-                  <p className="text-xs text-[#0051c5] leading-relaxed mb-4">
+                  <p className="text-xs text-[#0051c5] leading-relaxed mb-3.5">
                     {item.desc}
                   </p>
 
-                  <div className="space-y-2 pt-3 border-t border-[#E2E8F0]">
+                  <div className="space-y-1.5 pt-3 border-t border-[#E2E8F0]">
                     {item.points.map((pt, pIdx) => (
                       <div key={pIdx} className="flex items-start gap-2 text-xs font-semibold text-[#0335ab]">
                         <CheckCircle2 className="w-3.5 h-3.5 text-[#0055FF] shrink-0 mt-0.5" />
@@ -97,7 +95,7 @@ export default function SectionConstructabilityErection() {
                   </div>
                 </div>
 
-                <div className="pt-4 mt-5 border-t border-[#E2E8F0] flex items-center justify-between text-[11px] font-mono font-bold text-slate-400 group-hover:text-[#0055FF] transition-colors">
+                <div className="pt-3.5 mt-4 border-t border-[#E2E8F0] flex items-center justify-between text-[11px] font-mono font-bold text-slate-400 group-hover:text-[#0055FF] transition-colors">
                   <span>ERECTION DISCIPLINE</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>

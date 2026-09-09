@@ -32,24 +32,6 @@ const USA_OFFICES: LocationCard[] = [
   },
 ];
 
-const INTERNATIONAL_OFFICES: LocationCard[] = [
-  {
-    title: "CANADA - EAST",
-    addressLines: ["ONTARIO REGIONAL OFFICE", "TORONTO, ON, CANADA"],
-    phone: "+1 (438) 805-9990",
-  },
-  {
-    title: "CANADA - WEST",
-    addressLines: ["BRITISH COLUMBIA OFFICE", "VICTORIA, BC, CANADA"],
-    phone: "(604) 200-0616",
-  },
-  {
-    title: "CARIBBEAN & LATIN AMERICA",
-    addressLines: ["REGIONAL OPERATIONS", "NASSAU, BAHAMAS"],
-    phone: "(242) 802-8000",
-  },
-];
-
 function OfficeCard({ office }: { office: LocationCard }) {
   return (
     <div className="relative bg-white border border-[#E2E8F0] shadow-xs hover:border-[#0055FF] transition-all p-6 sm:p-7 flex flex-col justify-between overflow-hidden group min-h-[190px]">
@@ -96,36 +78,22 @@ function OfficeCard({ office }: { office: LocationCard }) {
 
 export default function CorporateContactSection() {
   return (
-    <section className="w-full bg-[#FFFFFF] py-14 sm:py-20 border-t border-[#E2E8F0] select-none">
+    <section className="w-full bg-[#FFFFFF] py-10 sm:py-14 border-t border-[#E2E8F0] select-none">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
-        <div className="text-center mb-10 sm:mb-14">
+        <div className="text-center mb-8 sm:mb-10">
           <h2 className="text-xl sm:text-2xl font-black tracking-[0.25em] text-[#0055FF] uppercase">
             LOCATIONS
           </h2>
         </div>
 
-        <div className="mb-12">
-          <div className="text-xs sm:text-[13px] font-black text-[#0055FF] tracking-wider uppercase mb-5">
-            USA OFFICES
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-            {USA_OFFICES.map((office, idx) => (
-              <OfficeCard key={idx} office={office} />
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <div className="text-xs sm:text-[13px] font-black text-[#0055FF] tracking-wider uppercase mb-5 pt-4 border-t border-[#F0F4F9]">
-            INTERNATIONAL OFFICES
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-            {INTERNATIONAL_OFFICES.map((office, idx) => (
-              <OfficeCard key={idx} office={office} />
-            ))}
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+          {USA_OFFICES.map((office, idx) => (
+            <OfficeCard key={idx} office={office} />
+          ))}
         </div>
       </div>
     </section>
   );
 }
+
+

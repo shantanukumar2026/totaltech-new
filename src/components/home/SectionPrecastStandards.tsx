@@ -44,11 +44,10 @@ export default function SectionPrecastStandards() {
   ];
 
   return (
-    <section id="section-standards-guidelines" className="w-full bg-white py-14 sm:py-18 border-t border-[#E2E8F0] select-none">
+    <section id="section-standards-guidelines" className="w-full bg-white py-10 sm:py-14 border-t border-[#E2E8F0] select-none">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
 
-        {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 pb-8 mb-10 border-b border-[#E2E8F0]">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 pb-6 mb-8 border-b border-[#E2E8F0]">
           <div>
             <div className="w-12 h-1 bg-[#0055FF] mb-3" />
             <div className="inline-flex items-center gap-2 px-2.5 py-0.5 bg-[#F0F6FE] border border-[#D2E4F9] text-[#0055FF] text-[10px] font-mono font-bold uppercase tracking-wider mb-2">
@@ -63,7 +62,6 @@ export default function SectionPrecastStandards() {
           </p>
         </div>
 
-        {/* 6 Standards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {STANDARDS.map((std, idx) => (
             <div
@@ -83,7 +81,7 @@ export default function SectionPrecastStandards() {
                 <h3 className="text-base font-black text-[#0335ab] group-hover:text-[#0055FF] transition-colors mb-1">
                   {std.code}
                 </h3>
-                <div className="text-xs font-bold text-[#0055FF] mb-2.5">
+                <div className="text-xs font-bold text-[#0055FF] mb-2">
                   {std.title}
                 </div>
 

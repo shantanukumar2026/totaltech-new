@@ -190,12 +190,12 @@ const SECTIONS: TopicSection[] = [
     cards: [
       {
         id: "mfg-1",
-        slug: "precast-technology",
+        slug: "precast-technologies",
         category: "Precast Technologies",
         type: "Manufacturing",
         title: "Precast Technologies",
         description:
-          "Precast is a construction method in which concrete structures are cast in a reusable mold or factory-controlled environment, then transported to the construction site for assembly.",
+          "Precast Technologies uses controlled production systems and processes to improve the way precast concrete components are manufactured. Our solutions support production planning, mold and formwork systems, automation, quality control, and efficient plant workflows for infrastructure projects.",
         icon: Bot,
         mediaUrl: "/precast_technologies_458x288.png",
       },
@@ -216,7 +216,7 @@ const SECTIONS: TopicSection[] = [
     id: "ai",
     title: "UI/UX For Precast",
     description:
-      "Harnessing deep neural architectures, cognitive algorithms, and automated computer vision to optimize high-throughput workflows.",
+      "Engineering intuitive digital interfaces, data architectures, and model workflows tailored for precast plant operators, detailers, and project managers.",
     quickLinks: [
       { label: "User Research", href: "/solutions/user-research" },
       { label: "Information Architecture (IA)", href: "/solutions/information-architecture" },
@@ -361,7 +361,7 @@ export default function CardShowcase() {
     <div className="w-full bg-white select-none">
       {SECTIONS.map((section) => (
         <React.Fragment key={section.id}>
-          <section className="w-full py-14 sm:py-16 px-4 sm:px-6 lg:px-12 bg-white">
+          <section className="w-full py-10 sm:py-14 px-4 sm:px-6 lg:px-12 bg-white">
             <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
               <div className="lg:col-span-4 flex flex-col justify-start">
                 <div className="w-12 h-1 bg-[#0055FF] mb-4" />
@@ -380,8 +380,9 @@ export default function CardShowcase() {
                     className="inline-flex items-center gap-2 text-[13px] font-bold text-[#0055FF] hover:text-[#0335ab] transition-colors cursor-pointer"
                   >
                     <ChevronDown
-                      className={`w-4 h-4 transition-transform duration-200 ${openLinks[section.id] ? "rotate-180" : ""
-                        }`}
+                      className={`w-4 h-4 transition-transform duration-200 ${
+                        openLinks[section.id] ? "rotate-180" : ""
+                      }`}
                     />
                     <span>Quick Links</span>
                   </button>

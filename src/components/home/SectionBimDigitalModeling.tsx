@@ -38,11 +38,10 @@ export default function SectionBimDigitalModeling() {
   ];
 
   return (
-    <section id="section-bim-modeling" className="w-full bg-[#F8FBFE] py-14 sm:py-18 border-t border-[#E2E8F0] select-none">
+    <section id="section-bim-modeling" className="w-full bg-[#F8FBFE] py-10 sm:py-14 border-t border-[#E2E8F0] select-none">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
 
-        {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 pb-8 mb-10 border-b border-[#E2E8F0]">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 pb-6 mb-8 border-b border-[#E2E8F0]">
           <div>
             <div className="w-12 h-1 bg-[#0055FF] mb-3" />
             <div className="inline-flex items-center gap-2 px-2.5 py-0.5 bg-white border border-[#D2E4F9] text-[#0055FF] text-[10px] font-mono font-bold uppercase tracking-wider mb-2 shadow-xs">
@@ -57,29 +56,28 @@ export default function SectionBimDigitalModeling() {
           </p>
         </div>
 
-        {/* 3 BIM Feature Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {BIM_FEATURES.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
                 key={idx}
-                className="bg-white border border-[#E2E8F0] p-5 sm:p-7 hover:border-[#0055FF] shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white border border-[#E2E8F0] p-5 sm:p-6 hover:border-[#0055FF] shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
-                  <div className="w-10 h-10 bg-[#F0F6FE] border border-[#D2E4F9] flex items-center justify-center text-[#0055FF] mb-4 group-hover:bg-[#0055FF] group-hover:text-white transition-colors">
-                    <Icon className="w-5 h-5" />
+                  <div className="w-9 h-9 bg-[#F0F6FE] border border-[#D2E4F9] flex items-center justify-center text-[#0055FF] mb-3.5 group-hover:bg-[#0055FF] group-hover:text-white transition-colors">
+                    <Icon className="w-4.5 h-4.5" />
                   </div>
 
                   <h3 className="text-base sm:text-lg font-black text-[#0335ab] mb-2 group-hover:text-[#0055FF] transition-colors">
                     {item.title}
                   </h3>
 
-                  <p className="text-xs text-[#0051c5] leading-relaxed mb-4">
+                  <p className="text-xs text-[#0051c5] leading-relaxed mb-3.5">
                     {item.desc}
                   </p>
 
-                  <div className="space-y-2 pt-3 border-t border-[#F0F4F9]">
+                  <div className="space-y-1.5 pt-3 border-t border-[#F0F4F9]">
                     {item.points.map((pt, pIdx) => (
                       <div key={pIdx} className="flex items-start gap-2 text-xs font-semibold text-[#0335ab]">
                         <CheckCircle2 className="w-3.5 h-3.5 text-[#0055FF] shrink-0 mt-0.5" />
@@ -89,7 +87,7 @@ export default function SectionBimDigitalModeling() {
                   </div>
                 </div>
 
-                <div className="pt-4 mt-5 border-t border-[#F0F4F9] flex items-center justify-between text-[11px] font-mono font-bold text-slate-400 group-hover:text-[#0055FF] transition-colors">
+                <div className="pt-3.5 mt-4 border-t border-[#F0F4F9] flex items-center justify-between text-[11px] font-mono font-bold text-slate-400 group-hover:text-[#0055FF] transition-colors">
                   <span>DIGITAL CAPABILITY</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
