@@ -45,7 +45,7 @@ export default function BlogPage() {
             <Link href="/" className="hover:text-[#0055FF] transition-colors">
               Home
             </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+            <ChevronRight className="w-3.5 h-3.5 --text-main" />
             <span className="text-[#0055FF] font-bold">Articles &amp; Insights</span>
           </div>
         </div>
@@ -63,7 +63,7 @@ export default function BlogPage() {
         </section>
 
         <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-          
+
           {/* Featured Article Spotlight (Full Width) */}
           <div className="mb-6">
             <Link
@@ -88,7 +88,7 @@ export default function BlogPage() {
                 {/* Content Right (5 cols) */}
                 <div className="lg:col-span-5 p-5 sm:p-7 lg:p-8 flex flex-col justify-between">
                   <div>
-                    <div className="flex items-center gap-3 text-xs text-slate-500 font-medium mb-2.5">
+                    <div className="flex items-center gap-3 text-xs --text-main font-medium mb-2.5">
                       <span className="flex items-center gap-1">
                         <Calendar className="w-3.5 h-3.5 text-[#0055FF]" />
                         {featuredPost.date}
@@ -110,7 +110,7 @@ export default function BlogPage() {
                   </div>
 
                   <div className="pt-3 border-t border-[#E2E8F0] flex items-center justify-between">
-                    <span className="text-xs font-bold text-slate-500">
+                    <span className="text-xs font-bold --text-main">
                       By {featuredPost.author}
                     </span>
                     <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0055FF] group-hover:translate-x-1 transition-transform">
@@ -130,11 +130,10 @@ export default function BlogPage() {
                 <button
                   key={i}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-3 py-1 text-[11px] font-mono font-bold uppercase tracking-wider transition-all cursor-pointer border ${
-                    selectedCategory === cat
-                      ? "bg-[#0055FF] text-white border-[#0055FF] shadow-xs"
-                      : "bg-white text-[#0335ab] border-[#D2E4F9] hover:border-[#0055FF]"
-                  }`}
+                  className={`px-3 py-1 text-[11px] font-mono font-bold uppercase tracking-wider transition-all cursor-pointer border ${selectedCategory === cat
+                    ? "bg-[#0055FF] text-white border-[#0055FF] shadow-xs"
+                    : "bg-white text-[#0335ab] border-[#D2E4F9] hover:border-[#0055FF]"
+                    }`}
                 >
                   {cat}
                 </button>
@@ -149,18 +148,18 @@ export default function BlogPage() {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-8 pr-3 py-1 text-xs bg-white border border-[#D2E4F9] focus:border-[#0055FF] focus:outline-none text-[#0335ab] placeholder-slate-400"
               />
-              <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-1/2 -translate-y-1/2" />
+              <Search className="w-3.5 h-3.5 --text-main absolute left-2.5 top-1/2 -translate-y-1/2" />
             </div>
           </div>
 
           {/* List Layout + Clean Sidebar (8 cols + 4 cols) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-            
+
             {/* Articles List (8 cols) */}
             <div className="lg:col-span-8 space-y-3.5">
               {filteredPosts.length === 0 ? (
                 <div className="p-8 text-center bg-white border border-[#E2E8F0]">
-                  <p className="text-sm font-bold text-slate-500">
+                  <p className="text-sm font-bold --text-main">
                     No articles found matching your search.
                   </p>
                 </div>
@@ -172,7 +171,7 @@ export default function BlogPage() {
                     className="group block bg-white border border-[#E2E8F0] hover:border-[#0055FF] shadow-xs hover:shadow-md transition-all duration-200 p-4"
                   >
                     <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
-                      
+
                       {/* Thumbnail */}
                       <div className="sm:col-span-4 relative aspect-[16/10] overflow-hidden bg-[#F0F6FE] border border-[#E2E8F0] shrink-0">
                         <img
@@ -190,7 +189,7 @@ export default function BlogPage() {
                       {/* Content */}
                       <div className="sm:col-span-8 flex flex-col justify-between">
                         <div>
-                          <div className="flex items-center gap-2 text-[11px] font-mono text-slate-500 mb-1">
+                          <div className="flex items-center gap-2 text-[11px] font-mono --text-main mb-1">
                             <span>{post.date}</span>
                             <span>•</span>
                             <span>{post.readTime}</span>
@@ -206,7 +205,7 @@ export default function BlogPage() {
                         </div>
 
                         <div className="flex items-center justify-between pt-1.5 border-t border-[#F0F4F9] text-xs font-bold">
-                          <span className="text-[11px] text-slate-500 font-semibold">
+                          <span className="text-[11px] --text-main font-semibold">
                             By {post.author}
                           </span>
                           <span className="inline-flex items-center gap-1 text-[#0055FF] group-hover:translate-x-1 transition-transform text-xs">
@@ -224,7 +223,7 @@ export default function BlogPage() {
 
             {/* Clean Sidebar (4 cols) */}
             <div className="lg:col-span-4 space-y-4">
-              
+
               {/* Recent Articles */}
               <div className="bg-white border border-[#D2E4F9] p-5 shadow-xs">
                 <div className="w-8 h-1 bg-[#0055FF] mb-2.5" />
@@ -238,7 +237,7 @@ export default function BlogPage() {
                       href={`/blog/${rPost.slug}`}
                       className="group block pb-2.5 border-b border-[#F0F4F9] last:border-0 last:pb-0"
                     >
-                      <div className="text-[10px] font-mono text-slate-400 mb-0.5">
+                      <div className="text-[10px] font-mono --text-main mb-0.5">
                         {rPost.date} • {rPost.category}
                       </div>
                       <h4 className="text-xs font-bold text-[#0335ab] group-hover:text-[#0055FF] transition-colors leading-snug">

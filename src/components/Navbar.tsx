@@ -411,7 +411,7 @@ const NAV_TABS: NavTab[] = [
           {
             title: "Open Engineering Positions",
             desc: "Join our licensed PE/SE structural teams, Tekla detailers, and FEA specialists.",
-            href: "/careers",
+            href: "#",
             icon: Briefcase,
           },
         ],
@@ -593,9 +593,8 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
                         setSelectedRegion(reg.code);
                         setRegionOpen(false);
                       }}
-                      className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between hover:bg-[#F0F6FE] transition-colors ${
-                        selectedRegion === reg.code ? "font-bold text-[#0055FF] bg-[#F8FBFE]" : "text-[#0335ab]"
-                      }`}
+                      className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between hover:bg-[#F0F6FE] transition-colors ${selectedRegion === reg.code ? "font-bold text-[#0055FF] bg-[#F8FBFE]" : "text-[#0335ab]"
+                        }`}
                     >
                       <span>{reg.name}</span>
                       <span className="font-mono text-[10px] text-[#0051c5] font-bold">{reg.code}</span>

@@ -31,9 +31,9 @@ export default function CompanyPage() {
   const [searchOpen, setSearchOpen] = useState(false);
 
   const stats = [
-    { value: "25+", label: "Years of Engineering Excellence" },
-    { value: "1,200+", label: "Infrastructure Projects Completed" },
-    { value: "48", label: "US States & Territories Served" },
+    { value: "0", label: "Years of Engineering Excellence" },
+    { value: "0", label: "Infrastructure Projects Completed" },
+    { value: "0", label: "US States & Territories Served" },
     { value: "100%", label: "PCI & ACI Standard Compliance" },
   ];
 
@@ -64,7 +64,7 @@ export default function CompanyPage() {
     {
       name: "Marcus Vance, PE, SE",
       role: "Chief Executive Officer & Principal Structural Engineer",
-      bio: "Over 28 years of specialty precast concrete engineering, segmental bridge design, and major DOT infrastructure leadership across North America.",
+      bio: "Over 0 years of specialty precast concrete engineering, segmental bridge design, and major DOT infrastructure leadership across North America.",
       specialty: "Segmental Bridges & Heavy Civil",
     },
     {
@@ -87,28 +87,28 @@ export default function CompanyPage() {
     },
   ];
 
-  const milestones = [
-    {
-      year: "1999",
-      title: "Founding & Specialty Precast Focus",
-      desc: "Established as a dedicated structural engineering consultancy focused on specialty precast bridge components and custom concrete detailing.",
-    },
-    {
-      year: "2007",
-      title: "National DOT Expansion",
-      desc: "Earned pre-qualification across 20+ State Departments of Transportation for bridge superstructure design and Accelerated Bridge Construction (ABC).",
-    },
-    {
-      year: "2016",
-      title: "Digital Twin & 3D BIM Detailing Hub",
-      desc: "Integrated full LOD 400 parametric BIM modeling directly with automated precast manufacturing machinery and laser projection systems.",
-    },
-    {
-      year: "2024",
-      title: "Next-Generation Intelligent Infrastructure",
-      desc: "Pioneering sensor-embedded precast elements, low-carbon geopolymer concrete analysis, and automated QA/QC scanning workflows.",
-    },
-  ];
+  // const milestones = [
+  //   {
+  //     year: "1999",
+  //     title: "Founding & Specialty Precast Focus",
+  //     desc: "Established as a dedicated structural engineering consultancy focused on specialty precast bridge components and custom concrete detailing.",
+  //   },
+  //   {
+  //     year: "2007",
+  //     title: "National DOT Expansion",
+  //     desc: "Earned pre-qualification across 20+ State Departments of Transportation for bridge superstructure design and Accelerated Bridge Construction (ABC).",
+  //   },
+  //   {
+  //     year: "2016",
+  //     title: "Digital Twin & 3D BIM Detailing Hub",
+  //     desc: "Integrated full LOD 400 parametric BIM modeling directly with automated precast manufacturing machinery and laser projection systems.",
+  //   },
+  //   {
+  //     year: "2024",
+  //     title: "Next-Generation Intelligent Infrastructure",
+  //     desc: "Pioneering sensor-embedded precast elements, low-carbon geopolymer concrete analysis, and automated QA/QC scanning workflows.",
+  //   },
+  // ];
 
   return (
     <div className="min-h-screen w-full bg-[#FFFFFF] text-[#0335ab] flex flex-col font-sans selection:bg-[#0085f4] selection:text-white">
@@ -130,7 +130,7 @@ export default function CompanyPage() {
         {/* Hero Section */}
         <section className="w-full bg-gradient-to-b from-[#00236E] to-[#00174A] text-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8 xl:px-10 border-b-2 border-[#0055FF] relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(0,133,244,0.18),transparent_50%)] pointer-events-none" />
-          
+
           <div className="w-full max-w-[1400px] mx-auto relative z-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0055FF]/20 border border-[#0085f4]/40 text-[#60A5FA] text-xs font-mono font-bold uppercase tracking-widest mb-4">
               <Building2 className="w-3.5 h-3.5 text-[#60A5FA]" />
@@ -242,7 +242,7 @@ export default function CompanyPage() {
                 </h2>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {milestones.map((m, idx) => (
                   <div key={idx} className="bg-white border border-[#D2E4F9] p-6 flex flex-col justify-between card-hover-lift">
                     <div>
@@ -262,13 +262,13 @@ export default function CompanyPage() {
                     </div>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </ScrollReveal>
           </div>
         </section>
 
         {/* Executive Leadership Team */}
-        <section className="w-full py-16 sm:py-20 px-4 sm:px-6 lg:px-8 xl:px-10 bg-[#FFFFFF]">
+        {/* <section className="w-full py-16 sm:py-20 px-4 sm:px-6 lg:px-8 xl:px-10 bg-[#FFFFFF]">
           <div className="w-full max-w-[1400px] mx-auto">
             <ScrollReveal>
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 mb-10 border-b border-[#E2E8F0]">
@@ -317,7 +317,7 @@ export default function CompanyPage() {
               </div>
             </ScrollReveal>
           </div>
-        </section>
+        </section> */}
 
         {/* Corporate Consultation CTA */}
         <section className="w-full bg-[#00236E] text-white py-14 px-4 sm:px-6 lg:px-8 xl:px-10 border-t-2 border-[#0055FF]">
