@@ -1,0 +1,257 @@
+.footer {
+    background: linear-gradient(180deg, #0055ff 0%, #0047e0 100%);
+    color: #ffffff;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 64px 0 28px 0;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 2.2fr 1.2fr 1.2fr 1.1fr 1.6fr;
+    gap: 40px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.brandCol {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.logoLink {
+    display: inline-block;
+    width: fit-content;
+}
+
+.logoWrapper {
+    background-color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    display: inline-flex;
+    align-items: center;
+}
+
+.logoImg {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+}
+
+.brandDesc {
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 1.65;
+    max-width: 360px;
+    font-weight: 500;
+}
+
+.badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+.badge {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+    padding: 5px 12px;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 3px;
+}
+
+.linkCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.colTitle {
+    font-size: 13px;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.colTitle::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 28px;
+    height: 2.5px;
+    background-color: #ffffff;
+    border-radius: 1px;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+}
+
+.link {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+    opacity: 0.95;
+}
+
+.link:hover {
+    color: #ffffff;
+    opacity: 1;
+    transform: translateX(4px);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.contactCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.contactList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+.contactItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+.contactItem a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.contactItem a:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.icon {
+    color: #ffffff;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.bottomBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    font-size: 13px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.bottomText {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.sep {
+    opacity: 0.6;
+}
+
+.bottomLinks {
+    display: flex;
+    gap: 22px;
+}
+
+.bottomLinks a {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.bottomLinks a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+    .grid {
+        grid-template-columns: 2fr 1.1fr 1.1fr 1.3fr;
+    }
+    .contactCol {
+        grid-column: span 4;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 860px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+    .brandCol,
+    .contactCol {
+        grid-column: span 2;
+    }
+    .bottomBar {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+    .bottomLinks {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 540px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    .brandCol,
+    .contactCol {
+        grid-column: span 1;
+    }
+    .bottomText {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    .sep {
+        display: none;
+    }
+}
