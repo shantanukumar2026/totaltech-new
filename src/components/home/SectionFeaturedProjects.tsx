@@ -88,11 +88,12 @@ export default function SectionFeaturedProjects() {
             <div className="w-12 h-1 bg-[#0055FF] mb-3" />
 
             <div className="inline-flex items-center gap-2 px-2.5 py-0.5 bg-white border border-[#D2E4F9] text-[#0055FF] text-[10px] font-mono font-bold uppercase tracking-wider mb-2 shadow-xs">
-              <span>09 | INFRASTRUCTURE APPLICATIONS</span>
+              <span className="live-pulse-dot" />
+              <span>08 | APPLICATIONS</span>
             </div>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0335ab] tracking-tight">
-              Featured Precast Infrastructure Applications
+              Precast Applications
             </h2>
           </div>
 
@@ -123,7 +124,7 @@ export default function SectionFeaturedProjects() {
           {filtered.map((project) => (
             <div
               key={project.id}
-              className="bg-white border border-[#E2E8F0] hover:border-[#0055FF] shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between group overflow-hidden"
+              className="bg-white border border-[#E2E8F0] hover:border-[#0055FF] shadow-xs card-hover-lift flex flex-col justify-between group overflow-hidden"
             >
               <div>
 

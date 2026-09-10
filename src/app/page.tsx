@@ -17,6 +17,8 @@ import SectionFeaturedProjects from "@/components/home/SectionFeaturedProjects";
 import CorporateContactSection from "@/components/CorporateContactSection";
 import Footer from "@/components/Footer";
 
+import ScrollReveal from "@/components/ScrollReveal";
+
 export default function Home() {
   const [searchOpen, setSearchOpen] = useState(false);
 
@@ -33,17 +35,50 @@ export default function Home() {
         <HeroSlider />
       </div>
 
-      <CardShowcase />
-      <OurMarkets />
-      <SectionWhoWeAre />
-      <SectionPrecastSpecialtyEngineering />
-      <SectionPrecastMarkets />
-      <SectionBimDigitalModeling />
-      <SectionConstructabilityErection />
-      <SectionPrecastDigitalMarketing />
-      <SectionPrecastStandards />
-      <SectionFeaturedProjects />
-      <CorporateContactSection />
+      <ScrollReveal>
+        <CardShowcase />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <OurMarkets />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <SectionWhoWeAre />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <SectionPrecastSpecialtyEngineering />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <SectionPrecastMarkets />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <SectionBimDigitalModeling />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <SectionConstructabilityErection />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <SectionPrecastDigitalMarketing />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <SectionPrecastStandards />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <SectionFeaturedProjects />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <CorporateContactSection />
+      </ScrollReveal>
+
       <Footer />
     </main>
   );

@@ -467,7 +467,7 @@ export default function CardShowcase() {
                     <Link
                       key={card.id}
                       href={`/solutions/${card.slug}`}
-                      className="bg-white border border-[#E2E8F0] hover:border-[#0055FF] shadow-xs hover:shadow-xl hover:shadow-blue-900/10 transition-all duration-300 flex flex-col justify-between group cursor-pointer overflow-hidden"
+                      className="bg-white border border-[#E2E8F0] hover:border-[#0055FF] shadow-xs card-hover-lift flex flex-col justify-between group cursor-pointer overflow-hidden"
                     >
                       <div>
                         {/* Image */}

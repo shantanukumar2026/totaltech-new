@@ -94,6 +94,7 @@ export default function SectionPrecastMarkets() {
             <div className="w-12 h-1 bg-[#0055FF] mb-3" />
 
             <div className="inline-flex items-center gap-2 px-2.5 py-0.5 bg-[#F0F6FE] border border-[#D2E4F9] text-[#0055FF] text-[10px] font-mono font-bold uppercase tracking-wider mb-2">
+              <span className="live-pulse-dot" />
               <span>04 | INFRASTRUCTURE SECTORS</span>
             </div>
 
@@ -117,7 +118,7 @@ export default function SectionPrecastMarkets() {
             return (
               <div
                 key={idx}
-                className="bg-[#F8FBFE] border border-[#E2E8F0] p-5 sm:p-6 hover:border-[#0055FF] shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between group"
+                className="bg-[#F8FBFE] border border-[#E2E8F0] p-5 sm:p-6 hover:border-[#0055FF] shadow-xs card-hover-lift flex flex-col justify-between group"
               >
                 <div>
 

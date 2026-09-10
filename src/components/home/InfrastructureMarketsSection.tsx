@@ -51,7 +51,7 @@ export default function InfrastructureMarketsSection() {
           <div className="max-w-3xl">
             <div className="w-12 h-1 bg-[#0055FF] mb-3" />
             <div className="inline-flex items-center gap-2 px-2.5 py-0.5 bg-white border border-[#D2E4F9] text-[#0055FF] text-[10px] font-mono font-bold uppercase tracking-wider mb-2 shadow-xs">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#0055FF]" />
+              <span className="live-pulse-dot" />
               <span>05 — INFRASTRUCTURE MARKETS</span>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0335ab] tracking-tight">
@@ -70,7 +70,7 @@ export default function InfrastructureMarketsSection() {
             return (
               <div
                 key={idx}
-                className="bg-white border border-[#E2E8F0] p-6 sm:p-7 hover:border-[#0055FF] shadow-xs hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white border border-[#E2E8F0] p-6 sm:p-7 hover:border-[#0055FF] shadow-xs card-hover-lift flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-5">

@@ -96,6 +96,7 @@ export default function SectionPrecastSpecialtyEngineering() {
             <div className="w-12 h-1 bg-[#0055FF] mb-3" />
 
             <div className="inline-flex items-center gap-2 px-2.5 py-0.5 bg-white border border-[#D2E4F9] text-[#0055FF] text-[10px] font-mono font-bold uppercase tracking-wider mb-2 shadow-xs">
+              <span className="live-pulse-dot" />
               <span>03 | SPECIALTY PRECAST ENGINEERING</span>
             </div>
 
