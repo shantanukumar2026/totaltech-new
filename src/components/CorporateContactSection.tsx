@@ -122,11 +122,10 @@ export default function CorporateContactSection() {
                 <button
                   key={office.id}
                   onClick={() => setActiveOfficeId(office.id)}
-                  className={`text-left p-5 border transition-all duration-200 relative cursor-pointer ${
-                    isSelected
-                      ? "bg-[#F0F6FE] border-[#0055FF] shadow-sm"
-                      : "bg-white border-[#E2E8F0] hover:border-[#0085f4] hover:bg-[#F8FBFE]"
-                  }`}
+                  className={`text-left p-5 border transition-all duration-200 relative cursor-pointer ${isSelected
+                    ? "bg-[#F0F6FE] border-[#0055FF] shadow-sm"
+                    : "bg-white border-[#E2E8F0] hover:border-[#0085f4] hover:bg-[#F8FBFE]"
+                    }`}
                 >
                   {isSelected && (
                     <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#0055FF]" />
@@ -144,11 +143,10 @@ export default function CorporateContactSection() {
                       )}
                     </div>
                     <ChevronRight
-                      className={`w-4 h-4 transition-transform ${
-                        isSelected
-                          ? "text-[#0055FF] translate-x-1"
-                          : "text-[#94A3B8]"
-                      }`}
+                      className={`w-4 h-4 transition-transform ${isSelected
+                        ? "text-[#0055FF] translate-x-1"
+                        : "text-[#94A3B8]"
+                        }`}
                     />
                   </div>
 

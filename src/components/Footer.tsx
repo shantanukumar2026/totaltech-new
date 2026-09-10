@@ -27,12 +27,12 @@ export default function Footer() {
   ];
 
   const designStandards = [
-    { label: "ACI / PCI CODE-319-25 Precast Code", href: "/contact" },
-    { label: "ACI CODE-318-25 Building Requirements", href: "/contact" },
-    { label: "PCI Design Handbook (9th Edition)", href: "/contact" },
-    { label: "AASHTO LRFD Bridge Specifications", href: "/contact" },
-    { label: "AREMA Manual for Railway Engineering", href: "/contact" },
-    { label: "ASTM Material QA Standards (C39/C143)", href: "/contact" },
+    { label: "ACI / PCI CODE-319-25 Precast Code", href: "/quality-standards" },
+    { label: "ACI CODE-318-25 Building Requirements", href: "/quality-standards" },
+    { label: "PCI Design Handbook (9th Edition)", href: "/quality-standards" },
+    { label: "AASHTO LRFD Bridge Specifications", href: "/quality-standards" },
+    { label: "AREMA Manual for Railway Engineering", href: "/quality-standards" },
+    { label: "ASTM Material QA Standards (C39/C143)", href: "/quality-standards" },
   ];
 
   return (
@@ -93,17 +93,17 @@ export default function Footer() {
 
             {/* Industry Badges */}
             <div className={styles.badgesWrapper}>
-              <span className={styles.badge}>PCI Certified</span>
-              <span className={styles.badge}>ACI 318/319</span>
-              <span className={styles.badge}>AASHTO LRFD</span>
-              <span className={styles.badge}>ISO 9001:2015</span>
+              <Link href="/quality-standards" className={styles.badge}>PCI Certified</Link>
+              <Link href="/quality-standards" className={styles.badge}>ACI 318/319</Link>
+              <Link href="/quality-standards" className={styles.badge}>AASHTO LRFD</Link>
+              <Link href="/quality-standards" className={styles.badge}>ISO 9001:2015</Link>
             </div>
           </div>
 
           {/* Column 2: Solutions */}
           <div className={styles.navCard}>
             <div className={styles.cardHeader}>
-              <Layers className="w-4 h-4 text-[#ffffff]" />
+              <Layers className="w-4 h-4 text-[#FF7A00]" />
               <h4 className={styles.colTitle}>Solutions</h4>
             </div>
             <ul className={styles.linkList}>
@@ -121,7 +121,7 @@ export default function Footer() {
           {/* Column 3: Codes & Standards */}
           <div className={styles.navCard}>
             <div className={styles.cardHeader}>
-              <FileCheck2 className="w-4 h-4 text-[#ffffff]" />
+              <FileCheck2 className="w-4 h-4 text-[#FF7A00]" />
               <h4 className={styles.colTitle}>Codes & Standards</h4>
             </div>
             <ul className={styles.linkList}>
@@ -139,14 +139,14 @@ export default function Footer() {
           {/* Column 4: Headquarters Contact */}
           <div className={styles.contactCard}>
             <div className={styles.cardHeader}>
-              <Building2 className="w-4 h-4 text-[#ffffff]" />
+              <Building2 className="w-4 h-4 text-[#FF7A00]" />
               <h4 className={styles.colTitle}>Headquarters</h4>
             </div>
 
             <div className={styles.contactInfoList}>
               <div className={styles.contactRow}>
                 <div className={styles.contactIconWrapper}>
-                  <MapPin className="w-4 h-4 text-[#ffffff]" />
+                  <MapPin className="w-4 h-4 text-[#FF7A00]" />
                 </div>
                 <div>
                   <span className={styles.contactSubhead}>Corporate Office</span>
@@ -156,7 +156,7 @@ export default function Footer() {
 
               <div className={styles.contactRow}>
                 <div className={styles.contactIconWrapper}>
-                  <Phone className="w-4 h-4 text-[#ffffff]" />
+                  <Phone className="w-4 h-4 text-[#FF7A00]" />
                 </div>
                 <div>
                   <span className={styles.contactSubhead}>Telephone</span>
@@ -168,7 +168,7 @@ export default function Footer() {
 
               <div className={styles.contactRow}>
                 <div className={styles.contactIconWrapper}>
-                  <Mail className="w-4 h-4 text-[#ffffff]" />
+                  <Mail className="w-4 h-4 text-[#FF7A00]" />
                 </div>
                 <div>
                   <span className={styles.contactSubhead}>Email Inquiries</span>
@@ -180,7 +180,7 @@ export default function Footer() {
 
               <div className={styles.contactRow}>
                 <div className={styles.contactIconWrapper}>
-                  <Clock className="w-4 h-4 text-[#ffffff]" />
+                  <Clock className="w-4 h-4 text-[#FF7A00]" />
                 </div>
                 <div>
                   <span className={styles.contactSubhead}>Office Hours</span>
@@ -199,9 +199,9 @@ export default function Footer() {
 
           <div className={styles.bottomLinks}>
             <Link href="/contact" className={styles.bottomLink}>Office Directory</Link>
-            <Link href="/contact" className={styles.bottomLink}>Quality & Standards</Link>
-            <Link href="/contact" className={styles.bottomLink}>Privacy Policy</Link>
-            <Link href="/contact" className={styles.bottomLink}>Terms & Conditions</Link>
+            <Link href="/quality-standards" className={styles.bottomLink}>Quality & Standards</Link>
+            <Link href="/privacy-policy" className={styles.bottomLink}>Privacy Policy</Link>
+            <Link href="/terms" className={styles.bottomLink}>Terms & Conditions</Link>
           </div>
         </div>
       </div>
