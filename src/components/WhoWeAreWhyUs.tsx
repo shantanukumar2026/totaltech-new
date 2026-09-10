@@ -69,7 +69,7 @@ const STEPS = [
 export default function WhoWeAreWhyUs() {
   return (
     <section className="w-full bg-[#F8FBFE] py-14 sm:py-18 border-t border-[#E2E8F0] select-none">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
         
         {/* Header spanning 80% width with no stat boxes */}
         <div className="w-full lg:w-[80%] mb-12 pb-8 border-b border-[#E2E8F0]">

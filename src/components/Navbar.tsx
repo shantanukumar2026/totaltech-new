@@ -507,80 +507,61 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
       <header className="w-full bg-[#0055FF] border-b-2 border-[#0085f4] text-white shadow-[0_4px_24px_rgba(0,85,255,0.35)]">
         <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#00bbff] to-transparent opacity-90" />
 
-        <div className="w-full h-16 flex items-center">
-          <a
-            href="/"
-            className="flex items-center justify-center h-full w-[285px] bg-white shrink-0 px-5"
-          >
-            <Logo className="h-full w-auto py-2" />
-          </a>
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 h-16 flex items-center justify-between">
+          <div className="flex items-center h-full">
+            <a
+              href="/"
+              className="flex items-center justify-center h-full w-[220px] sm:w-[260px] bg-white shrink-0 px-4 sm:px-5"
+            >
+              <Logo className="h-full w-auto py-2" />
+            </a>
 
-          <nav className="hidden lg:flex items-stretch h-full ml-8 gap-0.5">
-            {NAV_TABS.map((tab) => {
-              const isActive = activeTabName === tab.name;
+            <nav className="hidden lg:flex items-stretch h-full ml-4 xl:ml-6 gap-0.5">
+              {NAV_TABS.map((tab) => {
+                const isActive = activeTabName === tab.name;
 
-              return tab.href ? (
-                <Link
-                  key={tab.name}
-                  href={tab.href}
-                  className={`px-4 sm:px-5 h-full text-[13.5px] font-semibold tracking-normal transition-all flex items-center gap-1.5 ${isActive
-                    ? "bg-white text-[#0055FF] font-bold shadow-xs border-t-2 border-[#00bbff]"
-                    : "text-white hover:text-white hover:bg-white/10"
-                    }`}
-                >
-                  <span>{tab.name} </span>
+                return tab.href ? (
+                  <Link
+                    key={tab.name}
+                    href={tab.href}
+                    className={`px-3.5 xl:px-4 h-full text-[13.5px] font-semibold tracking-normal transition-all flex items-center gap-1.5 ${isActive
+                      ? "bg-white text-[#0055FF] font-bold shadow-xs border-t-2 border-[#00bbff]"
+                      : "text-white hover:text-white hover:bg-white/10"
+                      }`}
+                  >
+                    <span>{tab.name} </span>
+                  </Link>
+                ) : (
+                  <button
+                    key={tab.name}
+                    onClick={() =>
+                      handleTabToggle(tab.name, tab.hasMegaMenu)
+                    }
+                    onMouseEnter={() =>
+                      handleMouseEnterTab(tab.name, tab.hasMegaMenu)
+                    }
+                    className={`px-3.5 xl:px-4 h-full text-[13.5px] font-semibold tracking-normal transition-all flex items-center gap-1.5 cursor-pointer group relative ${isActive
+                      ? "bg-white text-[#0055FF] font-bold shadow-xs border-t-2 border-[#00bbff]"
+                      : "text-white hover:text-white hover:bg-white/10"
+                      }`}
+                  >
+                    <span>{tab.name}</span>
 
-                </Link>
-              ) : (
-                <button
-                  key={tab.name}
-                  onClick={() =>
-                    handleTabToggle(tab.name, tab.hasMegaMenu)
-                  }
-                  onMouseEnter={() =>
-                    handleMouseEnterTab(tab.name, tab.hasMegaMenu)
-                  }
-                  className={`px-4 sm:px-5 h-full text-[13.5px] font-semibold tracking-normal transition-all flex items-center gap-1.5 cursor-pointer group relative ${isActive
-                    ? "bg-white text-[#0055FF] font-bold shadow-xs border-t-2 border-[#00bbff]"
-                    : "text-white hover:text-white hover:bg-white/10"
-                    }`}
-                >
-                  <span>{tab.name}</span>
+                    {tab.hasMegaMenu && (
+                      <ChevronDown
+                        className={`w-3.5 h-3.5 transition-transform duration-200 ${isActive
+                          ? "rotate-180 text-[#0055FF]"
+                          : "text-white/80 group-hover:text-white"
+                          }`}
+                      />
+                    )}
+                  </button>
+                );
+              })}
+            </nav>
+          </div>
 
-                  {tab.hasMegaMenu && (
-                    <ChevronDown
-                      className={`w-3.5 h-3.5 transition-transform duration-200 ${isActive
-                        ? "rotate-180 text-[#0055FF]"
-                        : "text-white/80 group-hover:text-white"
-                        }`}
-                    />
-                  )}
-                </button>
-              )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            })}
-          </nav>
-
-          <div className="ml-auto flex items-center gap-2.5 sm:gap-3 pr-6 lg:pr-8">
+          <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
             <button
               onClick={handleSearchOpen}
               className="flex items-center gap-2 px-3 py-1.5 bg-white/15 hover:bg-white/25 border border-white/20 hover:border-white text-white transition-all cursor-pointer"
@@ -634,7 +615,6 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
                 <Menu className="w-5 h-5" />
               )}
             </button>
-
           </div>
         </div>
       </header >
@@ -645,7 +625,7 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
           onMouseLeave={() => setActiveTabName(null)}
           className="w-full bg-white border-b-2 border-[#0055FF] shadow-2xl shadow-blue-900/15 animate-in fade-in duration-150"
         >
-          <div className="max-w-[1440px] mx-auto min-h-[380px] flex flex-col md:flex-row">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 min-h-[380px] flex flex-col md:flex-row">
             <div className="w-full md:w-80 bg-[#F4F8FD] border-r border-[#E2E8F0] py-4 shrink-0">
               <div className="space-y-1">
                 {activeTab.subcategories.map((subcat) => {

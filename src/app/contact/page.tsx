@@ -20,7 +20,7 @@ export default function ContactPage() {
       <div className="flex-1 w-full pt-[66px]">
         {/* Breadcrumbs Bar */}
         <div className="w-full bg-[#F0F6FE] border-b border-[#D2E4F9]">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 py-3.5 flex items-center gap-2 text-xs font-semibold text-[#0051c5]">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 py-3.5 flex items-center gap-2 text-xs font-semibold text-[#0051c5]">
             <Link href="/" className="hover:text-[#0055FF] transition-colors">
               Home
             </Link>

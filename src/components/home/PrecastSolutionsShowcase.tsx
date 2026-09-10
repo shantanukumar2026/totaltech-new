@@ -81,7 +81,7 @@ const ROWS: ShowcaseRow[] = [
 export default function PrecastSolutionsShowcase() {
   return (
     <section className="w-full bg-[#F8FBFE] py-16 sm:py-24 border-t border-[#E2E8F0] select-none">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">

@@ -95,7 +95,7 @@ export default function CorporateContactSection() {
 
   return (
     <section id="locations" className="w-full bg-[#FFFFFF] py-14 sm:py-20 border-t border-[#E2E8F0]">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 mb-10 border-b border-[#E2E8F0]">
           <div>

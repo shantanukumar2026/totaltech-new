@@ -414,8 +414,8 @@ export default function CardShowcase() {
     <div className="w-full bg-white select-none">
       {SECTIONS.map((section) => (
         <React.Fragment key={section.id}>
-          <section className="w-full py-10 sm:py-14 px-4 sm:px-6 lg:px-12 bg-white">
-            <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+          <section className="w-full py-10 sm:py-14 px-4 sm:px-6 lg:px-8 xl:px-10 bg-white">
+            <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
 
               {/* Section Introduction */}
               <div className="lg:col-span-4 flex flex-col justify-start">
@@ -519,7 +519,7 @@ export default function CardShowcase() {
           </section>
 
           {/* Divider */}
-          <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
             <hr className="border-t border-[#E2E8F0]" />
           </div>
         </React.Fragment>

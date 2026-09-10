@@ -109,7 +109,7 @@ const QUICK_STATS = [
 export default function StandardsFrameworkSection() {
   return (
     <section className="w-full bg-white py-14 sm:py-18 border-t border-[#E2E8F0] select-none">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
         
         {/* Balanced Full-Width Header with Governing Authority Badges (No Blank Space) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-12 pb-10 border-b border-[#E2E8F0]">

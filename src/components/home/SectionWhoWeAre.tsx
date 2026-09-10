@@ -31,7 +31,7 @@ export default function SectionWhoWeAre() {
 
   return (
     <section id="section-who-we-are" className="w-full bg-white py-10 sm:py-14 border-t border-[#E2E8F0] select-none">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center pb-8 mb-8 border-b border-[#E2E8F0]">
           <div className="lg:col-span-7 flex flex-col justify-start">

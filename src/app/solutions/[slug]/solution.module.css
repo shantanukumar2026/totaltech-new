@@ -21,15 +21,33 @@
 }
 
 .breadcrumbInner {
-  max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
-  padding: 14px 32px;
+  padding: 14px 16px;
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 13px;
   font-weight: 600;
   color: #0051c5;
+}
+
+@media (min-width: 640px) {
+  .breadcrumbInner {
+    padding: 14px 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .breadcrumbInner {
+    padding: 14px 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .breadcrumbInner {
+    padding: 14px 40px;
+  }
 }
 
 .breadcrumbLink {
@@ -59,15 +77,33 @@
 }
 
 .heroGrid {
-  max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 16px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: center;
   position: relative;
   z-index: 2;
+}
+
+@media (min-width: 640px) {
+  .heroGrid {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heroGrid {
+    padding: 0 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .heroGrid {
+    padding: 0 40px;
+  }
 }
 
 .heroTextCol {
@@ -167,9 +203,27 @@
 }
 
 .overviewContainer {
-  max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 16px;
+}
+
+@media (min-width: 640px) {
+  .overviewContainer {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .overviewContainer {
+    padding: 0 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .overviewContainer {
+    padding: 0 40px;
+  }
 }
 
 .accentBar {
@@ -205,9 +259,27 @@
 }
 
 .relatedContainer {
-  max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 16px;
+}
+
+@media (min-width: 640px) {
+  .relatedContainer {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .relatedContainer {
+    padding: 0 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .relatedContainer {
+    padding: 0 40px;
+  }
 }
 
 .relatedHeader {
