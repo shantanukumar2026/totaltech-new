@@ -62,7 +62,7 @@ export default function Footer() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a href="tel:+17722970700" className={styles.btnSecondary}>
-                <Phone className="w-4 h-4 text-[#ffffff]" />
+                <Phone className="w-4 h-4 text-[#00bbff]" />
                 <span>(772) 297-0700</span>
               </a>
             </div>
@@ -103,7 +103,7 @@ export default function Footer() {
           {/* Column 2: Solutions */}
           <div className={styles.navCard}>
             <div className={styles.cardHeader}>
-              <Layers className="w-4 h-4 text-[#ffffff]" />
+              <Layers className="w-4 h-4 text-[#00bbff]" />
               <h4 className={styles.colTitle}>Solutions</h4>
             </div>
             <ul className={styles.linkList}>
@@ -121,7 +121,7 @@ export default function Footer() {
           {/* Column 3: Codes & Standards */}
           <div className={styles.navCard}>
             <div className={styles.cardHeader}>
-              <FileCheck2 className="w-4 h-4 text-[#ffffff]" />
+              <FileCheck2 className="w-4 h-4 text-[#00bbff]" />
               <h4 className={styles.colTitle}>Codes & Standards</h4>
             </div>
             <ul className={styles.linkList}>
@@ -139,14 +139,14 @@ export default function Footer() {
           {/* Column 4: Headquarters Contact */}
           <div className={styles.contactCard}>
             <div className={styles.cardHeader}>
-              <Building2 className="w-4 h-4 text-[#ffffff]" />
+              <Building2 className="w-4 h-4 text-[#00bbff]" />
               <h4 className={styles.colTitle}>Headquarters</h4>
             </div>
 
             <div className={styles.contactInfoList}>
               <div className={styles.contactRow}>
                 <div className={styles.contactIconWrapper}>
-                  <MapPin className="w-4 h-4 text-[#ffffff]" />
+                  <MapPin className="w-4 h-4 text-[#00bbff]" />
                 </div>
                 <div>
                   <span className={styles.contactSubhead}>Corporate Office</span>
@@ -156,7 +156,7 @@ export default function Footer() {
 
               <div className={styles.contactRow}>
                 <div className={styles.contactIconWrapper}>
-                  <Phone className="w-4 h-4 text-[#ffffff]" />
+                  <Phone className="w-4 h-4 text-[#00bbff]" />
                 </div>
                 <div>
                   <span className={styles.contactSubhead}>Telephone</span>
@@ -168,7 +168,7 @@ export default function Footer() {
 
               <div className={styles.contactRow}>
                 <div className={styles.contactIconWrapper}>
-                  <Mail className="w-4 h-4 text-[#ffffff]" />
+                  <Mail className="w-4 h-4 text-[#00bbff]" />
                 </div>
                 <div>
                   <span className={styles.contactSubhead}>Email Inquiries</span>
@@ -180,7 +180,7 @@ export default function Footer() {
 
               <div className={styles.contactRow}>
                 <div className={styles.contactIconWrapper}>
-                  <Clock className="w-4 h-4 text-[#ffffff]" />
+                  <Clock className="w-4 h-4 text-[#00bbff]" />
                 </div>
                 <div>
                   <span className={styles.contactSubhead}>Office Hours</span>
