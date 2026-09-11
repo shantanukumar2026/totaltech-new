@@ -43,16 +43,16 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative w-full bg-[#021430] text-white font-sans overflow-hidden">
+    <footer className="relative w-full bg-[#00236e] text-white font-sans overflow-hidden">
       {/* ==================== TOP BANNER / CTA STRIP ==================== */}
-      <div className="relative w-full bg-gradient-to-r from-[#005be3] via-[#0047bf] to-[#002766] border-b border-blue-900/60 overflow-hidden shadow-2xl">
+      <div className="relative w-full bg-gradient-to-r from-[#0052cc] via-[#003899] to-[#00236e] border-b border-blue-900/60 overflow-hidden shadow-2xl">
         {/* Background Bridge Image on the right half */}
         <div className="absolute right-0 top-0 bottom-0 w-full md:w-1/2 lg:w-2/5 overflow-hidden pointer-events-none">
           <div
             className="absolute inset-0 bg-cover bg-center mix-blend-luminosity opacity-35 filter brightness-110 contrast-125"
             style={{ backgroundImage: "url('/infrastructure/bridge_overpass.jpg')" }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0047bf] via-[#003899]/85 to-[#002766]/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#003899] via-[#002c80]/85 to-[#00236e]/60" />
         </div>
 
         <div className="max-w-[1720px] mx-auto flex flex-col lg:flex-row items-stretch justify-between relative z-10">
@@ -388,7 +388,7 @@ export default function Footer() {
       </div>
 
       {/* ==================== BOTTOM COPYRIGHT BAR ==================== */}
-      <div className="w-full border-t border-slate-800/80 bg-[#010e24]/90 backdrop-blur-sm relative z-10">
+      <div className="w-full border-t border-blue-950/60 bg-[#001747]/95 backdrop-blur-sm relative z-10">
         <div className="max-w-[1720px] mx-auto px-6 sm:px-10 lg:px-12 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           {/* Copyright */}
           <div className="font-medium text-slate-400/90 text-center sm:text-left">

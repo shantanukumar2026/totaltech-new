@@ -1,11 +1,11 @@
 .footer {
-    background: linear-gradient(180deg, #0055FF 0%, #004ae3 50%, #003ebd 100%);
+    background: #00236e;
     color: #ffffff;
     border-top: 2px solid #0085f4;
     position: relative;
     overflow: hidden;
     width: 100%;
-    box-shadow: 0 -8px 30px rgba(0, 85, 255, 0.2);
+    box-shadow: 0 -8px 30px rgba(0, 35, 110, 0.2);
 }
 
 .topGlowLine {
