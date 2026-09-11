@@ -99,15 +99,15 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
+  padding: 8px 18px;
   background-color: rgba(0, 187, 255, 0.15);
   border: 1px solid rgba(0, 187, 255, 0.4);
   color: #00bbff;
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 800;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  border-radius: 2px;
+  border-radius: 9999px;
   margin-bottom: 20px;
 }
 
@@ -174,7 +174,7 @@
   width: 4px;
   height: 24px;
   background-color: #0055ff;
-  border-radius: 1px;
+  border-radius: 9999px;
 }
 
 .groupTitle {
@@ -188,11 +188,11 @@
   margin-left: auto;
   font-size: 12px;
   font-weight: 700;
-  padding: 4px 10px;
+  padding: 4px 14px;
   background-color: #f0f6fe;
   border: 1px solid #d2e4f9;
   color: #0055ff;
-  border-radius: 2px;
+  border-radius: 9999px;
 }
 
 .cardsGrid {
@@ -204,19 +204,20 @@
 .cardItem {
   background-color: #ffffff;
   border: 1px solid #d2e4f9;
-  border-radius: 2px;
+  border-radius: 20px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-decoration: none;
-  transition: all 0.25s ease;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(0, 85, 255, 0.05);
 }
 
 .cardItem:hover {
-  border-color: #0055ff;
-  box-shadow: 0 12px 32px rgba(0, 85, 255, 0.12);
-  transform: translateY(-3px);
+  border-color: #0085f4;
+  box-shadow: 0 16px 36px rgba(0, 85, 255, 0.14);
+  transform: translateY(-4px);
 }
 
 .cardMediaWrapper {
@@ -232,25 +233,26 @@
   top: 12px;
   left: 12px;
   background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
   color: #0055ff;
   font-size: 10px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 4px 8px;
-  border-radius: 2px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 5px 12px;
+  border-radius: 9999px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .mediaItem {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .cardItem:hover .mediaItem {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 .cardBody {
@@ -336,11 +338,11 @@
   font-size: 14px;
   font-weight: 800;
   text-decoration: none;
-  border-radius: 2px;
+  border-radius: 9999px;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
   flex-shrink: 0;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
 }
 
 .ctaBtn:hover {

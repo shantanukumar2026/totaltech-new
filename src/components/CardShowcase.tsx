@@ -414,12 +414,12 @@ export default function CardShowcase() {
     <div className="w-full bg-white select-none">
       {SECTIONS.map((section) => (
         <React.Fragment key={section.id}>
-          <section className="w-full py-10 sm:py-14 px-4 sm:px-6 lg:px-8 xl:px-10 bg-white">
+          <section className="w-full py-12 sm:py-16 px-4 sm:px-6 lg:px-8 xl:px-10 bg-white">
             <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
 
               {/* Section Introduction */}
               <div className="lg:col-span-4 flex flex-col justify-start">
-                <div className="w-12 h-1 bg-[#0055FF] mb-4" />
+                <div className="w-12 h-1 bg-[#0055FF] rounded-full mb-4" />
 
                 <h2 className="text-2xl sm:text-3xl font-black text-[#0335ab] tracking-tight mb-4">
                   {section.title}
@@ -433,7 +433,7 @@ export default function CardShowcase() {
                 <div className="relative">
                   <button
                     onClick={() => toggle(section.id)}
-                    className="inline-flex items-center gap-2 text-[13px] font-bold text-[#0055FF] hover:text-[#0335ab] transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-2 text-[13px] font-bold text-[#0055FF] hover:text-[#0335ab] transition-colors cursor-pointer bg-blue-50/70 hover:bg-blue-100/80 px-4 py-2 rounded-lg border border-blue-200/60"
                   >
                     <ChevronDown
                       className={`w-4 h-4 transition-transform duration-200 ${openLinks[section.id] ? "rotate-180" : ""
@@ -444,14 +444,14 @@ export default function CardShowcase() {
                   </button>
 
                   {openLinks[section.id] && (
-                    <div className="mt-3 p-4 bg-[#F8FAFD] border border-[#D2E4F9] shadow-xs space-y-2.5">
+                    <div className="mt-3 p-4 bg-[#F8FAFD] border border-[#D2E4F9] rounded-xl shadow-md space-y-2.5">
                       {section.quickLinks.map((link, i) => (
                         <Link
                           key={i}
                           href={link.href}
                           className="flex items-center gap-2 text-xs font-semibold text-[#0051c5] hover:text-[#0055FF] transition-colors"
                         >
-                          <ArrowRight className="w-3 h-3 text-[#0055FF]" />
+                          <ArrowRight className="w-3.5 h-3.5 text-[#0055FF]" />
                           <span>{link.label}</span>
                         </Link>
                       ))}
@@ -467,11 +467,11 @@ export default function CardShowcase() {
                     <Link
                       key={card.id}
                       href={`/solutions/${card.slug}`}
-                      className="bg-white border border-[#E2E8F0] hover:border-[#0055FF] shadow-xs card-hover-lift flex flex-col justify-between group cursor-pointer overflow-hidden"
+                      className="bg-white border border-[#E2E8F0] hover:border-[#0085f4] rounded-2xl shadow-sm hover:shadow-xl hover:shadow-blue-500/8 card-hover-lift flex flex-col justify-between group cursor-pointer overflow-hidden transition-all duration-300"
                     >
                       <div>
                         {/* Image */}
-                        <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#F0F7FF]">
+                        <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#F0F7FF] rounded-t-2xl">
                           <CardMedia
                             mediaUrl={card.mediaUrl}
                             imageUrl={card.imageUrl}
@@ -482,11 +482,11 @@ export default function CardShowcase() {
 
                           {/* Image Labels */}
                           <div className="absolute bottom-3 left-4 z-20 flex items-center gap-2">
-                            <span className="px-2.5 py-1 bg-white/95 text-[#0055FF] text-[10px] font-mono font-bold tracking-wider uppercase shadow-md border border-blue-100">
+                            <span className="px-3 py-1 bg-white/95 backdrop-blur-xs text-[#0055FF] text-[10px] font-mono font-bold tracking-wider uppercase rounded-full shadow-md border border-blue-100">
                               {card.category}
                             </span>
 
-                            <span className="px-2.5 py-1 bg-[#0055FF] text-white text-[10px] font-mono font-bold tracking-wider uppercase shadow-md">
+                            <span className="px-3 py-1 bg-gradient-to-r from-[#0052cc] to-[#0085f4] text-white text-[10px] font-mono font-bold tracking-wider uppercase rounded-full shadow-md">
                               {card.type}
                             </span>
                           </div>
@@ -494,7 +494,7 @@ export default function CardShowcase() {
 
                         {/* Card Content */}
                         <div className="p-6">
-                          <h3 className="text-[15px] sm:text-base font-extrabold text-[#0335ab] leading-snug group-hover:text-[#0055FF] transition-colors">
+                          <h3 className="text-[15px] sm:text-base font-extrabold text-[#0335ab] leading-snug group-hover:text-[#0085f4] transition-colors">
                             {card.title}
                           </h3>
 
@@ -506,9 +506,9 @@ export default function CardShowcase() {
 
                       {/* CTA */}
                       <div className="px-6 pb-6 pt-1">
-                        <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0055FF] group-hover:translate-x-1 transition-transform">
+                        <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0055FF] group-hover:text-[#0085f4] group-hover:translate-x-1.5 transition-all">
                           <span>Read More</span>
-                          <ArrowRight className="w-3.5 h-3.5 text-[#0055FF]" />
+                          <ArrowRight className="w-3.5 h-3.5 text-[#0055FF] group-hover:text-[#0085f4]" />
                         </span>
                       </div>
                     </Link>

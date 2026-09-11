@@ -36,45 +36,75 @@
   }
 }
 
-.sharp-border {
-  border-radius: 0 !important;
+/* Modern Premium UI Tokens & Utilities */
+.rounded-tech-sm {
+  border-radius: 0.5rem;
+}
+
+.rounded-tech {
+  border-radius: 0.875rem;
+}
+
+.rounded-tech-lg {
+  border-radius: 1.25rem;
+}
+
+.rounded-tech-xl {
+  border-radius: 1.75rem;
 }
 
 .gradient-techno-text {
-  background: linear-gradient(135deg, #005dff 0%, #0085f4 50%, #00bbff 100%);
+  background: linear-gradient(135deg, #0052cc 0%, #0085f4 50%, #00bbff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gradient-techno-btn {
-  background: linear-gradient(135deg, #005dff 0%, #0085f4 100%);
+  background: linear-gradient(135deg, #0052cc 0%, #0085f4 100%);
   color: #ffffff;
-  transition: all 0.25s ease;
+  border-radius: 0.625rem;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(0, 133, 244, 0.25);
 }
 
 .gradient-techno-btn:hover {
-  background: linear-gradient(135deg, #005dff 0%, #00bbff 100%);
-  box-shadow: 0 4px 18px rgba(0, 133, 244, 0.35);
+  background: linear-gradient(135deg, #0047bf 0%, #00a2ff 100%);
+  box-shadow: 0 6px 20px rgba(0, 133, 244, 0.4);
+  transform: translateY(-1.5px);
+}
+
+.gradient-orange-btn {
+  background: linear-gradient(135deg, #ff5a00 0%, #ff7a1a 100%);
+  color: #ffffff;
+  border-radius: 0.625rem;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(255, 90, 0, 0.28);
+}
+
+.gradient-orange-btn:hover {
+  background: linear-gradient(135deg, #e65100 0%, #ff8a33 100%);
+  box-shadow: 0 6px 20px rgba(255, 90, 0, 0.42);
+  transform: translateY(-1.5px);
 }
 
 .border-techno-glow:hover {
   border-color: #0085f4;
-  box-shadow: 0 0 15px rgba(0, 187, 255, 0.25);
+  box-shadow: 0 0 20px rgba(0, 133, 244, 0.2);
 }
 
 .techno-blue-mesh {
   background-color: #F8FBFE;
   background-image:
-    radial-gradient(at 10% 15%, rgba(0, 133, 244, 0.09) 0px, transparent 50%),
-    radial-gradient(at 88% 25%, rgba(0, 187, 255, 0.11) 0px, transparent 50%),
-    radial-gradient(at 50% 85%, rgba(0, 4, 173, 0.05) 0px, transparent 60%);
+    radial-gradient(at 10% 15%, rgba(0, 133, 244, 0.08) 0px, transparent 50%),
+    radial-gradient(at 88% 25%, rgba(0, 187, 255, 0.09) 0px, transparent 50%),
+    radial-gradient(at 50% 85%, rgba(0, 85, 255, 0.04) 0px, transparent 60%);
 }
 
 .techno-grid-pattern {
   background-size: 40px 40px;
   background-image:
-    linear-gradient(to right, rgba(0, 133, 244, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 133, 244, 0.06) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 133, 244, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 133, 244, 0.05) 1px, transparent 1px);
 }
 
 /* Modern Performance Animations */
@@ -126,8 +156,8 @@
 
 .card-hover-lift:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 28px -4px rgba(0, 85, 255, 0.12);
-  border-color: #0055ff;
+  box-shadow: 0 16px 32px -6px rgba(0, 85, 255, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+  border-color: #0085f4;
 }
 
 .shimmer-hover {
@@ -145,7 +175,7 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.18) 50%,
     transparent 100%
   );
   background-size: 200% 100%;
@@ -164,8 +194,8 @@
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
 }
 
 ::-webkit-scrollbar-track {
@@ -174,7 +204,7 @@
 
 ::-webkit-scrollbar-thumb {
   background: #B6D5FC;
-  border-radius: 0;
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {

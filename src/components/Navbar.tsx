@@ -516,7 +516,7 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
               <Logo className="h-full w-auto py-2" />
             </a>
 
-            <nav className="hidden lg:flex items-stretch h-full ml-4 xl:ml-6 gap-0.5">
+            <nav className="hidden lg:flex items-center h-full ml-4 xl:ml-6 gap-1">
               {NAV_TABS.map((tab) => {
                 const isActive = activeTabName === tab.name;
 
@@ -524,12 +524,12 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
                   <Link
                     key={tab.name}
                     href={tab.href}
-                    className={`px-3.5 xl:px-4 h-full text-[13.5px] font-semibold tracking-normal transition-all flex items-center gap-1.5 ${isActive
-                      ? "bg-white text-[#0055FF] font-bold shadow-xs border-t-2 border-[#00bbff]"
-                      : "text-white hover:text-white hover:bg-white/10"
+                    className={`px-4 py-2 text-[13.5px] font-semibold tracking-normal transition-all flex items-center gap-1.5 rounded-full ${isActive
+                      ? "bg-white text-[#0055FF] font-bold shadow-md"
+                      : "text-white hover:text-white hover:bg-white/15"
                       }`}
                   >
-                    <span>{tab.name} </span>
+                    <span>{tab.name}</span>
                   </Link>
                 ) : (
                   <button
@@ -540,9 +540,9 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
                     onMouseEnter={() =>
                       handleMouseEnterTab(tab.name, tab.hasMegaMenu)
                     }
-                    className={`px-3.5 xl:px-4 h-full text-[13.5px] font-semibold tracking-normal transition-all flex items-center gap-1.5 cursor-pointer group relative ${isActive
-                      ? "bg-white text-[#0055FF] font-bold shadow-xs border-t-2 border-[#00bbff]"
-                      : "text-white hover:text-white hover:bg-white/10"
+                    className={`px-4 py-2 text-[13.5px] font-semibold tracking-normal transition-all flex items-center gap-1.5 cursor-pointer group relative rounded-full ${isActive
+                      ? "bg-white text-[#0055FF] font-bold shadow-md"
+                      : "text-white hover:text-white hover:bg-white/15"
                       }`}
                   >
                     <span>{tab.name}</span>
@@ -564,7 +564,7 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
           <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
             <button
               onClick={handleSearchOpen}
-              className="flex items-center gap-2 px-3 py-1.5 bg-white/15 hover:bg-white/25 border border-white/20 hover:border-white text-white transition-all cursor-pointer"
+              className="flex items-center gap-2 px-3.5 py-1.5 bg-white/15 hover:bg-white/25 border border-white/25 hover:border-white text-white rounded-full transition-all cursor-pointer shadow-xs"
               title="Search Total Tech"
             >
               <Search className="w-3.5 h-3.5 text-white" />
@@ -576,7 +576,7 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
             <div ref={regionRef} className="relative">
               <button
                 onClick={() => setRegionOpen(!regionOpen)}
-                className="flex items-center gap-1.5 text-white hover:bg-white/20 px-2.5 py-1.5 transition-colors cursor-pointer border border-white/20 bg-white/10 font-semibold"
+                className="flex items-center gap-1.5 text-white hover:bg-white/20 px-3 py-1.5 transition-colors cursor-pointer border border-white/25 bg-white/10 font-semibold rounded-full shadow-xs"
                 title="Select Regional Gateway"
               >
                 <Globe className="w-3.5 h-3.5 text-white" />
@@ -585,7 +585,7 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
               </button>
 
               {regionOpen && (
-                <div className="absolute right-0 top-full mt-1 w-48 bg-white border border-[#D2E4F9] shadow-xl py-1 z-50 text-[#0335ab]">
+                <div className="absolute right-0 top-full mt-2 w-52 bg-white border border-[#D2E4F9] rounded-2xl shadow-2xl py-2 z-50 text-[#0335ab] overflow-hidden animate-in fade-in zoom-in-95 duration-150">
                   {REGIONS.map((reg) => (
                     <button
                       key={reg.code}
@@ -593,11 +593,11 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
                         setSelectedRegion(reg.code);
                         setRegionOpen(false);
                       }}
-                      className={`w-full text-left px-3 py-2 text-xs flex items-center justify-between hover:bg-[#F0F6FE] transition-colors ${selectedRegion === reg.code ? "font-bold text-[#0055FF] bg-[#F8FBFE]" : "text-[#0335ab]"
+                      className={`w-full text-left px-4 py-2.5 text-xs flex items-center justify-between hover:bg-[#F0F6FE] transition-colors ${selectedRegion === reg.code ? "font-bold text-[#0055FF] bg-[#F8FBFE]" : "text-[#0335ab]"
                         }`}
                     >
                       <span>{reg.name}</span>
-                      <span className="font-mono text-[10px] text-[#0051c5] font-bold">{reg.code}</span>
+                      <span className="font-mono text-[10px] text-[#0051c5] font-bold px-2 py-0.5 bg-blue-50 rounded-full">{reg.code}</span>
                     </button>
                   ))}
                 </div>
@@ -606,7 +606,7 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
 
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-1.5 text-white bg-white/15 border border-white/20"
+              className="lg:hidden p-2 text-white bg-white/15 hover:bg-white/25 border border-white/20 rounded-full transition-colors"
             >
               {mobileOpen ? (
                 <X className="w-5 h-5" />
@@ -616,17 +616,17 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
             </button>
           </div>
         </div>
-      </header >
+      </header>
 
 
       {activeTab?.hasMegaMenu && activeTab.subcategories && (
         <div
           onMouseLeave={() => setActiveTabName(null)}
-          className="w-full bg-white border-b-2 border-[#0055FF] shadow-2xl shadow-blue-900/15 animate-in fade-in duration-150"
+          className="w-full bg-white border-b-2 border-[#0055FF] shadow-2xl shadow-blue-900/20 rounded-b-3xl overflow-hidden animate-in fade-in duration-150"
         >
           <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 min-h-[380px] flex flex-col md:flex-row">
-            <div className="w-full md:w-80 bg-[#F4F8FD] border-r border-[#E2E8F0] py-4 shrink-0">
-              <div className="space-y-1">
+            <div className="w-full md:w-80 bg-[#F4F8FD] border-r border-[#E2E8F0] p-4 shrink-0">
+              <div className="space-y-1.5">
                 {activeTab.subcategories.map((subcat) => {
                   const SubIcon = subcat.icon;
                   const isSubActive = subcat.id === (currentSubcategory?.id || "");
@@ -635,17 +635,12 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
                       key={subcat.id}
                       onClick={() => setActiveSubcatId(subcat.id)}
                       onMouseEnter={() => setActiveSubcatId(subcat.id)}
-                      className={`w-full text-left px-5 py-3.5 text-xs sm:text-[13px] transition-all flex items-center gap-3 group relative cursor-pointer ${isSubActive
-                        ? "bg-white text-[#0055FF] font-bold shadow-xs"
+                      className={`w-full text-left px-4 py-3 text-xs sm:text-[13px] rounded-xl transition-all flex items-center gap-3 group relative cursor-pointer ${isSubActive
+                        ? "bg-white text-[#0055FF] font-bold shadow-sm"
                         : "text-[#0051c5] hover:text-[#0055FF] hover:bg-white/80 font-medium"
                         }`}
                     >
-
-                      {isSubActive && (
-                        <span className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#0055FF]" />
-                      )}
-
-                      <div className={`p-1.5 border shrink-0 transition-colors ${isSubActive
+                      <div className={`p-2 rounded-lg border shrink-0 transition-colors ${isSubActive
                         ? "bg-[#0055FF] text-white border-[#0055FF]"
                         : "bg-white text-[#0055FF] border-[#E2E8F0] group-hover:bg-[#0055FF] group-hover:text-white"
                         }`}>
@@ -663,8 +658,8 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
               {currentSubcategory && (
                 <div>
                   <div className="flex items-center gap-3 mb-6 border-b border-[#E2E8F0] pb-3">
-                    <div className="p-1.5 bg-[#F0F7FF] border border-[#0055FF]/30 text-[#0055FF]">
-                      {React.createElement(currentSubcategory.icon, { className: "w-4 h-4" })}
+                    <div className="p-2 bg-[#F0F7FF] border border-[#0055FF]/30 text-[#0055FF] rounded-xl shadow-xs">
+                      {React.createElement(currentSubcategory.icon, { className: "w-4.5 h-4.5" })}
                     </div>
                     <h3 className="text-lg sm:text-xl font-bold text-[#0335ab] font-sans tracking-tight">
                       {currentSubcategory.heading}
@@ -679,16 +674,16 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
                         <a
                           key={idx}
                           href={item.href}
-                          className="group flex items-start gap-3.5 p-3.5 bg-[#F8FAFD] hover:bg-[#F0F7FF] border border-[#E2E8F0] hover:border-[#0055FF] transition-all duration-200 shadow-xs hover:shadow-md hover:shadow-blue-500/10"
+                          className="group flex items-start gap-3.5 p-4 bg-[#F8FAFD] hover:bg-[#F0F7FF] border border-[#E2E8F0] hover:border-[#0085f4] rounded-2xl transition-all duration-200 shadow-xs hover:shadow-lg hover:shadow-blue-500/10"
                         >
-                          <div className="p-2 bg-white border border-[#E2E8F0] text-[#0055FF] group-hover:bg-[#0055FF] group-hover:text-white group-hover:border-[#0055FF] transition-all shrink-0 mt-0.5 shadow-xs">
+                          <div className="p-2.5 bg-white border border-[#E2E8F0] text-[#0055FF] group-hover:bg-[#0055FF] group-hover:text-white group-hover:border-[#0055FF] rounded-xl transition-all shrink-0 mt-0.5 shadow-xs">
                             <ItemIcon className="w-4 h-4" />
                           </div>
 
                           <div className="flex-1">
-                            <div className="flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#0335ab] group-hover:text-[#0055FF] transition-colors">
+                            <div className="flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#0335ab] group-hover:text-[#0085f4] transition-colors">
                               <span>{item.title}</span>
-                              <span className="text-[#0055FF] font-black text-xs group-hover:translate-x-1 transition-all inline-block">
+                              <span className="text-[#0055FF] font-black text-xs group-hover:translate-x-1.5 transition-all inline-block">
                                 &gt;
                               </span>
                             </div>
@@ -711,7 +706,7 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
 
       {
         mobileOpen && (
-          <div className="lg:hidden bg-[#0055FF] border-b-2 border-white px-4 pt-4 pb-6 max-h-[85vh] overflow-y-auto shadow-xl text-white">
+          <div className="lg:hidden bg-[#0055FF] border-b-2 border-white px-4 pt-4 pb-6 max-h-[85vh] overflow-y-auto rounded-b-3xl shadow-2xl text-white">
             {NAV_TABS.map((tab) => (
               <div key={tab.name} className="py-2 border-b border-white/20">
                 <div className="text-sm font-bold text-white px-2 py-1 flex items-center justify-between">
@@ -734,7 +729,7 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
                                 key={i}
                                 href={item.href}
                                 onClick={() => setMobileOpen(false)}
-                                className="block text-xs text-white/80 hover:text-white py-0.5"
+                                className="block text-xs text-white/80 hover:text-white py-1 px-2 rounded-lg hover:bg-white/10"
                               >
                                 • {item.title}
                               </a>
@@ -754,7 +749,7 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
                   setMobileOpen(false);
                   handleSearchOpen();
                 }}
-                className="w-full flex items-center justify-center gap-2 p-2.5 bg-white/20 text-white text-xs font-semibold border border-white/30"
+                className="w-full flex items-center justify-center gap-2 p-3 bg-white/20 text-white text-xs font-semibold rounded-full border border-white/30 shadow-xs"
               >
                 <Search className="w-4 h-4 text-white" />
                 <span>Search Total Tech</span>
@@ -768,7 +763,7 @@ export default function Navbar({ onOpenSearch }: NavbarProps) {
         isOpen={internalSearchOpen}
         onClose={() => setInternalSearchOpen(false)}
       />
-    </div >
+    </div>
   );
 }
 

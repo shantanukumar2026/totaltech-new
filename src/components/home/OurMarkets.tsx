@@ -59,9 +59,9 @@ export default function OurMarkets() {
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 pb-6 mb-8 border-b border-[#E2E8F0]">
           <div className="max-w-3xl">
-            <div className="w-12 h-1 bg-[#0055FF] mb-3" />
+            <div className="w-12 h-1 bg-[#0055FF] rounded-full mb-3" />
 
-            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 bg-[#F0F6FE] border border-[#D2E4F9] text-[#0055FF] text-[10px] font-mono font-bold uppercase tracking-wider mb-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F0F6FE] border border-[#D2E4F9] text-[#0055FF] text-[11px] font-mono font-bold uppercase tracking-wider rounded-full mb-2">
               <span className="live-pulse-dot" />
               <span>01 — OUR MARKETS</span>
             </div>
@@ -79,18 +79,18 @@ export default function OurMarkets() {
         </div>
 
         {/* Market Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
           {PILLARS.map((item, idx) => {
             const Icon = item.icon;
 
             return (
               <div
                 key={idx}
-                className="bg-[#F8FBFE] border border-[#E2E8F0] hover:border-[#0055FF] shadow-xs card-hover-lift flex flex-col justify-between group overflow-hidden"
+                className="bg-[#F8FBFE] border border-[#E2E8F0] hover:border-[#0085f4] rounded-2xl shadow-sm hover:shadow-xl hover:shadow-blue-500/8 card-hover-lift flex flex-col justify-between group overflow-hidden transition-all duration-300"
               >
                 <div>
                   {/* Image */}
-                  <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#F0F6FE] border-b border-[#E2E8F0]">
+                  <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#F0F6FE] border-b border-[#E2E8F0] rounded-t-2xl">
                     <Image
                       src={item.image}
                       alt={item.title}
@@ -99,14 +99,14 @@ export default function OurMarkets() {
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
 
-                    <div className="absolute top-3 left-3 z-10 w-9 h-9 bg-white/95 backdrop-blur-xs border border-[#D2E4F9] flex items-center justify-center text-[#0055FF] shadow-xs group-hover:bg-[#0055FF] group-hover:text-white transition-colors">
-                      <Icon className="w-4.5 h-4.5" />
+                    <div className="absolute top-3 left-3 z-10 w-10 h-10 rounded-xl bg-white/95 backdrop-blur-xs border border-[#D2E4F9] flex items-center justify-center text-[#0055FF] shadow-sm group-hover:bg-[#0055FF] group-hover:text-white transition-colors">
+                      <Icon className="w-5 h-5" />
                     </div>
                   </div>
 
                   {/* Content */}
-                  <div className="p-5 sm:p-6">
-                    <h3 className="text-base sm:text-lg font-black text-[#0335ab] mb-2 group-hover:text-[#0055FF] transition-colors leading-snug">
+                  <div className="p-6">
+                    <h3 className="text-base sm:text-lg font-black text-[#0335ab] mb-2 group-hover:text-[#0085f4] transition-colors leading-snug">
                       {item.title}
                     </h3>
 
@@ -117,9 +117,9 @@ export default function OurMarkets() {
                 </div>
 
                 {/* Footer */}
-                <div className="px-5 pb-5 sm:px-6 sm:pb-6 pt-0">
+                <div className="px-6 pb-6 pt-0">
                   <div className="pt-4 border-t border-[#E2E8F0] flex items-center justify-between text-[11px] font-mono font-semibold text-[#0055FF]">
-                    <span>MARKET 0{idx + 1}</span>
+                    <span className="px-2.5 py-0.5 bg-blue-50 text-[#0055FF] rounded-full border border-blue-200/50">MARKET 0{idx + 1}</span>
                     <span className="text-slate-400 group-hover:text-[#0055FF] transition-colors">
                       INFRASTRUCTURE
                     </span>
@@ -131,9 +131,9 @@ export default function OurMarkets() {
         </div>
 
         {/* Standards / Capabilities */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-4 sm:p-5 bg-white border border-[#D2E4F9] shadow-xs">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 p-6 sm:p-7 bg-white border border-[#D2E4F9] rounded-2xl shadow-sm">
           {STATS.map((st, i) => (
-            <div key={i} className="flex flex-col justify-center">
+            <div key={i} className="flex flex-col justify-center border-l-2 border-blue-500/30 pl-4">
               <div className="text-[10px] font-mono font-bold text-[#0055FF] uppercase tracking-wider">
                 {st.label}
               </div>
@@ -142,7 +142,7 @@ export default function OurMarkets() {
                 {st.value}
               </div>
 
-              <div className="text-[11px] text-slate-500 font-medium">
+              <div className="text-[11px] text-slate-500 font-medium mt-0.5">
                 {st.sub}
               </div>
             </div>

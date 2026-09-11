@@ -86,16 +86,16 @@ export default function SectionPrecastSpecialtyEngineering() {
   return (
     <section
       id="section-specialty-engineering"
-      className="w-full bg-[#F8FBFE] py-10 sm:py-14 border-t border-[#E2E8F0] select-none"
+      className="w-full bg-[#F8FBFE] py-12 sm:py-16 border-t border-[#E2E8F0] select-none"
     >
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
 
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 pb-6 mb-8 border-b border-[#E2E8F0]">
           <div>
-            <div className="w-12 h-1 bg-[#0055FF] mb-3" />
+            <div className="w-12 h-1 bg-[#0055FF] rounded-full mb-3" />
 
-            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 bg-white border border-[#D2E4F9] text-[#0055FF] text-[10px] font-mono font-bold uppercase tracking-wider mb-2 shadow-xs">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-[#D2E4F9] text-[#0055FF] text-[11px] font-mono font-bold uppercase tracking-wider rounded-full mb-2 shadow-xs">
               <span className="live-pulse-dot" />
               <span>03 | SPECIALTY PRECAST ENGINEERING</span>
             </div>
@@ -112,14 +112,14 @@ export default function SectionPrecastSpecialtyEngineering() {
         </div>
 
         {/* Service Rows */}
-        <div className="bg-white border border-[#E2E8F0] shadow-xs divide-y divide-[#E2E8F0] overflow-hidden">
+        <div className="bg-white border border-[#E2E8F0] rounded-2xl shadow-sm divide-y divide-[#E2E8F0] overflow-hidden">
           {SERVICES.map((row, idx) => {
             const isImageLeft = idx % 2 === 0;
 
             return (
               <div
                 key={idx}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center p-5 sm:p-7 hover:bg-[#FBFDFF] transition-colors"
+                className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-6 sm:p-8 hover:bg-[#FBFDFF] transition-colors"
               >
 
                 {/* Image */}
@@ -127,7 +127,7 @@ export default function SectionPrecastSpecialtyEngineering() {
                   className={`lg:col-span-6 ${isImageLeft ? "lg:order-1" : "lg:order-2"
                     }`}
                 >
-                  <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#F0F6FE] border border-[#D2E4F9] shadow-xs group">
+                  <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#F0F6FE] border border-[#D2E4F9] rounded-xl shadow-sm group">
                     <Image
                       src={row.image}
                       alt={row.imageAlt}
@@ -138,7 +138,7 @@ export default function SectionPrecastSpecialtyEngineering() {
 
                     {/* Image Tag */}
                     <div className="absolute top-3 left-3 z-10">
-                      <span className="px-2.5 py-1 bg-white/95 backdrop-blur-xs text-[#0055FF] text-[10px] font-mono font-bold uppercase shadow-sm border border-blue-100">
+                      <span className="px-3 py-1 bg-white/95 backdrop-blur-xs text-[#0055FF] text-[10px] font-mono font-bold uppercase rounded-full shadow-md border border-blue-100">
                         {row.tag}
                       </span>
                     </div>
@@ -155,16 +155,16 @@ export default function SectionPrecastSpecialtyEngineering() {
                     {row.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-[#0051c5] leading-relaxed mb-3.5">
+                  <p className="text-xs sm:text-sm text-[#0051c5] leading-relaxed mb-4">
                     {row.description}
                   </p>
 
                   {/* Applications / Scope */}
-                  <div className="space-y-1.5 mb-4">
+                  <div className="space-y-2 mb-5">
                     {row.points.map((pt, pIdx) => (
                       <div
                         key={pIdx}
-                        className="flex items-start gap-2 text-xs sm:text-[13px] font-semibold text-[#0335ab]"
+                        className="flex items-start gap-2.5 text-xs sm:text-[13px] font-semibold text-[#0335ab]"
                       >
                         <CheckCircle2 className="w-4 h-4 text-[#0055FF] shrink-0 mt-0.5" />
                         <span>{pt}</span>
@@ -175,7 +175,7 @@ export default function SectionPrecastSpecialtyEngineering() {
                   {/* CTA */}
                   <Link
                     href={row.linkHref}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0055FF] hover:text-[#0335ab] transition-colors w-fit group"
+                    className="inline-flex items-center gap-2 text-xs font-bold text-[#0055FF] hover:text-[#0335ab] group bg-blue-50/70 hover:bg-blue-100/80 px-4 py-2 rounded-lg border border-blue-200/60 w-fit transition-all"
                   >
                     <span>{row.linkText}</span>
 

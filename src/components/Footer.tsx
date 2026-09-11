@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Logo from "@/components/Logo";
 import {
   Mail,
   Phone,
@@ -55,9 +56,9 @@ export default function Footer() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#003899] via-[#002c80]/85 to-[#00236e]/60" />
         </div>
 
-        <div className="max-w-[1720px] mx-auto flex flex-col lg:flex-row items-stretch justify-between relative z-10">
-          {/* Left Angled Orange Callout Box */}
-          <div className="relative flex-shrink-0 flex items-center bg-gradient-to-br from-[#ff5a00] to-[#ff7300] px-8 sm:px-12 py-6 sm:py-8 lg:py-7 lg:pr-16 lg:[clip-path:polygon(0_0,calc(100%-38px)_0,100%_100%,0_100%)] shadow-2xl">
+        <div className="max-w-[1720px] mx-auto flex flex-col lg:flex-row items-stretch justify-between relative z-10 p-4 sm:p-6 lg:p-8 gap-6">
+          {/* Left Orange Callout Box with smooth modern rounded corners */}
+          <div className="relative flex-shrink-0 flex items-center bg-gradient-to-br from-[#ff5a00] to-[#ff7300] px-8 sm:px-10 py-6 sm:py-7 rounded-2xl shadow-2xl border border-orange-400/30">
             <div className="relative z-10">
               <p className="text-[11px] sm:text-xs font-bold tracking-[0.25em] text-white/95 uppercase mb-1">
                 LET&apos;S BUILD
@@ -70,7 +71,7 @@ export default function Footer() {
           </div>
 
           {/* Center Message & Right CTA Button */}
-          <div className="flex-1 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 px-6 sm:px-10 lg:px-14 py-6 sm:py-8">
+          <div className="flex-1 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 px-4 sm:px-6 py-2">
             <div className="max-w-2xl">
               <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-normal leading-snug">
                 Partner with Total Tech for innovative precast solutions.
@@ -83,14 +84,14 @@ export default function Footer() {
             <div className="flex items-center gap-6 sm:gap-8 flex-shrink-0">
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-3 bg-white text-[#0047bf] hover:text-[#002f80] hover:bg-blue-50 px-7 sm:px-8 py-3.5 sm:py-4 rounded-md font-extrabold text-xs sm:text-sm tracking-wider uppercase shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0"
+                className="group inline-flex items-center gap-3 bg-white text-[#0047bf] hover:text-[#002f80] hover:bg-blue-50 px-8 py-4 rounded-full font-extrabold text-xs sm:text-sm tracking-wider uppercase shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0"
               >
                 <span>GET IN TOUCH</span>
                 <ArrowRight className="w-4 h-4 text-[#ff5a00] transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
 
-              {/* Angled Orange Accent Slash on far right */}
-              <div className="hidden xl:block h-16 w-4 -skew-x-[25deg] bg-gradient-to-b from-[#ff7300] to-[#ff5a00] rounded-sm shadow-md" />
+              {/* Rounded Accent Slash on far right */}
+              <div className="hidden xl:block h-16 w-3.5 -skew-x-[20deg] bg-gradient-to-b from-[#ff7300] to-[#ff5a00] rounded-full shadow-md" />
             </div>
           </div>
         </div>
@@ -129,39 +130,13 @@ export default function Footer() {
           
           {/* ========== COLUMN 1: Company Logo, Bio & Certifications ========== */}
           <div className="flex flex-col gap-6">
-            {/* Total Tech Logo with icon and modern typography */}
-            <Link href="/" className="inline-flex items-center gap-3.5 group" aria-label="Total Tech Technologies">
-              <div className="relative w-12 h-12 flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-[#003899] to-[#001f5c] border border-blue-400/40 rounded shadow-md transition-transform duration-300 group-hover:scale-105">
-                {/* Modern Geometric Monogram TT */}
-                <svg viewBox="0 0 36 36" className="w-8 h-8" fill="none">
-                  <path
-                    d="M6 7 H22 V13 H16 V29 H10 V13 H6 V7 Z"
-                    fill="#ffffff"
-                  />
-                  <path
-                    d="M20 14 H30 V19 H26 V29 H20 V14 Z"
-                    fill="#ff5a00"
-                  />
-                  <rect x="23" y="7" width="7" height="4.5" fill="#ff5a00" />
-                </svg>
-              </div>
-
-              <div className="flex flex-col">
-                <div className="flex items-center gap-1.5">
-                  <span className="text-xl sm:text-2xl font-black tracking-tight text-white uppercase leading-none">
-                    TOTAL
-                  </span>
-                  <span className="text-xl sm:text-2xl font-black tracking-tight text-[#ff5a00] uppercase leading-none">
-                    TECH
-                  </span>
-                </div>
-                <span className="text-[10px] font-extrabold tracking-[0.22em] text-slate-300 uppercase mt-0.5">
-                  TECHNOLOGIES
-                </span>
-                <span className="text-[8px] font-bold tracking-[0.25em] text-blue-300/80 uppercase mt-0.5">
-                  — FUTURISTIC TECHNOLOGIES —
-                </span>
-              </div>
+            {/* Total Tech Official Logo matching Navbar */}
+            <Link
+              href="/"
+              className="inline-flex items-center justify-center bg-white px-3.5 py-2 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg hover:scale-[1.02] w-fit max-w-[210px] overflow-hidden"
+              aria-label="Total Tech Technologies"
+            >
+              <Logo className="h-9 w-auto max-w-full" imageClassName="h-8 sm:h-9 w-auto object-contain" />
             </Link>
 
             <p className="text-xs sm:text-[13px] text-slate-300/90 leading-relaxed font-normal pr-2">
@@ -169,11 +144,11 @@ export default function Footer() {
             </p>
 
             {/* Certifications Badge Row */}
-            <div className="grid grid-cols-4 gap-2 pt-2 border-t border-slate-800/80">
+            <div className="grid grid-cols-4 gap-2.5 pt-2 border-t border-slate-800/80">
               {/* PCI */}
               <div className="flex flex-col items-center text-center group cursor-default">
-                <div className="w-8 h-8 rounded bg-blue-950/70 border border-blue-500/30 flex items-center justify-center text-white mb-1.5 transition-colors group-hover:border-[#ff5a00]">
-                  <ShieldCheck className="w-4 h-4 text-white" />
+                <div className="w-9 h-9 rounded-xl bg-blue-950/70 border border-blue-500/30 flex items-center justify-center text-white mb-1.5 transition-colors group-hover:border-[#ff5a00]">
+                  <ShieldCheck className="w-4.5 h-4.5 text-white" />
                 </div>
                 <span className="text-[10.5px] font-bold text-slate-200 leading-tight">PCI</span>
                 <span className="text-[9.5px] text-slate-400 font-medium leading-tight">Certified</span>
@@ -181,8 +156,8 @@ export default function Footer() {
 
               {/* ACI */}
               <div className="flex flex-col items-center text-center group cursor-default">
-                <div className="w-8 h-8 rounded bg-blue-950/70 border border-blue-500/30 flex items-center justify-center text-white mb-1.5 transition-colors group-hover:border-[#ff5a00]">
-                  <HardHat className="w-4 h-4 text-white" />
+                <div className="w-9 h-9 rounded-xl bg-blue-950/70 border border-blue-500/30 flex items-center justify-center text-white mb-1.5 transition-colors group-hover:border-[#ff5a00]">
+                  <HardHat className="w-4.5 h-4.5 text-white" />
                 </div>
                 <span className="text-[10.5px] font-bold text-slate-200 leading-tight">ACI</span>
                 <span className="text-[9.5px] text-slate-400 font-medium leading-tight">318/319</span>
@@ -190,7 +165,7 @@ export default function Footer() {
 
               {/* AASHTO */}
               <div className="flex flex-col items-center text-center group cursor-default">
-                <div className="w-8 h-8 rounded bg-blue-950/70 border border-blue-500/30 flex items-center justify-center text-white mb-1.5 transition-colors group-hover:border-[#ff5a00]">
+                <div className="w-9 h-9 rounded-xl bg-blue-950/70 border border-blue-500/30 flex items-center justify-center text-white mb-1.5 transition-colors group-hover:border-[#ff5a00]">
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
@@ -198,7 +173,7 @@ export default function Footer() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="w-4 h-4 text-white"
+                    className="w-4.5 h-4.5 text-white"
                   >
                     <path d="M4 19V7" />
                     <path d="M20 19V7" />
@@ -215,8 +190,8 @@ export default function Footer() {
 
               {/* ISO */}
               <div className="flex flex-col items-center text-center group cursor-default">
-                <div className="w-8 h-8 rounded bg-blue-950/70 border border-blue-500/30 flex items-center justify-center text-white mb-1.5 transition-colors group-hover:border-[#ff5a00]">
-                  <Award className="w-4 h-4 text-white" />
+                <div className="w-9 h-9 rounded-xl bg-blue-950/70 border border-blue-500/30 flex items-center justify-center text-white mb-1.5 transition-colors group-hover:border-[#ff5a00]">
+                  <Award className="w-4.5 h-4.5 text-white" />
                 </div>
                 <span className="text-[10.5px] font-bold text-slate-200 leading-tight">ISO</span>
                 <span className="text-[9.5px] text-slate-400 font-medium leading-tight">9001:2015</span>

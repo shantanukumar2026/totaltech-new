@@ -99,15 +99,15 @@ export default function CorporateContactSection() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 mb-10 border-b border-[#E2E8F0]">
           <div>
-            <div className="flex items-center gap-2 text-xs font-bold text-[#0055FF] uppercase tracking-wider mb-2">
-              <Building className="w-4 h-4" />
-              <span>Locations & Regional Operations</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#F0F6FE] border border-[#D2E4F9] text-xs font-bold text-[#0055FF] uppercase tracking-wider rounded-full mb-3">
+              <Building className="w-3.5 h-3.5" />
+              <span>Locations &amp; Regional Operations</span>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0335ab] tracking-tight">
               Our Regional Engineering Network
             </h2>
           </div>
-          <p className="text-sm text-[#0051c5] font-medium max-w-md">
+          <p className="text-sm text-[#0051c5] font-medium max-w-md leading-relaxed">
             Strategic regional offices providing localized structural engineering, precast BIM modeling, and on-site support across North America.
           </p>
         </div>
@@ -115,29 +115,29 @@ export default function CorporateContactSection() {
         {/* Interactive Master-Detail Corporate UI */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {/* Left Column: Office Selector List */}
-          <div className="lg:col-span-5 flex flex-col gap-3">
+          <div className="lg:col-span-5 flex flex-col gap-3.5">
             {CORPORATE_OFFICES.map((office) => {
               const isSelected = office.id === activeOffice.id;
               return (
                 <button
                   key={office.id}
                   onClick={() => setActiveOfficeId(office.id)}
-                  className={`text-left p-5 border transition-all duration-200 relative cursor-pointer ${isSelected
-                    ? "bg-[#F0F6FE] border-[#0055FF] shadow-sm"
+                  className={`text-left p-5 border rounded-xl transition-all duration-200 relative cursor-pointer ${isSelected
+                    ? "bg-[#F0F6FE] border-[#0055FF] shadow-md shadow-blue-500/10"
                     : "bg-white border-[#E2E8F0] hover:border-[#0085f4] hover:bg-[#F8FBFE]"
                     }`}
                 >
                   {isSelected && (
-                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#0055FF]" />
+                    <div className="absolute left-0 top-3 bottom-3 w-1 bg-[#0055FF] rounded-r-full" />
                   )}
 
-                  <div className="flex items-start justify-between gap-3 mb-1">
+                  <div className="flex items-start justify-between gap-3 mb-1.5">
                     <div className="flex items-center gap-2">
                       <span className="text-xs font-bold uppercase tracking-wider text-[#0051c5]">
                         {office.region}
                       </span>
                       {office.isHQ && (
-                        <span className="px-2 py-0.5 bg-[#0055FF] text-white text-[10px] font-black uppercase tracking-wider">
+                        <span className="px-2.5 py-0.5 bg-[#0055FF] text-white text-[10px] font-black uppercase tracking-wider rounded-full">
                           HQ
                         </span>
                       )}
@@ -167,7 +167,7 @@ export default function CorporateContactSection() {
           </div>
 
           {/* Right Column: Selected Office Deep Dive Card */}
-          <div className="lg:col-span-7 bg-[#F8FBFE] border border-[#D2E4F9] p-6 sm:p-8 flex flex-col justify-between">
+          <div className="lg:col-span-7 bg-[#F8FBFE] border border-[#D2E4F9] rounded-2xl shadow-sm p-6 sm:p-8 flex flex-col justify-between">
             <div>
               {/* Header Badge & Region */}
               <div className="flex flex-wrap items-center justify-between gap-3 pb-4 mb-6 border-b border-[#D2E4F9]">
@@ -180,7 +180,7 @@ export default function CorporateContactSection() {
                   </h3>
                 </div>
                 {activeOffice.isHQ && (
-                  <span className="px-3 py-1 bg-[#0055FF] text-white text-xs font-bold uppercase tracking-wider">
+                  <span className="px-3 py-1 bg-[#0055FF] text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-xs">
                     Corporate Headquarters
                   </span>
                 )}
@@ -194,12 +194,12 @@ export default function CorporateContactSection() {
               {/* Office Details Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {/* Physical Address */}
-                <div className="bg-white border border-[#E2E8F0] p-4">
-                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0055FF] mb-2">
+                <div className="bg-white border border-[#E2E8F0] rounded-xl p-5 shadow-xs">
+                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0055FF] mb-2.5">
                     <MapPin className="w-4 h-4" />
                     <span>Office Address</span>
                   </div>
-                  <div className="text-sm text-[#0335ab] font-bold">
+                  <div className="text-sm text-[#0335ab] font-bold leading-relaxed">
                     {activeOffice.addressLines.map((line, idx) => (
                       <div key={idx}>{line}</div>
                     ))}
@@ -208,21 +208,21 @@ export default function CorporateContactSection() {
                     href={`https://maps.google.com/?q=${activeOffice.mapQuery}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs font-bold text-[#0055FF] hover:underline mt-3"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0055FF] hover:underline mt-3.5"
                   >
                     <span>View on Google Maps</span>
-                    <ExternalLink className="w-3 h-3" />
+                    <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 </div>
 
                 {/* Contact & Hours */}
-                <div className="bg-white border border-[#E2E8F0] p-4 space-y-3">
+                <div className="bg-white border border-[#E2E8F0] rounded-xl p-5 space-y-3 shadow-xs">
                   <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0055FF]">
                     <Clock className="w-4 h-4" />
-                    <span>Contact & Hours</span>
+                    <span>Contact &amp; Hours</span>
                   </div>
 
-                  <div className="space-y-1.5 text-xs text-[#0051c5] font-medium">
+                  <div className="space-y-2 text-xs text-[#0051c5] font-medium">
                     <div className="flex items-center gap-2">
                       <Phone className="w-3.5 h-3.5 text-[#0055FF] shrink-0" />
                       <a
@@ -241,7 +241,7 @@ export default function CorporateContactSection() {
                         {activeOffice.email}
                       </a>
                     </div>
-                    <div className="flex items-start gap-2 pt-1 border-t border-[#F1F5F9] text-[11px]">
+                    <div className="flex items-start gap-2 pt-2 border-t border-[#F1F5F9] text-[11px] text-slate-500">
                       <span>{activeOffice.hours}</span>
                     </div>
                   </div>
@@ -253,16 +253,16 @@ export default function CorporateContactSection() {
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 mt-6 border-t border-[#D2E4F9]">
               <div className="flex items-center gap-2 text-xs font-bold text-[#0051c5]">
                 <Globe2 className="w-4 h-4 text-[#0055FF]" />
-                <span>Serving projects across state lines & multi-jurisdiction DOTs</span>
+                <span>Serving projects across state lines &amp; multi-jurisdiction DOTs</span>
               </div>
 
               <div className="flex items-center gap-3 w-full sm:w-auto">
                 <Link
                   href="/contact"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#0055FF] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#0047e0] transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#0055FF] hover:bg-[#0047e0] text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-all shadow-md hover:shadow-lg"
                 >
                   <span>Inquire With This Office</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>

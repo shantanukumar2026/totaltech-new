@@ -142,21 +142,21 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 14px 28px;
-  background-color: #0055ff;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #0055ff 0%, #0085f4 100%);
   color: #ffffff;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 800;
   text-decoration: none;
-  border-radius: 2px;
-  box-shadow: 0 4px 18px rgba(0, 85, 255, 0.45);
-  transition: all 0.25s ease;
+  border-radius: 9999px;
+  box-shadow: 0 6px 22px rgba(0, 85, 255, 0.45);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .primaryBtn:hover {
-  background-color: #0044cc;
-  box-shadow: 0 6px 24px rgba(0, 85, 255, 0.6);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #0044cc 0%, #00a2ff 100%);
+  box-shadow: 0 8px 28px rgba(0, 85, 255, 0.6);
+  transform: translateY(-2px);
 }
 
 .backLink {
@@ -167,19 +167,21 @@
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
-  padding: 8px 12px;
-  transition: color 0.2s ease;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
 }
 
 .backLink:hover {
   color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .heroMediaContainer {
   position: relative;
   width: 100%;
   height: 380px;
-  border-radius: 4px;
+  border-radius: 24px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
@@ -230,6 +232,7 @@
   width: 48px;
   height: 4px;
   background-color: #0055ff;
+  border-radius: 9999px;
   margin-bottom: 16px;
 }
 
@@ -330,19 +333,20 @@
 .cardItem {
   background-color: #ffffff;
   border: 1px solid #d2e4f9;
-  border-radius: 2px;
+  border-radius: 20px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-decoration: none;
-  transition: all 0.25s ease;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(0, 85, 255, 0.05);
 }
 
 .cardItem:hover {
-  border-color: #0055ff;
-  box-shadow: 0 12px 32px rgba(0, 85, 255, 0.12);
-  transform: translateY(-3px);
+  border-color: #0085f4;
+  box-shadow: 0 16px 36px rgba(0, 85, 255, 0.14);
+  transform: translateY(-4px);
 }
 
 .cardMediaWrapper {
@@ -358,14 +362,15 @@
   top: 12px;
   left: 12px;
   background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
   color: #0055ff;
   font-size: 10px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 4px 8px;
-  border-radius: 2px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 5px 12px;
+  border-radius: 9999px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .cardBody {

@@ -67,10 +67,10 @@ export default function SearchModal({ isOpen, onClose, onSearchSubmit }: SearchM
       onClick={onClose}
     >
       <div
-        className="w-full max-w-2xl bg-white border border-[#D2E4F9] shadow-2xl shadow-blue-900/20 overflow-hidden"
+        className="w-full max-w-2xl bg-white border border-[#D2E4F9] rounded-3xl shadow-2xl shadow-blue-900/25 overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
-        <form onSubmit={handleSubmit} className="flex items-center px-5 py-4 bg-white border-b border-[#E2E8F0]">
+        <form onSubmit={handleSubmit} className="flex items-center px-6 py-4 bg-white border-b border-[#E2E8F0]">
           <Search className="w-5 h-5 text-[#0055FF] mr-3.5 shrink-0" />
           <input
             type="text"
@@ -92,33 +92,33 @@ export default function SearchModal({ isOpen, onClose, onSearchSubmit }: SearchM
           <button
             type="button"
             onClick={onClose}
-            className="px-2.5 py-1.5 text-xs font-mono text-[#0051c5] hover:text-[#0335ab] hover:bg-[#F0F6FE] border border-[#D2E4F9] transition-colors cursor-pointer"
+            className="px-3 py-1 text-xs font-mono text-[#0051c5] hover:text-[#0335ab] hover:bg-[#F0F6FE] border border-[#D2E4F9] rounded-full transition-colors cursor-pointer"
           >
             ESC
           </button>
         </form>
 
         {query.trim() !== "" && (
-          <div className="max-h-[60vh] overflow-y-auto p-4 space-y-4 bg-[#F8FBFE]">
+          <div className="max-h-[60vh] overflow-y-auto p-5 space-y-4 bg-[#F8FBFE]">
             {totalResults === 0 ? (
               <div className="py-8 text-center text-xs text-[#0051c5]">
-                No matching results found for <span className="font-bold text-[#0335ab]">"{query}"</span>.
+                No matching results found for <span className="font-bold text-[#0335ab]">&quot;{query}&quot;</span>.
               </div>
             ) : (
               <>
                 {results.solutions.length > 0 && (
                   <div>
-                    <div className="text-[11px] font-mono font-bold text-[#0055FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                    <div className="text-[11px] font-mono font-bold text-[#0055FF] uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
                       <Layers className="w-3.5 h-3.5" />
-                      <span>Solutions & Systems</span>
+                      <span>Solutions &amp; Systems</span>
                     </div>
-                    <div className="space-y-1.5">
+                    <div className="space-y-2">
                       {results.solutions.map((sol) => (
                         <Link
                           key={sol.slug}
                           href={`/solutions/${sol.slug}`}
                           onClick={onClose}
-                          className="flex items-center justify-between p-3 bg-white border border-[#E2E8F0] hover:border-[#0055FF] transition-all group"
+                          className="flex items-center justify-between p-3.5 bg-white border border-[#E2E8F0] hover:border-[#0085f4] rounded-2xl transition-all group shadow-xs hover:shadow-md"
                         >
                           <div>
                             <div className="text-xs font-bold text-[#0335ab] group-hover:text-[#0055FF]">
@@ -128,7 +128,7 @@ export default function SearchModal({ isOpen, onClose, onSearchSubmit }: SearchM
                               {sol.shortDesc}
                             </div>
                           </div>
-                          <ArrowRight className="w-3.5 h-3.5 text-[#0055FF] group-hover:translate-x-1 transition-transform shrink-0" />
+                          <ArrowRight className="w-4 h-4 text-[#0055FF] group-hover:translate-x-1.5 transition-transform shrink-0" />
                         </Link>
                       ))}
                     </div>
@@ -137,17 +137,17 @@ export default function SearchModal({ isOpen, onClose, onSearchSubmit }: SearchM
 
                 {results.blogs.length > 0 && (
                   <div>
-                    <div className="text-[11px] font-mono font-bold text-[#0055FF] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                    <div className="text-[11px] font-mono font-bold text-[#0055FF] uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
                       <FileText className="w-3.5 h-3.5" />
-                      <span>Technical Articles & Insights</span>
+                      <span>Technical Articles &amp; Insights</span>
                     </div>
-                    <div className="space-y-1.5">
+                    <div className="space-y-2">
                       {results.blogs.map((blog) => (
                         <Link
                           key={blog.slug}
                           href={`/blog/${blog.slug}`}
                           onClick={onClose}
-                          className="flex items-center justify-between p-3 bg-white border border-[#E2E8F0] hover:border-[#0055FF] transition-all group"
+                          className="flex items-center justify-between p-3.5 bg-white border border-[#E2E8F0] hover:border-[#0085f4] rounded-2xl transition-all group shadow-xs hover:shadow-md"
                         >
                           <div>
                             <div className="text-xs font-bold text-[#0335ab] group-hover:text-[#0055FF]">
@@ -157,7 +157,7 @@ export default function SearchModal({ isOpen, onClose, onSearchSubmit }: SearchM
                               {blog.excerpt}
                             </div>
                           </div>
-                          <ArrowRight className="w-3.5 h-3.5 text-[#0055FF] group-hover:translate-x-1 transition-transform shrink-0" />
+                          <ArrowRight className="w-4 h-4 text-[#0055FF] group-hover:translate-x-1.5 transition-transform shrink-0" />
                         </Link>
                       ))}
                     </div>
